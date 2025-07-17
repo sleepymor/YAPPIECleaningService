@@ -1,31 +1,37 @@
 fileFormatVersion: 2
-guid: ee0da58222dd63e458b9dc0e867051f7
+guid: b33f84d6e61b22243b62a4e331207338
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1739882456456380142
-    second: idle_walk_0
+      213: -5380739489725017918
+    second: attack_3_0
   - first:
-      213: 4586093228133353343
-    second: idle_walk_1
+      213: -4247717978914183710
+    second: attack_3_1
   - first:
-      213: -4959136696878929830
-    second: idle_walk_2
+      213: -4717293389601449187
+    second: attack_3_2
   - first:
-      213: 3955929553347523986
-    second: idle_walk_3
+      213: -2413366586220006507
+    second: attack_3_3
   - first:
-      213: -8800666381133127404
-    second: idle_walk_4
+      213: -7871607363476248928
+    second: attack_3_4
   - first:
-      213: -2194173414111504302
-    second: idle_walk_5
+      213: 5206573391639200654
+    second: attack_3_5
   - first:
-      213: 465459976274802782
-    second: idle_walk_6
+      213: -9089782509164551423
+    second: attack_3_6
   - first:
-      213: -5528651454527577121
-    second: idle_walk_7
+      213: -6691999846858851337
+    second: attack_3_7
+  - first:
+      213: 2421983327278571526
+    second: attack_3_8
+  - first:
+      213: -7178216154894146864
+    second: attack_3_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +75,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 20
@@ -108,12 +114,12 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 12
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -121,79 +127,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_walk_0
+      name: attack_3_0
       rect:
         serializedVersion: 2
         x: 15
-        y: 78
-        width: 32
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eee340830ed452810800000000000000
-      internalID: 1739882456456380142
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_walk_1
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 78
-        width: 32
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f7786b92e7315af30800000000000000
-      internalID: 4586093228133353343
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_walk_2
-      rect:
-        serializedVersion: 2
-        x: 143
-        y: 78
-        width: 32
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a586de5e27b9d2bb0800000000000000
-      internalID: -4959136696878929830
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_walk_3
-      rect:
-        serializedVersion: 2
-        x: 10
         y: 14
-        width: 38
-        height: 36
+        width: 34
+        height: 49
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 295bfb728f846e630800000000000000
-      internalID: 3955929553347523986
+      spriteID: 2c0160641f5c355b0800000000000000
+      internalID: -5380739489725017918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_walk_4
+      name: attack_3_1
       rect:
         serializedVersion: 2
-        x: 71
+        x: 66
         y: 14
-        width: 41
-        height: 36
+        width: 45
+        height: 45
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 41166d5ed80cdd580800000000000000
-      internalID: -8800666381133127404
+      spriteID: 2e5a7c8e0031d05c0800000000000000
+      internalID: -4247717978914183710
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_walk_5
+      name: attack_3_2
       rect:
         serializedVersion: 2
         x: 135
         y: 14
-        width: 41
-        height: 35
+        width: 51
+        height: 45
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +186,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e58750fd165a57600800000000000000
-      internalID: 465459976274802782
+      spriteID: d1bd18bc7aec88eb0800000000000000
+      internalID: -4717293389601449187
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_walk_6
+      name: attack_3_6
       rect:
         serializedVersion: 2
-        x: 198
+        x: 399
         y: 14
-        width: 42
-        height: 36
+        width: 43
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,8 +208,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd3efed4bc84643b0800000000000000
-      internalID: -5528651454527577121
+      spriteID: 10320b7b7fa9ad180800000000000000
+      internalID: -9089782509164551423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack_3_7
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 14
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fb7203589d3123a0800000000000000
+      internalID: -6691999846858851337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack_3_8
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 14
+        width: 43
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 600ab52010d9c9120800000000000000
+      internalID: 2421983327278571526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack_3_9
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 14
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d2609e507ad16c90800000000000000
+      internalID: -7178216154894146864
       vertices: []
       indices: 
       edges: []
@@ -278,7 +284,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 7ce54819d6963fd4ab50670c30e330c6
     internalID: 0
     vertices: []
     indices: 
@@ -288,13 +294,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      idle_walk_0: 1739882456456380142
-      idle_walk_1: 4586093228133353343
-      idle_walk_2: -4959136696878929830
-      idle_walk_3: 3955929553347523986
-      idle_walk_4: -8800666381133127404
-      idle_walk_5: 465459976274802782
-      idle_walk_6: -5528651454527577121
+      attack_3_0: -5380739489725017918
+      attack_3_1: -4247717978914183710
+      attack_3_2: -4717293389601449187
+      attack_3_3: -2413366586220006507
+      attack_3_4: -7871607363476248928
+      attack_3_5: 5206573391639200654
+      attack_3_6: -9089782509164551423
+      attack_3_7: -6691999846858851337
+      attack_3_8: 2421983327278571526
+      attack_3_9: -7178216154894146864
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

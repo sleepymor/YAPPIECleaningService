@@ -1,14 +1,14 @@
 {
-    "name": "dpad",
+    "name": "Controller",
     "maps": [
         {
             "name": "Movement",
-            "id": "d8c92707-63d6-458b-a246-0cda23a5fb6c",
+            "id": "c2934937-4565-4943-be45-01630109af3e",
             "actions": [
                 {
                     "name": "Move",
                     "type": "PassThrough",
-                    "id": "dcd5c7e6-6bc4-43c2-a352-5f4d5fd7126e",
+                    "id": "16df18bb-9685-44c1-9987-c3aaf5cdd67a",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -18,7 +18,7 @@
             "bindings": [
                 {
                     "name": "2D Vector",
-                    "id": "ea4e5e7b-5c3f-49d9-88f2-9092d696b330",
+                    "id": "e5cdba57-e144-4839-ba1a-db76e22495e6",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -29,7 +29,7 @@
                 },
                 {
                     "name": "up",
-                    "id": "c5101147-3652-488a-97da-6084054b3286",
+                    "id": "560bd7a0-978f-4cdd-aaa2-cde507db797f",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
@@ -40,7 +40,7 @@
                 },
                 {
                     "name": "down",
-                    "id": "621721cd-30de-4386-ab38-33e5ad3ec13c",
+                    "id": "3a972582-0186-4dab-b8b9-4e4f111c4178",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
@@ -51,7 +51,7 @@
                 },
                 {
                     "name": "left",
-                    "id": "ee07656c-30c7-496c-b3e2-4fa6ecadfeb1",
+                    "id": "975fb0ff-d172-491d-a19d-aac1de114328",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -62,7 +62,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "69d1a9cd-dafb-45fd-bb75-4a08fe634252",
+                    "id": "a1e75f03-a0d1-440a-9c22-c9d8425dbf74",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
@@ -70,6 +70,34 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "Attack",
+            "id": "8262e9f3-d4cb-4ee8-937a-69fcee5ca9ef",
+            "actions": [
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "1440301f-7b9a-435e-a71f-3682378c59e5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "140f58bf-0fd6-4cad-9682-670380587488",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

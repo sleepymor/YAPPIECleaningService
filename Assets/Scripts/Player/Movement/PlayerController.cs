@@ -5,20 +5,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Animator _animator;
-    private Dpad dpad;
+    private Controller controller;
     private Vector2 movement;
     private Rigidbody2D rb;
 
     private void Awake()
     {
-        dpad = new Dpad();
+        controller = new Controller();
         rb = GetComponent<Rigidbody2D>();
 
     }
 
     private void OnEnable()
     {
-        dpad.Enable();
+        controller.Enable();
     }
 
     private void Update()
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerInput()
     {
-        movement = dpad.Movement.Move.ReadValue<Vector2>();
+        movement = controller.Movement.Move.ReadValue<Vector2>();
     }
 
     private void Move()
