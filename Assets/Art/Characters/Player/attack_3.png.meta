@@ -130,10 +130,10 @@ TextureImporter:
       name: attack_3_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 14
-        width: 34
-        height: 49
+        x: 0
+        y: 15
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: attack_3_1
       rect:
         serializedVersion: 2
-        x: 66
-        y: 14
-        width: 45
-        height: 45
+        x: 64
+        y: 15
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,10 +174,10 @@ TextureImporter:
       name: attack_3_2
       rect:
         serializedVersion: 2
-        x: 135
-        y: 14
-        width: 51
-        height: 45
+        x: 128
+        y: 15
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,10 +196,10 @@ TextureImporter:
       name: attack_3_6
       rect:
         serializedVersion: 2
-        x: 399
-        y: 14
-        width: 43
-        height: 40
+        x: 384
+        y: 15
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,10 +218,10 @@ TextureImporter:
       name: attack_3_7
       rect:
         serializedVersion: 2
-        x: 206
-        y: 14
-        width: 44
-        height: 44
+        x: 192
+        y: 15
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,10 +240,10 @@ TextureImporter:
       name: attack_3_8
       rect:
         serializedVersion: 2
-        x: 271
-        y: 14
-        width: 43
-        height: 44
+        x: 256
+        y: 15
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,10 +262,10 @@ TextureImporter:
       name: attack_3_9
       rect:
         serializedVersion: 2
-        x: 335
-        y: 14
-        width: 43
-        height: 43
+        x: 320
+        y: 15
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

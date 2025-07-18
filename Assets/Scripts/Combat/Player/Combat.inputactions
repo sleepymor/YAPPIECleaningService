@@ -1,0 +1,54 @@
+{
+    "name": "Combat",
+    "maps": [
+        {
+            "name": "Fight",
+            "id": "f536fb40-d165-48e1-84c7-0c6c5169de76",
+            "actions": [
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "aadabdd3-d68e-436a-991f-1031f17c63fc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "80e1e0f9-51aa-4e86-8a43-999577570544",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1d0e8b60-8699-4be1-ae2b-09513cd9ab60",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b7bfaa9b-263e-433a-ab68-15ff6f962432",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
