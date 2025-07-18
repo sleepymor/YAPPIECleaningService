@@ -1,0 +1,983 @@
+fileFormatVersion: 2
+guid: f08f0bc9f6a997f4abab181de126f31e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -172388973507624314
+    second: SmallLivingGarbage_0
+  - first:
+      213: -1149433403903088162
+    second: SmallLivingGarbage_1
+  - first:
+      213: 7044145602846885824
+    second: SmallLivingGarbage_2
+  - first:
+      213: 2052648380475553765
+    second: SmallLivingGarbage_3
+  - first:
+      213: 6342762579994312157
+    second: SmallLivingGarbage_4
+  - first:
+      213: 4847923206113006019
+    second: SmallLivingGarbage_5
+  - first:
+      213: 2504774532736923845
+    second: SmallLivingGarbage_6
+  - first:
+      213: -2624507207212382741
+    second: SmallLivingGarbage_7
+  - first:
+      213: -1009311835279221915
+    second: SmallLivingGarbage_8
+  - first:
+      213: -2298252904205886053
+    second: SmallLivingGarbage_9
+  - first:
+      213: 1404471602536265702
+    second: SmallLivingGarbage_10
+  - first:
+      213: -6009745291632675847
+    second: SmallLivingGarbage_11
+  - first:
+      213: 7002446912052312243
+    second: SmallLivingGarbage_12
+  - first:
+      213: 4899334945623575148
+    second: SmallLivingGarbage_13
+  - first:
+      213: 4864120175997930711
+    second: SmallLivingGarbage_14
+  - first:
+      213: -7813212930636653033
+    second: SmallLivingGarbage_15
+  - first:
+      213: 8282107741114554672
+    second: SmallLivingGarbage_16
+  - first:
+      213: 261747107842923568
+    second: SmallLivingGarbage_17
+  - first:
+      213: -6369607670343177562
+    second: SmallLivingGarbage_18
+  - first:
+      213: 3850003978315152905
+    second: SmallLivingGarbage_19
+  - first:
+      213: -3276533846090323837
+    second: SmallLivingGarbage_20
+  - first:
+      213: 6522972958182040690
+    second: SmallLivingGarbage_21
+  - first:
+      213: 3953823904776060297
+    second: SmallLivingGarbage_22
+  - first:
+      213: -4139397056024919520
+    second: SmallLivingGarbage_23
+  - first:
+      213: -634904471629874507
+    second: SmallLivingGarbage_24
+  - first:
+      213: -903627178186790726
+    second: SmallLivingGarbage_25
+  - first:
+      213: 345591667165151913
+    second: SmallLivingGarbage_26
+  - first:
+      213: 250162237182932471
+    second: SmallLivingGarbage_27
+  - first:
+      213: -5378767049188585054
+    second: SmallLivingGarbage_28
+  - first:
+      213: 7050816738125131752
+    second: SmallLivingGarbage_29
+  - first:
+      213: -2573554616576631726
+    second: SmallLivingGarbage_30
+  - first:
+      213: 4428313173887137318
+    second: SmallLivingGarbage_31
+  - first:
+      213: -2065823449570184053
+    second: SmallLivingGarbage_32
+  - first:
+      213: -4977358238233235649
+    second: SmallLivingGarbage_33
+  - first:
+      213: 7771823973928212198
+    second: SmallLivingGarbage_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 282
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68242e6542d8b9df0800000000000000
+      internalID: -172388973507624314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 282
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed9636bb8646c00f0800000000000000
+      internalID: -1149433403903088162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 282
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c781d3ba15d1c160800000000000000
+      internalID: 7044145602846885824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 282
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e7b60f93d87c7c10800000000000000
+      internalID: 2052648380475553765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 282
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddd733b06f4060850800000000000000
+      internalID: 6342762579994312157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 282
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c11db67878474340800000000000000
+      internalID: 4847923206113006019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Walk_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 218
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c8ba3aaa2fb2c220800000000000000
+      internalID: 2504774532736923845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 220
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be547aba990e39bd0800000000000000
+      internalID: -2624507207212382741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 232
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56b959ebb343ef1f0800000000000000
+      internalID: -1009311835279221915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Walk_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 235
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9d5cc80927fa10e0800000000000000
+      internalID: -2298252904205886053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Walk_4
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 236
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e73c463b7fad7310800000000000000
+      internalID: 1404471602536265702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Walk_5
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 235
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f378ad8f78199ca0800000000000000
+      internalID: -6009745291632675847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Walk_6
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 225
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b8b86fad50bd2160800000000000000
+      internalID: 7002446912052312243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Walk_7
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 218
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6a0d8ddc2fedf340800000000000000
+      internalID: 4899334945623575148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Attack_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 154
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dcca236783d08340800000000000000
+      internalID: 4864120175997930711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 154
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71ed9ea5c34e19390800000000000000
+      internalID: -7813212930636653033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 154
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03955ac2c15ffe270800000000000000
+      internalID: 8282107741114554672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 160
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03c96f79b99e1a300800000000000000
+      internalID: 261747107842923568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 162
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90eb0575836fd6530800000000000000
+      internalID: 3850003978315152905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 156
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2746be36851468a50800000000000000
+      internalID: 6522972958182040690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 154
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98dff94a4edced630800000000000000
+      internalID: 3953823904776060297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Attack_7
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 154
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 022465b1f48ed86c0800000000000000
+      internalID: -4139397056024919520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Dead_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 90
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bab1363fbd5037f0800000000000000
+      internalID: -634904471629874507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Dead_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 90
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab8a9ca7edba573f0800000000000000
+      internalID: -903627178186790726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Dead_2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 90
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a2c6be4ac9cbc400800000000000000
+      internalID: 345591667165151913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Dead_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 90
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f57183ba31c87300800000000000000
+      internalID: 250162237182932471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Dead_4
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 90
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a1d98fddd7ca55b0800000000000000
+      internalID: -5378767049188585054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Dead_5
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 90
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8efa35c677889d160800000000000000
+      internalID: 7050816738125131752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Dead_6
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 90
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25c12e426b5e84cd0800000000000000
+      internalID: -2573554616576631726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Hit_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 26
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626b9b39e57847d30800000000000000
+      internalID: 4428313173887137318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Hit_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 26
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8472bf8488b453e0800000000000000
+      internalID: -2065823449570184053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Hit_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 26
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f6e32bd0fdceab0800000000000000
+      internalID: -4977358238233235649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallLivingGarbage_Hit_3
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 26
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e61bd63ab01bdb60800000000000000
+      internalID: 7771823973928212198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 61d7c29f98f864a44ae3cc999e9d3bf1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SmallLivingGarbage_18: -6369607670343177562
+      SmallLivingGarbage_20: -3276533846090323837
+      SmallLivingGarbage_Attack_0: 4864120175997930711
+      SmallLivingGarbage_Attack_1: -7813212930636653033
+      SmallLivingGarbage_Attack_2: 8282107741114554672
+      SmallLivingGarbage_Attack_3: 261747107842923568
+      SmallLivingGarbage_Attack_4: 3850003978315152905
+      SmallLivingGarbage_Attack_5: 6522972958182040690
+      SmallLivingGarbage_Attack_6: 3953823904776060297
+      SmallLivingGarbage_Attack_7: -4139397056024919520
+      SmallLivingGarbage_Dead_0: -634904471629874507
+      SmallLivingGarbage_Dead_1: -903627178186790726
+      SmallLivingGarbage_Dead_2: 345591667165151913
+      SmallLivingGarbage_Dead_3: 250162237182932471
+      SmallLivingGarbage_Dead_4: -5378767049188585054
+      SmallLivingGarbage_Dead_5: 7050816738125131752
+      SmallLivingGarbage_Dead_6: -2573554616576631726
+      SmallLivingGarbage_Hit_0: 4428313173887137318
+      SmallLivingGarbage_Hit_1: -2065823449570184053
+      SmallLivingGarbage_Hit_2: -4977358238233235649
+      SmallLivingGarbage_Hit_3: 7771823973928212198
+      SmallLivingGarbage_Idle_0: -172388973507624314
+      SmallLivingGarbage_Idle_1: -1149433403903088162
+      SmallLivingGarbage_Idle_2: 7044145602846885824
+      SmallLivingGarbage_Idle_3: 2052648380475553765
+      SmallLivingGarbage_Idle_4: 6342762579994312157
+      SmallLivingGarbage_Idle_5: 4847923206113006019
+      SmallLivingGarbage_Walk_0: 2504774532736923845
+      SmallLivingGarbage_Walk_1: -2624507207212382741
+      SmallLivingGarbage_Walk_2: -1009311835279221915
+      SmallLivingGarbage_Walk_3: -2298252904205886053
+      SmallLivingGarbage_Walk_4: 1404471602536265702
+      SmallLivingGarbage_Walk_5: -6009745291632675847
+      SmallLivingGarbage_Walk_6: 7002446912052312243
+      SmallLivingGarbage_Walk_7: 4899334945623575148
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
