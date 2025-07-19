@@ -115,12 +115,12 @@ TextureImporter:
       name: run_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 15
-        width: 38
-        height: 48
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -137,12 +137,12 @@ TextureImporter:
       name: run_1
       rect:
         serializedVersion: 2
-        x: 71
-        y: 15
-        width: 41
-        height: 48
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,12 +159,12 @@ TextureImporter:
       name: run_3
       rect:
         serializedVersion: 2
-        x: 135
-        y: 15
-        width: 41
-        height: 48
+        x: 192
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -178,23 +178,23 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_4
+      name: run_2
       rect:
         serializedVersion: 2
-        x: 198
-        y: 15
-        width: 42
-        height: 48
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4858bd91a3ef5aab0800000000000000
-      internalID: -4997308686002322044
+      spriteID: ae9fead53424590409bbb5fd7d1bab0b
+      internalID: -2673560216460186399
       vertices: []
       indices: 
       edges: []
@@ -217,7 +217,6 @@ TextureImporter:
       run_1: 7439426567979852956
       run_2: -2673560216460186399
       run_3: -5822559823783948592
-      run_4: -4997308686002322044
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

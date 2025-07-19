@@ -1,102 +1,40 @@
 using UnityEngine;
-
-// We can reuse the same enum from before
-public enum EnemyState
-{
-    Moving,
-    Idle,
-    Stopped 
-}
+using System.Collections;
+using System.Collections.Generic;
 
 public class Enemy_AI : MonoBehaviour
 {
-    [Header("State Machine")]
-    public EnemyState currentState;
-
-    [Header("Movement Settings")]
-    public float speed = 2f;
-
-    public float moveTime = 2.0f; 
-
-    [Header("Idle Settings")]
-
-    public float idleTime = 3.0f; 
-
-    private float stateTimer;
- 
-    private Vector2 moveDirection;
-
-    void Start()
+    private enum State
     {
-
-        currentState = EnemyState.Idle;
-        stateTimer = idleTime;
+        Roaming
     }
 
-    void Update()
+    private State state;
+    private Enemy_Pathfinding pathfinding;
+
+    private void Awake()
     {
-  
-        switch (currentState)
+        pathfinding = GetComponent<Enemy_Pathfinding>();
+        state = State.Roaming;
+    }
+
+    private void Start()
+    {
+        StartCoroutine(RoamingRoutine());
+    }
+
+    private IEnumerator RoamingRoutine()
+    {
+        while(state == State.Roaming)
         {
-            case EnemyState.Moving:
-    
-                transform.Translate(moveDirection * speed * Time.deltaTime);
-                stateTimer -= Time.deltaTime;
-                if (stateTimer <= 0f)
-                {
-
-                    currentState = EnemyState.Idle;
-                    stateTimer = idleTime;
-                }
-                break;
-
-            case EnemyState.Idle:
-
-                stateTimer -= Time.deltaTime;
-                if (stateTimer <= 0f)
-                {
-   
-                    ChooseNewDirection();
-                    currentState = EnemyState.Moving;
-                    stateTimer = moveTime;
-                }
-                break;
-
-            case EnemyState.Stopped:
-
-                break;
+            Vector2 roamPosition = GetRoamingPosition();
+            pathfinding.MoveTo(roamPosition);
+            yield return new WaitForSeconds(2f);
         }
     }
 
-    // This function picks a random cardinal direction
-    private void ChooseNewDirection()
+    private Vector2 GetRoamingPosition()
     {
-        int randomDirection = Random.Range(0, 4);
-
-        switch (randomDirection)
-        {
-            case 0:
-                moveDirection = Vector2.up;    
-                break;
-            case 1:
-                moveDirection = Vector2.down; 
-                break;
-            case 2:
-                moveDirection = Vector2.left; 
-                break;
-            case 3:
-                moveDirection = Vector2.right;
-                break;
-        }
+        return new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
     }
-
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Enemy hit by Player! Stopping movement.");
-            currentState = EnemyState.Stopped;
-        }
-    }
-}
+} 

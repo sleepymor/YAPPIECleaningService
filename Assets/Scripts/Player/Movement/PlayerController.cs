@@ -2,18 +2,24 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+    public Vector2 LastMoveDirection { get; private set; }
+    public bool canMove = true;
+
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody2D rb;
 
     private Controller controller;
-    private Vector2 movement;
+    public Vector2 movement;
 
     private void Awake()
     {
+        instance = this;
         controller = new Controller();
     }
+
 
     private void OnEnable()
     {
@@ -32,8 +38,20 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerInput()
     {
+        if (!canMove)
+        {
+            movement = Vector2.zero;
+            return;
+        }
+
         movement = controller.Movement.Move.ReadValue<Vector2>();
+
+        if (movement != Vector2.zero)
+        {
+            LastMoveDirection = movement.normalized;
+        }
     }
+
 
     private void Move()
     {
@@ -51,4 +69,5 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("isRunning", false);
         }
     }
+
 }

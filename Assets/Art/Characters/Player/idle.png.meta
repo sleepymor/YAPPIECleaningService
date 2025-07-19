@@ -115,133 +115,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Yappiefix-Sheet_0
+      name: idle_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 15
-        width: 32
-        height: 48
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a8d5bf1f0c9055020800000000000000
-      internalID: 2329779106532253066
+      spriteID: 8dd0956e3aab282419bd9c2a29a5e731
+      internalID: -37847132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yappiefix-Sheet_1
+      name: idle_1
       rect:
         serializedVersion: 2
-        x: 79
-        y: 15
-        width: 32
-        height: 48
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9ca5e05bc431888f0800000000000000
-      internalID: -538158935294715191
+      spriteID: 1cb24ff8a3ae23548abfb955ad1f8979
+      internalID: 1081777309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yappiefix-Sheet_2
+      name: idle_2
       rect:
         serializedVersion: 2
-        x: 143
-        y: 15
-        width: 32
-        height: 48
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 400de80c950e9a3f0800000000000000
-      internalID: -888932775341666300
+      spriteID: e0d07d986ec19de45bee9b3ed3090dcc
+      internalID: -1015978020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yappiefix-Sheet_3
+      name: idle_3
       rect:
         serializedVersion: 2
-        x: 207
-        y: 15
-        width: 32
-        height: 48
+        x: 192
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ad5703585ea6c4ef0800000000000000
-      internalID: -122605555831245350
+      spriteID: 935fdf33743248443b41c835598bfcd5
+      internalID: 1451040608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yappiefix-Sheet_4
+      name: idle_4
       rect:
         serializedVersion: 2
-        x: 271
-        y: 15
-        width: 32
-        height: 48
+        x: 256
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 14f59b34820067680800000000000000
-      internalID: -8757812252440436927
+      spriteID: 5b58de0379536de46a19cdce372b8d9f
+      internalID: 1041324251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yappiefix-Sheet_5
+      name: idle_5
       rect:
         serializedVersion: 2
-        x: 335
-        y: 15
-        width: 32
-        height: 48
+        x: 320
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b1b634e7ff0b60880800000000000000
-      internalID: -8645027823309591781
+      spriteID: 6a04209816a09734ca9b7af3528920c8
+      internalID: -1776165498
       vertices: []
       indices: 
       edges: []
@@ -260,12 +260,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Yappiefix-Sheet_0: 2329779106532253066
-      Yappiefix-Sheet_1: -538158935294715191
-      Yappiefix-Sheet_2: -888932775341666300
-      Yappiefix-Sheet_3: -122605555831245350
-      Yappiefix-Sheet_4: -8757812252440436927
-      Yappiefix-Sheet_5: -8645027823309591781
+      idle_0: -37847132
+      idle_1: 1081777309
+      idle_2: -1015978020
+      idle_3: 1451040608
+      idle_4: 1041324251
+      idle_5: -1776165498
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
