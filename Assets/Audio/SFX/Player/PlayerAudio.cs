@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerAudio : MonoBehaviour
 {
-    public AudioSource audioSource;
+    [SerializeField] public AudioSource audioSource;
     public string targetStateName = "Run";
     private Animator animator;
 

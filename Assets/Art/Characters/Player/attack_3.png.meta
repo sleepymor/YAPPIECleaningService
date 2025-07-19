@@ -131,11 +131,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 15
+        y: 0
         width: 64
-        height: 48
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,11 +153,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 15
+        y: 0
         width: 64
-        height: 48
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,11 +175,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 15
+        y: 0
         width: 64
-        height: 48
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -197,11 +197,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 15
+        y: 0
         width: 64
-        height: 48
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -215,67 +215,67 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack_3_7
+      name: attack_3_3
       rect:
         serializedVersion: 2
         x: 192
-        y: 15
+        y: 0
         width: 64
-        height: 48
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7fb7203589d3123a0800000000000000
-      internalID: -6691999846858851337
+      spriteID: 17806299a1e678f409c3a2be831a93c4
+      internalID: -2413366586220006507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack_3_8
+      name: attack_3_4
       rect:
         serializedVersion: 2
         x: 256
-        y: 15
+        y: 0
         width: 64
-        height: 48
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 600ab52010d9c9120800000000000000
-      internalID: 2421983327278571526
+      spriteID: 284340b4e085fe5458453fc48915a1b1
+      internalID: -7871607363476248928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack_3_9
+      name: attack_3_5
       rect:
         serializedVersion: 2
         x: 320
-        y: 15
+        y: 0
         width: 64
-        height: 48
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0d2609e507ad16c90800000000000000
-      internalID: -7178216154894146864
+      spriteID: 2cb24496bc3b5814599dabe3c3575c4c
+      internalID: 5206573391639200654
       vertices: []
       indices: 
       edges: []
@@ -301,9 +301,6 @@ TextureImporter:
       attack_3_4: -7871607363476248928
       attack_3_5: 5206573391639200654
       attack_3_6: -9089782509164551423
-      attack_3_7: -6691999846858851337
-      attack_3_8: 2421983327278571526
-      attack_3_9: -7178216154894146864
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

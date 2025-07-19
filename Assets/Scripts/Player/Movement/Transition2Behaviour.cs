@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public class Transition1Behaviour : StateMachineBehaviour
+public class Transition2Behaviour : StateMachineBehaviour
 {
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
@@ -13,7 +14,8 @@ public class Transition1Behaviour : StateMachineBehaviour
     {
         if (PlayerCombat.instance.isAttacking)
         {
-            PlayerCombat.instance.animator.Play("Attack_2");
+            PlayerCombat.instance.animator.Play("Attack_3");
+
         }
     }
 
@@ -21,6 +23,7 @@ public class Transition1Behaviour : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         PlayerCombat.instance.isAttacking = false;
+
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

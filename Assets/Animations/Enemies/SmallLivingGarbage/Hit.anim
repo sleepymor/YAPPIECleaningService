@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Transition_1
+  m_Name: Hit
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -8312566940136299171, guid: 8a1b1aa6b46fef84b9bee139919f3fee, type: 3}
-    - time: 0.41666666
-      value: {fileID: -8312566940136299171, guid: 8a1b1aa6b46fef84b9bee139919f3fee, type: 3}
+      value: {fileID: -59066101396820148, guid: fadfa2a31d4e3b84c852ab8ead517971, type: 3}
+    - time: 0.11666667
+      value: {fileID: -9037724387597929990, guid: fadfa2a31d4e3b84c852ab8ead517971, type: 3}
+    - time: 0.25
+      value: {fileID: 8501104746477335304, guid: fadfa2a31d4e3b84c852ab8ead517971, type: 3}
+    - time: 0.36666667
+      value: {fileID: 7761068069398732630, guid: fadfa2a31d4e3b84c852ab8ead517971, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,14 +50,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -8312566940136299171, guid: 8a1b1aa6b46fef84b9bee139919f3fee, type: 3}
-    - {fileID: -8312566940136299171, guid: 8a1b1aa6b46fef84b9bee139919f3fee, type: 3}
+    - {fileID: -59066101396820148, guid: fadfa2a31d4e3b84c852ab8ead517971, type: 3}
+    - {fileID: -9037724387597929990, guid: fadfa2a31d4e3b84c852ab8ead517971, type: 3}
+    - {fileID: 8501104746477335304, guid: fadfa2a31d4e3b84c852ab8ead517971, type: 3}
+    - {fileID: 7761068069398732630, guid: fadfa2a31d4e3b84c852ab8ead517971, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.43333334
+    m_StopTime: 0.38333336
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -72,4 +78,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.33333334
+    functionName: onKnockbackEnd
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
