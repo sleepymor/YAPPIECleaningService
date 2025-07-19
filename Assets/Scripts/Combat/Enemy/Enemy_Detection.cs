@@ -14,7 +14,6 @@ public class Enemy_Detection : MonoBehaviour
         {
             PlayerController playerController = other.transform.root.GetComponent<PlayerController>();
             Debug.Log("Player Detected!");
-            //enemyHealth.TakeDamage(damageAmount);
         }
     }
 
@@ -24,7 +23,6 @@ public class Enemy_Detection : MonoBehaviour
         {
             PlayerController playerController = other.transform.root.GetComponent<PlayerController>();
             Debug.Log("Player Exited!");
-            //enemyHealth.TakeDamage(damageAmount);
         }
     }
 }
