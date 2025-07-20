@@ -29,6 +29,9 @@ public class Enemy_Pathfinding : MonoBehaviour
         {
             animator.SetBool("isMoving", true);
             spriteRenderer.flipX = moveDir.x < 0;
+        } else
+        {
+            animator.SetBool("isMoving", false);
         }
     }
 
