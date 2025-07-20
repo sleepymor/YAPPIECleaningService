@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4507745253270419660}
   - component: {fileID: 8827441615986171934}
-  - component: {fileID: 4631063190381545314}
   m_Layer: 0
   m_Name: DetectionArea
   m_TagString: Untagged
@@ -67,21 +66,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 4.73012
---- !u!114 &4631063190381545314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180845469431716219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f00bcabbaedd325468cbdadc6247e690, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionArea: {fileID: 4507745253270419660}
+  m_Offset: {x: 0, y: 0.1654892}
+  m_Radius: 9.989075
 --- !u!1 &640511851712396857
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,6 +84,9 @@ GameObject:
   - component: {fileID: 2806451232791597443}
   - component: {fileID: 2162543742832439446}
   - component: {fileID: 6531761326749783175}
+  - component: {fileID: 1889077434184104144}
+  - component: {fileID: 5226607809404224034}
+  - component: {fileID: 3720550274367774204}
   - component: {fileID: -915983924706461515}
   m_Layer: 0
   m_Name: The Living Garbage
@@ -166,7 +155,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_Sprite: {fileID: 8793639957104055765, guid: fabd78a11382e23439560d84a77bab13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -226,7 +215,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1350819893242509078
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -285,6 +274,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235d79001a666e64d8c1b56f14cd17ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  chaseUpdateRate: 0.5
+  attackSpeed: 1
 --- !u!114 &2162543742832439446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +303,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 10
+--- !u!114 &1889077434184104144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640511851712396857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00bcabbaedd325468cbdadc6247e690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionArea: {fileID: 4507745253270419660}
+  isDetecting: 0
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 8
+  attackRange: 2
+  currentTarget: {fileID: 0}
+  hasLineOfSight: 0
+--- !u!114 &5226607809404224034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640511851712396857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46762622d710164468a8d82bbd1b039a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+--- !u!114 &3720550274367774204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640511851712396857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c503fd235f8d0429c14d0a1d3d5e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  reachDistance: 0.1
+  waitTimeAtPoint: 0.5
+  loop: 1
 --- !u!114 &-915983924706461515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockBackTime: 0.2
+  isPlayer: 0
 --- !u!1 &8222233743822890949
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,8 +376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6387627533298423262}
   - component: {fileID: 8459765280582921692}
-  - component: {fileID: 7073280312684191853}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,18 +432,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.96193147
---- !u!114 &7073280312684191853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8222233743822890949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46762622d710164468a8d82bbd1b039a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackArea: {fileID: 6387627533298423262}
+  m_Offset: {x: 0, y: 0.05336857}
+  m_Radius: 1.5667746

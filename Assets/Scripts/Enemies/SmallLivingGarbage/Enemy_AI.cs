@@ -1,40 +1,29 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 public class Enemy_AI : MonoBehaviour
 {
-    private enum State
-    {
-        Roaming
-    }
+    public static Enemy_AI instance;
 
-    private State state;
     private Enemy_Pathfinding pathfinding;
+    private Animator animator;
+    [SerializeField] private Transform player;
+    [SerializeField] private float chaseUpdateRate = 0.5f;
+    [SerializeField] private float attackSpeed = 1f;
 
     private void Awake()
     {
+        instance = this;
+        animator = GetComponent<Animator>();
         pathfinding = GetComponent<Enemy_Pathfinding>();
-        state = State.Roaming;
     }
 
     private void Start()
     {
-        StartCoroutine(RoamingRoutine());
     }
 
-    private IEnumerator RoamingRoutine()
+    private void Update()
     {
-        while(state == State.Roaming)
-        {
-            Vector2 roamPosition = GetRoamingPosition();
-            pathfinding.MoveTo(roamPosition);
-            yield return new WaitForSeconds(2f);
-        }
+       
     }
-
-    private Vector2 GetRoamingPosition()
-    {
-        return new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
-    }
-} 
+}

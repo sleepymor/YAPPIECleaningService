@@ -82,8 +82,8 @@ PolygonCollider2D:
     - - {x: 1.3562629, y: 0.79840004}
       - {x: 0.44808602, y: 1.5235608}
       - {x: -0.59234023, y: 1.5201037}
-      - {x: 0.17583531, y: 0.19343832}
-      - {x: -0.35662788, y: -1.3580157}
+      - {x: -0.50744957, y: -0.00951758}
+      - {x: -0.5054622, y: -1.3580157}
       - {x: 0.68891644, y: -1.3146735}
       - {x: 1.3555818, y: -0.48558623}
   m_UseDelaunayMesh: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54ca578c6a861747b54ddf39c3d35ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAmount: 1
 --- !u!1 &4236011337253573336
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,6 +115,7 @@ GameObject:
   - component: {fileID: 8038676033108594750}
   - component: {fileID: 123013570954591507}
   - component: {fileID: 6783049725239749118}
+  - component: {fileID: 4744115874390610952}
   - component: {fileID: 1632485647782245835}
   m_Layer: 0
   m_Name: Player
@@ -183,7 +185,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -3297650188656544483, guid: 8a1b1aa6b46fef84b9bee139919f3fee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -228,9 +230,9 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
+  m_UseAutoMass: 1
+  m_Mass: 0.26312733
+  m_LinearDamping: 10
   m_AngularDamping: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -274,6 +276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d0d437b9c24bb45a99c886edada483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingHealth: 10
+  currentHealth: 0
   spriteRenderer: {fileID: 5849496393168956538}
   animator: {fileID: 133066889896157945}
   attackMoveSpeed: 5
@@ -295,6 +299,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1632485647782245835}
   targetStateName: Run
+--- !u!114 &4744115874390610952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4236011337253573336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae1ff12a36d520d45a419e3e80dc5a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackTime: 0.2
+  isPlayer: 1
 --- !u!82 &1632485647782245835
 AudioSource:
   m_ObjectHideFlags: 0
@@ -458,7 +476,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.060669124, y: -0.6620928}
+  m_Offset: {x: -0.04608822, y: -0.5689054}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -468,7 +486,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.6316217, y: 0.37959975}
+  m_Size: {x: 1.2875128, y: 0.20436871}
   m_EdgeRadius: 0
 --- !u!1 &8019181699805940192
 GameObject:
@@ -480,7 +498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5145062528559637568}
   - component: {fileID: 2947999575180660378}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +554,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.008545041, y: 0.06949043}
+  m_Offset: {x: -0.0063683093, y: -0.33003038}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -546,5 +564,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8120091, y: 1.5958142}
+  m_Size: {x: 0.79754597, y: 1.5547224}
   m_EdgeRadius: 0
