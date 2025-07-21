@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -55,6 +57,7 @@ public class PlayerCombat : MonoBehaviour
     void Update()
     {
         Attack();
+
     }
 
     void Attack()
@@ -127,5 +130,14 @@ public class PlayerCombat : MonoBehaviour
         currentHealth -= damage;
         knockback.GetKnockedBack(Enemy_Attack.instance.transform, 15f);
         animator.SetBool("isHit", true);
+        CheckDeath();
+    }
+
+    public void CheckDeath()
+    {
+        if(currentHealth < 1)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }

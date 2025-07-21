@@ -34,6 +34,11 @@ public class PlayerController : MonoBehaviour
         controller.Enable();
     }
 
+    private void OnDisable()
+    {
+        controller.Disable();
+    }
+
     private void Update()
     {
         PlayerInput();
