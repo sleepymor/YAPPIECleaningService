@@ -1,0 +1,349 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6896342796607642787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6896342796607642789}
+  - component: {fileID: 6896342796607642790}
+  - component: {fileID: 6896342796607642788}
+  m_Layer: 4
+  m_Name: water platformer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6896342796607642789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6896342796607642787}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6896342796607642790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6896342796607642787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a4eb44351a6e644ad5211a5b0d8712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waterSimulationType: 1
+  _childPPLayerRenderer:
+    layerTexture: {fileID: 0}
+    format: 0
+    fliterMode: 0
+    bitDepth: 0
+    layerName: Water
+    layerMask: -1
+    mainCamera: {fileID: 0}
+    CameraRenderingScene: {fileID: 0}
+    holder: {fileID: 0}
+    follow: {fileID: 0}
+    res: 1
+    reflectionLayerIdx: 4
+    copyMainBackground: 0
+    lastOrtographicSize: 0
+  _childPP: {fileID: 0}
+  _surfaceRenderer:
+    layerTexture: {fileID: 0}
+    format: 0
+    fliterMode: 0
+    bitDepth: 0
+    layerName: nl
+    layerMask: -1
+    mainCamera: {fileID: 0}
+    CameraRenderingScene: {fileID: 0}
+    holder: {fileID: 0}
+    follow: {fileID: 0}
+    res: 0
+    reflectionLayerIdx: -1
+    copyMainBackground: 0
+    lastOrtographicSize: 0
+  _surfaceRendererObject: {fileID: 0}
+  ManagersVisible:
+    _value: 0
+  enableObstruction:
+    _value: 0
+  enableReflections:
+    _value: 1
+  enableSimulation:
+    _value: 0
+  enableBlur:
+    _value: 0
+  normalsPreview:
+    _value: 0
+  overrideMainCamera:
+    _value: 0
+  cameraOverride: {fileID: 0}
+  settings:
+    _obstructorSettings:
+      mainCamera: {fileID: 0}
+      textureResolution:
+        _value: 1
+      overrideMainCamera:
+        _value: 0
+      obstructionObjectsVisible:
+        _value: 0
+      cameraVisible:
+        _value: 0
+    _reflectionsSettings:
+      enableTopDownReflections:
+        _value: 1
+      enablePlatformerReflections:
+        _value: 1
+      mainCamera: {fileID: 0}
+      textureResolution:
+        _value: 1
+      overrideMainCamera:
+        _value: 0
+      reflectionObjectsVisible:
+        _value: 0
+      cameraVisible:
+        _value: 0
+      defaultReflectionSprflipx:
+        _value: 0
+      angle:
+        _value: 0
+      tilt:
+        _value: 0
+      length:
+        _value: 0
+      originalColor:
+        _value: 1
+      color:
+        _value: {r: 1, g: 1, b: 1, a: 0}
+      alpha:
+        _value: 0.717
+      mirrorY:
+        _value: 0.356
+      layers: 00000000010000000200000005000000
+      usePerspective:
+        _value: 1
+      waterPerspective:
+        _value: {x: 1.45, y: 2.55}
+      reflectionsPerspective:
+        _value: {x: -2, y: 2.97}
+      falloffStrength:
+        _value: 0.05
+      falloffStart:
+        _value: 0.158
+      enableFalloff:
+        _value: 1
+      enableScrolling:
+        _value: 0
+      playerPosition: {fileID: 0}
+      scrollingStrength:
+        _value: 1.4
+      DistortionFPRH:
+        _value: 0
+    _waterSettings:
+      color:
+        _value: {r: 0.115699545, g: 0.24415031, b: 0.3773585, a: 0}
+      tiling:
+        _value: {x: 1, y: 1.5}
+      baseAlpha:
+        _value: 1
+      numOfPixels:
+        _value: 256
+      pixelPerfect:
+        _value: 0
+      obstructionWidth:
+        _value: 0.15
+      obstructionColor:
+        _value: {r: 1, g: 1, b: 1, a: 0}
+      obstructionAlpha:
+        _value: 1
+      depthColor:
+        _value: {r: 0.25, g: 0.8078126, b: 1, a: 0}
+      foamColor:
+        _value: {r: 0.745105, g: 0.9811321, b: 0.94565207, a: 0}
+      foamSize:
+        _value: 4.15
+      foamSpeed:
+        _value: {x: 0, y: 0}
+      foamAlpha:
+        _value: 0.098
+      distortionSpeed:
+        _value: {x: 0.03, y: 0.03}
+      distortionStrength:
+        _value: {x: 0.11, y: 0.03}
+      distortionTiling:
+        _value: {x: 1, y: 1}
+      distortionMinMax:
+        _value: {x: 0, y: 0}
+      distortionColor:
+        _value: {r: 0, g: 0, b: 0, a: 1}
+      distortionTexture: {fileID: 2800000, guid: 63a3a961b343e5341a13f8efb4988815, type: 3}
+      sunStripsTexture: {fileID: 2800000, guid: 02b9ccfabe688644ebd37eb70cbe2341, type: 3}
+      stripsSpeed:
+        _value: 1.6
+      stripsScrollingSpeed:
+        _value: 0
+      stripsSize:
+        _value: 0.53
+      surfaceTexture: {fileID: 0}
+      surfaceTiling:
+        _value: {x: 0, y: 0}
+      surfaceSpeed:
+        _value: {x: 0, y: 0}
+      useFoamSpeed:
+        _value: 0
+      surfaceAlpha:
+        _value: 0
+      stripsAlpha:
+        _value: 1
+      stripsDensity:
+        _value: 11
+      foamDensity:
+        _value: 0.256
+      perspective:
+        _value: {x: 0, y: 0}
+      _useLighting:
+        _value: 0
+      enableBelowWater:
+        _value: 0
+      belowWaterUV:
+        _value: {x: 0, y: 0, z: 0, w: 0}
+      belowWaterDistortionStrength:
+        _value: 1
+      belowWaterAlpha:
+        _value: 1
+    _simulationSettings:
+      resolution:
+        _value: {x: 1024, y: 1024}
+      waterCmp: {fileID: 7200000, guid: 14821a0cc6771aa45b7163f15854b208, type: 3}
+      sr: {fileID: 6896342796607642788}
+      obstruction: {fileID: 0}
+      mainCam: {fileID: 0}
+      chunksX:
+        _value: 0
+      chunksY:
+        _value: 0
+      waveRad:
+        _value: 0.005
+      waveHeight:
+        _value: 0.3
+      dispersion:
+        _value: 0.975
+      iterations:
+        _value: 4
+      simulationSpeed:
+        _value: 1
+      enableRain:
+        _value: 0
+      rainWaveHeight:
+        _value: 1
+      rainSpeed:
+        _value: 1.3
+      rainRadius:
+        _value: 3
+      normalStrength:
+        _value: 0.1
+      waveColor:
+        _value: {r: 1, g: 1, b: 1, a: 0.92941177}
+      waveColorMinMaxHeight:
+        _value: {x: 0, y: 0.4}
+    _blurSettings:
+      blurType: 0
+      useBlur:
+        _value: 0
+      boxSamplingRange:
+        _value: 12
+      boxStrength:
+        _value: 1
+      gaussianSamplingRange:
+        _value: 12
+      gaussianStrengthX:
+        _value: 2
+      bokehArea:
+        _value: 0.0068
+      bokehQuality:
+        _value: 12
+      bokehGamma:
+        _value: 10.8
+      bokehHardness:
+        _value: 0.42
+      bokehRatio:
+        _value: 1.3
+      useFalloff:
+        _value: 1
+      falloffStart:
+        _value: 0.114
+      falloffEnd:
+        _value: 0.769
+      falloffStrength:
+        _value: 0.85
+  customWaterMaterial: 0
+  _mat: {fileID: 2100000, guid: f6bfede243cf34141b8faba15b38116c, type: 2}
+  _matb: {fileID: 0}
+  _sr: {fileID: 6896342796607642788}
+--- !u!212 &6896342796607642788
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6896342796607642787}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: f6bfede243cf34141b8faba15b38116c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1618424005
+  m_SortingLayer: 4
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: ced0a51abbb19fa41be243a46a103728, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.03125, y: 0.03125}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0

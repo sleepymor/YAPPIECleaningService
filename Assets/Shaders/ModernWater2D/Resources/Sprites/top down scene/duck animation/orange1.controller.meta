@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 539b5276d49f02244b269336822625ef
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255068
+  packageName: Modern 2D Water
+  packageVersion: 2.0v
+  assetPath: Assets/ModernWater2D/Resources/Sprites/top down scene/duck animation/orange1.controller
+  uploadId: 670077
