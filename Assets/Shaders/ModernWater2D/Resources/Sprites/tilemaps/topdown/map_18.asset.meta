@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bf919c78b5273424d95d2fe7a9982505
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255068
+  packageName: Modern 2D Water
+  packageVersion: 2.0v
+  assetPath: Assets/ModernWater2D/Resources/Sprites/tilemaps/topdown/map_18.asset
+  uploadId: 670077

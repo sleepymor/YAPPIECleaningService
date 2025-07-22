@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6420b4b7fdb2fe64da209c0303c88aca
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255068
+  packageName: Modern 2D Water
+  packageVersion: 2.0v
+  assetPath: Assets/ModernWater2D/Resources/Sprites/tilemaps/platformer/tilemapPlat
+    1_6.asset
+  uploadId: 670077

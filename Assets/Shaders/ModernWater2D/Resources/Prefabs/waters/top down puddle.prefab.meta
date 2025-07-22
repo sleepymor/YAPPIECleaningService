@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c200b63cb8ecefc43a6346742a266d9e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255068
+  packageName: Modern 2D Water
+  packageVersion: 2.0v
+  assetPath: Assets/ModernWater2D/Resources/Prefabs/waters/top down puddle.prefab
+  uploadId: 670077

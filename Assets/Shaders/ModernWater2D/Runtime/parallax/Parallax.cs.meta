@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e8d90a77ed4b06f46a1ec6526e041b1f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255068
+  packageName: Modern 2D Water
+  packageVersion: 2.0v
+  assetPath: Assets/ModernWater2D/Runtime/parallax/Parallax.cs
+  uploadId: 670077

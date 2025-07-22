@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 47c5766e5635c194a81a30f7d581eb4c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255068
+  packageName: Modern 2D Water
+  packageVersion: 2.0v
+  assetPath: Assets/ModernWater2D/Runtime/Obstructions/ObstructorManager.cs
+  uploadId: 670077

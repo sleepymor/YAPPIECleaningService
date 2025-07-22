@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0ae8ac8d38b65bd408099e116c252bce
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255068
+  packageName: Modern 2D Water
+  packageVersion: 2.0v
+  assetPath: Assets/ModernWater2D/Resources/Materials/reflector_mat.mat
+  uploadId: 670077
