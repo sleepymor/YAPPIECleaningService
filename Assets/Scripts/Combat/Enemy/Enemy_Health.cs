@@ -42,6 +42,17 @@ public class Enemy_Health : MonoBehaviour
         DetectDeath();
     }
 
+    public void PullDamage(int damage)
+    {
+        if (IsDead) return;
+
+        currentHealth -= damage;
+        Debug.Log(currentHealth);
+
+        knockback.PullToward(PlayerController.instance.transform, 80f);
+        DetectDeath();
+    }
+
     private void DetectDeath()
     {
         if (currentHealth <= 0 && !IsDead)
