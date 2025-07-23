@@ -11,15 +11,17 @@ public class EnemyPatrolController : MonoBehaviour
     private int currentWaypointIndex = 0;
     private Enemy_Pathfinding pathfinding;
     private bool isWaiting = false;
+    private Enemy_Detection enemyDetection;
 
     private void Awake()
     {
         pathfinding = GetComponent<Enemy_Pathfinding>();
+        enemyDetection = GetComponent<Enemy_Detection>();
     }
 
     private void Update()
     {
-        if (Enemy_Detection.instance.hasLineOfSight != null && Enemy_Detection.instance.hasLineOfSight)
+        if (enemyDetection.hasLineOfSight != null && enemyDetection.hasLineOfSight)
         {
             pathfinding.MoveTo(Vector2.zero);
             return;

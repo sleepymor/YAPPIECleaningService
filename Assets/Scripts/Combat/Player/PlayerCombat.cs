@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 
 public class PlayerCombat : MonoBehaviour
@@ -15,7 +16,10 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private float attackMoveSpeed = 3f;
     [SerializeField] private float attackMoveDuration = 0.2f;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] public Transform hitDmgArea;
+    [SerializeField] public Transform hitDmgArea; 
+    [SerializeField] private float invincibilityDuration = 1f; // how long player is invincible after hit
+    private bool isInvincible = false;
+
     private KnockbackEffect knockback;
 
     private Combat combat;
@@ -125,13 +129,41 @@ public class PlayerCombat : MonoBehaviour
 
 
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, Transform attacker)
     {
+        if (isInvincible) return;
+
         currentHealth -= damage;
-        knockback.GetKnockedBack(Enemy_Attack.instance.transform, 15f);
+        knockback.GetKnockedBack(attacker, 15f);
         animator.SetBool("isHit", true);
+
+        StartCoroutine(InvincibilityCoroutine()); // Start i-frame timer
+
         CheckDeath();
     }
+
+    private IEnumerator InvincibilityCoroutine()
+    {
+        isInvincible = true;
+
+        // Optional: flash the player sprite for visual feedback
+        float flashDuration = 0.1f;
+        float elapsed = 0f;
+
+        while (elapsed < invincibilityDuration)
+        {
+            spriteRenderer.enabled = false;
+            yield return new WaitForSeconds(flashDuration);
+            spriteRenderer.enabled = true;
+            yield return new WaitForSeconds(flashDuration);
+            elapsed += flashDuration * 2;
+        }
+
+        isInvincible = false;
+    }
+
+
+
 
     public void CheckDeath()
     {

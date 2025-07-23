@@ -2,27 +2,45 @@ using UnityEngine;
 
 public class Enemy_Detection : MonoBehaviour
 {
-    public static Enemy_Detection instance;
-
+    [Header("Detection Settings")]
     [SerializeField] public Transform detectionArea;
     [SerializeField] public bool isDetecting = false;
     [SerializeField] private LayerMask obstacleMask;
-    [SerializeField] public float attackRange = 1.5f;
+
+    [Header("Attack Ranges")]
+    [SerializeField] public float meleeRange = 1.5f;
+    [SerializeField] public float rangedRange = 4f;
+    [SerializeField] public bool useTrigger = false;
+    [SerializeField] public float triggerRange = 1.5f;
 
     [HideInInspector] public Transform currentTarget;
     [HideInInspector] public bool hasLineOfSight;
 
+    private Animator animator;
     private Enemy_Pathfinding pathfinding;
-
-    private void Awake()
-    {
-        instance = this;
-    }
+    private Enemy_Attack enemyAttack;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         pathfinding = GetComponent<Enemy_Pathfinding>();
+        enemyAttack = GetComponent<Enemy_Attack>();
         detectionArea.gameObject.SetActive(true);
+    }
+
+    private float GetEffectiveRange()
+    {
+        if (enemyAttack == null) return meleeRange;
+
+        if (enemyAttack.CurrentAttackMode == AttackMode.AOE)
+        {
+            if (enemyAttack.IsAOEReady())
+                return rangedRange;
+            else
+                return meleeRange;
+        }
+
+        return enemyAttack.CurrentAttackMode == AttackMode.Ranged ? rangedRange : meleeRange;
     }
 
     private void FixedUpdate()
@@ -41,43 +59,37 @@ public class Enemy_Detection : MonoBehaviour
 
                 Vector2 direction = (end - start).normalized;
                 float distanceToTarget = Vector2.Distance(start, end);
+                float effectiveRange = GetEffectiveRange(); // Uses smart logic
 
-                int segments = 30;
-                float angleStep = 360f / segments;
-                Vector3 prevPoint = start + new Vector2(Mathf.Cos(0), Mathf.Sin(0)) * attackRange;
-                for (int i = 1; i <= segments; i++)
-                {
-                    float rad = Mathf.Deg2Rad * (i * angleStep);
-                    Vector3 nextPoint = start + new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)) * attackRange;
-                    Debug.DrawLine(prevPoint, nextPoint, Color.red);
-                    prevPoint = nextPoint;
-                }
+                DrawRangeCircle(start, effectiveRange);
 
-                if (distanceToTarget <= attackRange)
+                if (distanceToTarget <= effectiveRange)
                 {
+
+                    if (HasBoolParam(animator, "isHiding") && useTrigger && distanceToTarget <= triggerRange)
+                    { 
+                        animator.SetBool("isHiding", false);
+                    } else
+                    {
+                        Debug.Log("False");
+                    }
+
                     pathfinding.MoveTo(Vector2.zero);
-                    Enemy_Attack.instance.Attack();
+                    enemyAttack.Attack();
                 }
                 else
                 {
-                    Enemy_Attack.instance.StopAttack();
+                    enemyAttack.StopAttack();
                     pathfinding.MoveTo(direction);
                 }
             }
-
             else
             {
                 hasLineOfSight = false;
                 Debug.DrawLine(start, end, Color.red);
             }
         }
-        else
-        {
-            hasLineOfSight = false;
-
-        }
     }
-
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.name == "Hitbox")
@@ -85,12 +97,26 @@ public class Enemy_Detection : MonoBehaviour
             Transform playerRoot = other.transform.root;
             if (playerRoot.GetComponent<PlayerController>())
             {
-                var player = other;
-                currentTarget = player.transform;
+                currentTarget = other.transform;
                 isDetecting = true;
             }
         }
     }
+    private void DrawRangeCircle(Vector2 center, float radius)
+    {
+        int segments = 30;
+        float angleStep = 360f / segments;
+        Vector3 prevPoint = center + new Vector2(Mathf.Cos(0), Mathf.Sin(0)) * radius;
+
+        for (int i = 1; i <= segments; i++)
+        {
+            float rad = Mathf.Deg2Rad * (i * angleStep);
+            Vector3 nextPoint = center + new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)) * radius;
+            Debug.DrawLine(prevPoint, nextPoint, Color.red);
+            prevPoint = nextPoint;
+        }
+    }
+
 
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -99,11 +125,22 @@ public class Enemy_Detection : MonoBehaviour
             Transform playerRoot = other.transform.root;
             if (playerRoot.GetComponent<PlayerController>())
             {
-                var player = other;
                 currentTarget = null;
                 isDetecting = false;
             }
         }
+    }
+
+    private bool HasBoolParam(Animator anim, string paramName)
+    {
+        if (anim == null) return false;
+
+        foreach (var param in anim.parameters)
+        {
+            if (param.name == paramName && param.type == AnimatorControllerParameterType.Bool)
+                return true;
+        }
+        return false;
     }
 
 }
