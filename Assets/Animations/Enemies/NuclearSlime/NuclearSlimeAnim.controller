@@ -72,7 +72,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5c63960c3dee89148a13413c25989d46, type: 2}
+  m_Motion: {fileID: 7400000, guid: 28faa5986c7f505418666ac107c736a0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -102,7 +102,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ef998b448774fdc4dbd4deed94ba965b, type: 2}
+  m_Motion: {fileID: 7400000, guid: 82fb636d30dc69640a9e5bbb4901c383, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -239,7 +239,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: _SmallLGAnim
+  m_Name: NuclearSlimeAnim
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isMoving
@@ -352,7 +352,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4ccfad37de224ed448b61693a0d39ad5, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4a1f0414a75c8c64fadb96f44b11ce0d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -378,7 +378,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 40100471ddbfb1a4b8444c153a2d77ef, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2dd262ce7a121d84887f822b8dc6791d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -407,7 +407,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2b368c6e3420df24593bc34b48df4efe, type: 2}
+  m_Motion: {fileID: 7400000, guid: d8d10d4c2302f434aa63651c0051ab46, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -477,13 +477,13 @@ AnimatorStateMachine:
     m_Position: {x: 310, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2099672074706950023}
-    m_Position: {x: 630, y: 80, z: 0}
+    m_Position: {x: 600, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3666548760205810219}
-    m_Position: {x: 330, y: 0, z: 0}
+    m_Position: {x: 310, y: 80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3574920285958349779}
-    m_Position: {x: 310, y: -120, z: 0}
+    m_Position: {x: 310, y: -90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7364492241944230244}
     m_Position: {x: 610, y: 220, z: 0}
