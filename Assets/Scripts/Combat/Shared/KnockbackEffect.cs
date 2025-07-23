@@ -6,7 +6,7 @@ public class KnockbackEffect : MonoBehaviour
     public bool gettingKnockedBack { get; private set; }
 
     [SerializeField] private float knockBackTime = 0.2f;
-    [SerializeField] private bool isPlayer = false; 
+    [SerializeField] private bool isPlayer = false;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -19,16 +19,27 @@ public class KnockbackEffect : MonoBehaviour
 
     public void GetKnockedBack(Transform damageSource, float knockBackThrust)
     {
+        ApplyForceFromSource(damageSource, knockBackThrust, pushAway: true);
+    }
+
+    public void PullToward(Transform pullSource, float pullStrength)
+    {
+        ApplyForceFromSource(pullSource, pullStrength, pushAway: false);
+    }
+
+    private void ApplyForceFromSource(Transform source, float thrust, bool pushAway)
+    {
         gettingKnockedBack = true;
 
         if (isPlayer)
-        {
-            // Disable player movement
             PlayerController.instance.canMove = false;
-        }
 
-        Vector2 difference = (transform.position - damageSource.position).normalized * knockBackThrust * rb.mass;
-        rb.AddForce(difference, ForceMode2D.Impulse);
+        Vector2 direction = (transform.position - source.position).normalized;
+        if (!pushAway)
+            direction *= -1f;
+
+        Vector2 force = direction * thrust * rb.mass;
+        rb.AddForce(force, ForceMode2D.Impulse);
 
         animator.SetBool("isHit", true);
         StartCoroutine(KnockRoutine());
@@ -47,9 +58,7 @@ public class KnockbackEffect : MonoBehaviour
         gettingKnockedBack = false;
 
         if (isPlayer)
-        {
             PlayerController.instance.canMove = true;
-        }
 
         onKnockbackEnd();
     }

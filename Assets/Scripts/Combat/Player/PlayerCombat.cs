@@ -16,8 +16,18 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private float attackMoveSpeed = 3f;
     [SerializeField] private float attackMoveDuration = 0.2f;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] public Transform hitDmgArea; 
-    [SerializeField] private float invincibilityDuration = 1f; // how long player is invincible after hit
+    [SerializeField] public Transform hitDmgArea;
+    [SerializeField] public Transform harpoonPullArea;
+    [SerializeField] private float invincibilityDuration = 1f;
+    [SerializeField] public float harpoonRange = 4f;
+    [SerializeField] private GameObject harpoonAimPrefab;
+    
+    private GameObject harpoonAimInstance;
+
+    private float holdTime = 0f;
+    private bool isHolding = false;
+    private bool hasAttacked = false;
+    private float requiredHoldTime = 0.5f;
     private bool isInvincible = false;
 
     private KnockbackEffect knockback;
@@ -33,6 +43,8 @@ public class PlayerCombat : MonoBehaviour
         rb = GetComponent<Rigidbody2D>(); 
         knockback = GetComponent<KnockbackEffect>();
         hitDmgArea.gameObject.SetActive(false);
+        harpoonPullArea.gameObject.SetActive(false);
+
     }
 
     void Start()
@@ -40,7 +52,7 @@ public class PlayerCombat : MonoBehaviour
         currentHealth = startingHealth;
         animator = GetComponent<Animator>();
         hitDmgArea.gameObject.SetActive(false);
-
+        harpoonPullArea.gameObject.SetActive(false);
     }
 
     private void OnEnable()
@@ -66,16 +78,104 @@ public class PlayerCombat : MonoBehaviour
 
     void Attack()
     {
-        if (combat.Fight.Attack.triggered && !isAttacking)
+        float input = combat.Fight.Attack.ReadValue<float>();
+
+        if (input > 0)
         {
-            isAttacking = true;
+            if (!isHolding)
+            {
+                isHolding = true;
+                holdTime = 0f;
+                hasAttacked = false;
+                Debug.Log("Mulai menahan tombol...");
+            }
 
-            Vector2 currentDir = PlayerController.instance.LastMoveDirection;
-            UpdateDirection(currentDir);
+            holdTime += Time.deltaTime;
 
-            StartCoroutine(AttackMove());
+            if (holdTime >= requiredHoldTime)
+            {
+                if (harpoonAimInstance == null)
+                {
+                    harpoonAimInstance = Instantiate(harpoonAimPrefab);
+                    Debug.Log("Harpoon Aim muncul");
+                }
+
+                Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mouseWorld.z = 0f;
+                harpoonAimInstance.transform.position = mouseWorld;
+            }
+            if (holdTime < requiredHoldTime && !hasAttacked)
+            {
+                hasAttacked = true; // Prevent repeated triggering
+                isAttacking = true;
+                Vector2 currentDir = PlayerController.instance.LastMoveDirection;
+                UpdateDirection(currentDir);
+                StartCoroutine(AttackMove());
+            }
+
         }
+
+        if (combat.Fight.Attack.WasReleasedThisFrame())
+        {
+            if (harpoonAimInstance != null && holdTime >= requiredHoldTime)
+            {
+                Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mouseWorld.z = 0f;
+
+                Vector2 direction = (mouseWorld - transform.position).normalized;
+                UpdateHarpoonDirection(direction);
+
+                harpoonPullArea.gameObject.SetActive(true);
+                StartCoroutine(DisableHarpoonPullArea());
+
+                spriteRenderer.flipX = direction.x < 0f;
+
+                StartCoroutine(TemporarilyDisableMovement(0.3f));
+            }
+
+            if (harpoonAimInstance != null)
+            {
+                Destroy(harpoonAimInstance);
+                Debug.Log("Harpoon Aim dihancurkan");
+            }
+
+            isHolding = false;
+            holdTime = 0f;
+            hasAttacked = false;
+        }
+
     }
+
+    IEnumerator TemporarilyDisableMovement(float duration)
+    {
+        PlayerController.instance.canMove = false;
+        yield return new WaitForSeconds(duration);
+        PlayerController.instance.canMove = true;
+    }
+
+
+    void UpdateHarpoonDirection(Vector2 dir)
+    {
+        if (dir == Vector2.zero) return;
+
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        float offset = 1f;
+
+        Vector3 newPosition = new Vector3(dir.x, dir.y, 0) * offset;
+
+        harpoonPullArea.localRotation = Quaternion.Euler(0, 0, angle);
+        harpoonPullArea.localPosition = newPosition;
+    }
+
+    IEnumerator DisableHarpoonPullArea()
+    {
+        yield return new WaitForSeconds(0.2f); // Adjust time as needed
+        harpoonPullArea.gameObject.SetActive(false);
+    }
+
+
+
+
 
     public void OnAttackSuccess()
     {
@@ -137,7 +237,7 @@ public class PlayerCombat : MonoBehaviour
         knockback.GetKnockedBack(attacker, 15f);
         animator.SetBool("isHit", true);
 
-        StartCoroutine(InvincibilityCoroutine()); // Start i-frame timer
+        StartCoroutine(InvincibilityCoroutine());
 
         CheckDeath();
     }
@@ -146,7 +246,6 @@ public class PlayerCombat : MonoBehaviour
     {
         isInvincible = true;
 
-        // Optional: flash the player sprite for visual feedback
         float flashDuration = 0.1f;
         float elapsed = 0f;
 
