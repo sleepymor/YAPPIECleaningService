@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: ea0e95eceb4f94c46aea4c021f12a29d
+guid: d1a4c085fb7de35409c2a16634c7bf6f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8036851259694981124
-    second: oildrop_death_0
+      213: -5067005759771811272
+    second: nuclearslime_death_0
   - first:
-      213: -4878058896070124871
-    second: oildrop_death_1
+      213: -261802600530002028
+    second: nuclearslime_death_1
   - first:
-      213: 3076107880408889241
-    second: oildrop_death_2
+      213: 1951995936383518666
+    second: nuclearslime_death_2
   - first:
-      213: 2029347797120818274
-    second: oildrop_death_3
+      213: 1514177928548909446
+    second: nuclearslime_death_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,7 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: oildrop_death_0
+      name: nuclearslime_death_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cffda314c5e577090800000000000000
-      internalID: -8036851259694981124
+      spriteID: 83261fd8b116ea9b0800000000000000
+      internalID: -5067005759771811272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: oildrop_death_1
+      name: nuclearslime_death_1
       rect:
         serializedVersion: 2
         x: 64
@@ -146,14 +146,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9ba5e427747ad4cb0800000000000000
-      internalID: -4878058896070124871
+      spriteID: 49fb2220ce3ed5cf0800000000000000
+      internalID: -261802600530002028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: oildrop_death_2
+      name: nuclearslime_death_2
       rect:
         serializedVersion: 2
         x: 128
@@ -168,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9973d8eb1d780ba20800000000000000
-      internalID: 3076107880408889241
+      spriteID: ac7452746f1e61b10800000000000000
+      internalID: 1951995936383518666
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: oildrop_death_3
+      name: nuclearslime_death_3
       rect:
         serializedVersion: 2
         x: 192
@@ -190,8 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 26c9b1dc111b92c10800000000000000
-      internalID: 2029347797120818274
+      spriteID: 68105e5bdc0730510800000000000000
+      internalID: 1514177928548909446
       vertices: []
       indices: 
       edges: []
@@ -200,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 218c38f9d96976e4e913697a0446eb7b
+    spriteID: 91a9f84d3c390de48b1b62a351ae9cc7
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      oildrop_death_0: -8036851259694981124
-      oildrop_death_1: -4878058896070124871
-      oildrop_death_2: 3076107880408889241
-      oildrop_death_3: 2029347797120818274
+      nuclearslime_death_0: -5067005759771811272
+      nuclearslime_death_1: -261802600530002028
+      nuclearslime_death_2: 1951995936383518666
+      nuclearslime_death_3: 1514177928548909446
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,34 +1,22 @@
 fileFormatVersion: 2
-guid: 1179965cdb87de943aaeab019b31d885
+guid: a123474ee9ec6d844b9fd9a7da1b35e6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3310200245181711024
-    second: oildrop_idle_0
+      213: 1574705178335005242
+    second: nuclearslime_hit_0
   - first:
-      213: 1728771765018901299
-    second: oildrop_idle_1
+      213: -2880294506327957113
+    second: nuclearslime_hit_1
   - first:
-      213: -813131684234845796
-    second: oildrop_idle_2
+      213: -1218738803909801075
+    second: nuclearslime_hit_2
   - first:
-      213: -6777322590559812375
-    second: oildrop_idle_3
+      213: -2286431217589345368
+    second: nuclearslime_hit_3
   - first:
-      213: 4189017187928470405
-    second: oildrop_idle_4
-  - first:
-      213: 4821662156181825133
-    second: oildrop_idle_5
-  - first:
-      213: 7143693553412807443
-    second: oildrop_idle_6
-  - first:
-      213: -3829519394002788742
-    second: oildrop_idle_7
-  - first:
-      213: -5523333783637664713
-    second: oildrop_idle_8
+      213: 5274628120028402418
+    second: nuclearslime_hit_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -124,7 +112,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: oildrop_idle_0
+      name: nuclearslime_hit_0
       rect:
         serializedVersion: 2
         x: 0
@@ -139,14 +127,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0b28775b59130fd20800000000000000
-      internalID: 3310200245181711024
+      spriteID: a3a40ac340a7ad510800000000000000
+      internalID: 1574705178335005242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: oildrop_idle_1
+      name: nuclearslime_hit_1
       rect:
         serializedVersion: 2
         x: 64
@@ -161,14 +149,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 33b3da7c2c4ddf710800000000000000
-      internalID: 1728771765018901299
+      spriteID: 78120dd28632708d0800000000000000
+      internalID: -2880294506327957113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: oildrop_idle_2
+      name: nuclearslime_hit_2
       rect:
         serializedVersion: 2
         x: 128
@@ -183,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c9121959a0d27b4f0800000000000000
-      internalID: -813131684234845796
+      spriteID: d8bc8f6d38b261fe0800000000000000
+      internalID: -1218738803909801075
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: oildrop_idle_3
+      name: nuclearslime_hit_3
       rect:
         serializedVersion: 2
         x: 192
@@ -205,14 +193,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9e4c37df20d12f1a0800000000000000
-      internalID: -6777322590559812375
+      spriteID: 8a32930fbe6f440e0800000000000000
+      internalID: -2286431217589345368
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: oildrop_idle_4
+      name: nuclearslime_hit_4
       rect:
         serializedVersion: 2
         x: 256
@@ -227,96 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5837b7420f0622a30800000000000000
-      internalID: 4189017187928470405
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: oildrop_idle_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d66692e4f2cf9e240800000000000000
-      internalID: 4821662156181825133
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: oildrop_idle_6
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 31b1b6b107f732360800000000000000
-      internalID: 7143693553412807443
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: oildrop_idle_7
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a7e9efb9660dadac0800000000000000
-      internalID: -3829519394002788742
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: oildrop_idle_8
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 73cdc5a003d2953b0800000000000000
-      internalID: -5523333783637664713
+      spriteID: 2f25498345e333940800000000000000
+      internalID: 5274628120028402418
       vertices: []
       indices: 
       edges: []
@@ -325,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: be0464c6a3e2f2349ae7153aa58eb819
+    spriteID: 4186773852c1b8646b813f2a9d47d893
     internalID: 0
     vertices: []
     indices: 
@@ -335,15 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      oildrop_idle_0: 3310200245181711024
-      oildrop_idle_1: 1728771765018901299
-      oildrop_idle_2: -813131684234845796
-      oildrop_idle_3: -6777322590559812375
-      oildrop_idle_4: 4189017187928470405
-      oildrop_idle_5: 4821662156181825133
-      oildrop_idle_6: 7143693553412807443
-      oildrop_idle_7: -3829519394002788742
-      oildrop_idle_8: -5523333783637664713
+      nuclearslime_hit_0: 1574705178335005242
+      nuclearslime_hit_1: -2880294506327957113
+      nuclearslime_hit_2: -1218738803909801075
+      nuclearslime_hit_3: -2286431217589345368
+      nuclearslime_hit_4: 5274628120028402418
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
