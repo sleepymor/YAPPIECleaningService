@@ -1,0 +1,203 @@
+fileFormatVersion: 2
+guid: 65cfcd13dd3ab5a4da76f89e24490335
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2829168612171234357
+    second: Cleaning-Service-22-07-2025_0
+  - first:
+      213: -2275079784527664949
+    second: Cleaning-Service-22-07-2025_1
+  - first:
+      213: -5134300545248708205
+    second: Cleaning-Service-22-07-2025_2
+  - first:
+      213: -1650319825946217459
+    second: Cleaning-Service-22-07-2025_3
+  - first:
+      213: -7711275423079714326
+    second: Cleaning-Service-22-07-2025_4
+  - first:
+      213: 2039077684652206136
+    second: Cleaning-Service-22-07-2025_5
+  - first:
+      213: 837268568206937927
+    second: Cleaning-Service-22-07-2025_6
+  - first:
+      213: -7595147633631124431
+    second: Cleaning-Service-22-07-2025_7
+  - first:
+      213: -7362838719028857531
+    second: Cleaning-Service-22-07-2025_8
+  - first:
+      213: 2312749901941681962
+    second: Cleaning-Service-22-07-2025_9
+  - first:
+      213: -2421592272997551113
+    second: Cleaning-Service-22-07-2025_10
+  - first:
+      213: -1785387535284153409
+    second: Cleaning-Service-22-07-2025_11
+  - first:
+      213: 3715435022392363168
+    second: Cleaning-Service-22-07-2025_12
+  - first:
+      213: -1280112680472325762
+    second: Cleaning-Service-22-07-2025_13
+  - first:
+      213: -4863157718849686154
+    second: Cleaning-Service-22-07-2025_14
+  - first:
+      213: -8253421561960198337
+    second: Cleaning-Service-22-07-2025_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cleaning-Service-22-07-2025_0
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 43
+        width: 950
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53cb62afcd9334720800000000000000
+      internalID: 2829168612171234357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 25cd275827495d847b22b215928c8803
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Cleaning-Service-22-07-2025_0: 2829168612171234357
+      Cleaning-Service-22-07-2025_1: -2275079784527664949
+      Cleaning-Service-22-07-2025_10: -2421592272997551113
+      Cleaning-Service-22-07-2025_11: -1785387535284153409
+      Cleaning-Service-22-07-2025_12: 3715435022392363168
+      Cleaning-Service-22-07-2025_13: -1280112680472325762
+      Cleaning-Service-22-07-2025_14: -4863157718849686154
+      Cleaning-Service-22-07-2025_15: -8253421561960198337
+      Cleaning-Service-22-07-2025_2: -5134300545248708205
+      Cleaning-Service-22-07-2025_3: -1650319825946217459
+      Cleaning-Service-22-07-2025_4: -7711275423079714326
+      Cleaning-Service-22-07-2025_5: 2039077684652206136
+      Cleaning-Service-22-07-2025_6: 837268568206937927
+      Cleaning-Service-22-07-2025_7: -7595147633631124431
+      Cleaning-Service-22-07-2025_8: -7362838719028857531
+      Cleaning-Service-22-07-2025_9: 2312749901941681962
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
