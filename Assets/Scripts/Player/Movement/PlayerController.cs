@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     private float lastFacingX = 1f; 
 
-    private Controller controller;
+    public Controller controller;
     public Vector2 movement;
 
     private void Awake()

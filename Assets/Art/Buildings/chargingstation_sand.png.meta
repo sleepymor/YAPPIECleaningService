@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: bc0006fe9eb60c248948f252bd8a17cd
+guid: a0676c64ad44f714f82ea4edf579c36e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3597004318424568531
-    second: harpoon_aim_0
+      213: 2125384493421533666
+    second: chargingstation_sand_0
+  - first:
+      213: -4582794528848545747
+    second: chargingstation_sand_1
+  - first:
+      213: 4446019696762096269
+    second: chargingstation_sand_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,16 +52,16 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 40
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: harpoon_aim_0
+      name: chargingstation_sand_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d2de1c051afd41ec0800000000000000
-      internalID: -3597004318424568531
+      spriteID: 2e9938d9fe1ee7d10800000000000000
+      internalID: 2125384493421533666
       vertices: []
       indices: 
       edges: []
@@ -125,7 +131,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: e28d0ff4d2901a84ab30b4af89ee3248
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +141,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      harpoon_aim_0: -3597004318424568531
+      chargingstation_sand_0: 2125384493421533666
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
