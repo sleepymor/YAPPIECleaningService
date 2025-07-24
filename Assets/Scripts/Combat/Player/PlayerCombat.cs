@@ -262,7 +262,10 @@ public class PlayerCombat : MonoBehaviour
     }
 
 
-
+    public void ChargeFull()
+    {
+        currentHealth = startingHealth;
+    }
 
     public void CheckDeath()
     {
