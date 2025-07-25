@@ -389,6 +389,7 @@ GameObject:
   - component: {fileID: 5849496393168956538}
   - component: {fileID: 133066889896157945}
   - component: {fileID: 7634892641128356809}
+  - component: {fileID: 5889461115473972152}
   - component: {fileID: 8038676033108594750}
   - component: {fileID: 123013570954591507}
   - component: {fileID: 6783049725239749118}
@@ -526,6 +527,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &5889461115473972152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4236011337253573336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5139341bbb30704db71cde6bba6cf0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumHealth: 5
+  moveSpeed: 10
+  attackMoveSpeed: 3
+  attackMoveDuration: 0.2
+  dashSpeed: 20
+  dashDuration: 0.3
+  dashCooldown: 0.5
+  harpoonRange: 4
+  harpoonHoldTime: 0.5
+  invincibilityDuration: 1
+  invincibilityFlashDuration: 0.1
+  meleeDmgArea: {fileID: 8004367055302414096}
+  harpoonDmgArea: {fileID: 1918204861481720751}
+  harpoonAimPrefab: {fileID: 6516955048128497807, guid: c0151f8697febd944b988e60d8b4d932, type: 3}
 --- !u!114 &8038676033108594750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,14 +566,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  moveSpeed: 2
-  spriteRenderer: {fileID: 5849496393168956538}
-  _animator: {fileID: 133066889896157945}
-  rb: {fileID: 7634892641128356809}
-  dashSpeed: 30
-  dashDuration: 0.3
-  dashCooldown: 0.5
-  movement: {x: 0, y: 0}
 --- !u!114 &123013570954591507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,18 +578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d0d437b9c24bb45a99c886edada483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 10
-  currentHealth: 0
-  spriteRenderer: {fileID: 5849496393168956538}
-  animator: {fileID: 133066889896157945}
-  attackMoveSpeed: 5
-  attackMoveDuration: 0.2
-  rb: {fileID: 7634892641128356809}
-  hitDmgArea: {fileID: 8004367055302414096}
-  harpoonPullArea: {fileID: 1918204861481720751}
-  invincibilityDuration: 1
-  harpoonRange: 4
-  harpoonAimPrefab: {fileID: 6516955048128497807, guid: c0151f8697febd944b988e60d8b4d932, type: 3}
   isAttacking: 0
 --- !u!114 &6783049725239749118
 MonoBehaviour:
@@ -598,7 +605,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1ff12a36d520d45a419e3e80dc5a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackTime: 0.2
   isPlayer: 1
 --- !u!82 &1632485647782245835
 AudioSource:

@@ -3,20 +3,26 @@ using System.Collections;
 
 public class EnemyPatrolController : MonoBehaviour
 {
-    [SerializeField] private Transform[] waypoints;
-    [SerializeField] private float reachDistance = 0.1f;
-    [SerializeField] private float waitTimeAtPoint = 0.5f;
-    [SerializeField] private bool loop = true;
+    private Transform[] waypoints;
+    private float reachDistance;
+    private float waitTimeAtPoint;
+    private bool loop;
 
     private int currentWaypointIndex = 0;
     private Enemy_Pathfinding pathfinding;
     private bool isWaiting = false;
     private Enemy_Detection enemyDetection;
-
+    private Enemy_Config config;
     private void Awake()
     {
+        config = GetComponent<Enemy_Config>();
         pathfinding = GetComponent<Enemy_Pathfinding>();
         enemyDetection = GetComponent<Enemy_Detection>();
+
+        waypoints = config.Waypoints;
+        reachDistance = config.ReachDistance;
+        waitTimeAtPoint = config.WaitTime;
+        loop = config.LoopPatrol;
     }
 
     private void Update()

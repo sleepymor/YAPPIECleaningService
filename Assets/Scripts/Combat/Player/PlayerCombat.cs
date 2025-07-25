@@ -8,20 +8,26 @@ public class PlayerCombat : MonoBehaviour
 {
     public static PlayerCombat instance;
 
-    [SerializeField] public int startingHealth = 10;
+    private int startingHealth;
+    public int currentHealth { get; set; }
+    public bool isStunned { get; set; }
 
-    public int currentHealth;
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] public Animator animator;
-    [SerializeField] private float attackMoveSpeed = 3f;
-    [SerializeField] private float attackMoveDuration = 0.2f;
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] public Transform hitDmgArea;
-    [SerializeField] public Transform harpoonPullArea;
-    [SerializeField] private float invincibilityDuration = 1f;
-    [SerializeField] public float harpoonRange = 4f;
-    [SerializeField] private GameObject harpoonAimPrefab;
-    
+    public Animator animator { get; set; }
+    private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rb;
+
+    private float attackMoveSpeed;
+    private float attackMoveDuration;
+
+    public Transform hitDmgArea { get; set; }
+    public Transform harpoonPullArea { get; set; }
+
+    private float invincibilityDuration;
+    private float flashDuration;
+
+    private float harpoonRange;
+
+    private GameObject harpoonAimPrefab;
     private GameObject harpoonAimInstance;
 
     private float holdTime = 0f;
@@ -32,19 +38,41 @@ public class PlayerCombat : MonoBehaviour
 
     private KnockbackEffect knockback;
 
+    private PlayerConfig config;
+
     private Combat combat;
-    public bool isAttacking = false;
+
+    [HideInInspector]
+    public bool isAttacking;
     private Vector2 lastMoveDirection = Vector2.right;
 
     public void Awake()
     {
+        isStunned = false;
         instance = this;
         combat = new Combat();
-        rb = GetComponent<Rigidbody2D>(); 
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        config = GetComponent<PlayerConfig>();
         knockback = GetComponent<KnockbackEffect>();
-        hitDmgArea.gameObject.SetActive(false);
-        harpoonPullArea.gameObject.SetActive(false);
 
+        startingHealth = config.MaximumHealth;
+        hitDmgArea = config.MeleeDmgArea;
+
+        harpoonPullArea = config.HarpoonDmgArea;
+        harpoonRange = config.HarpoonRange;
+        harpoonAimPrefab = config.HarpoonAimPrefab;
+
+        attackMoveSpeed = config.MeleeAttackMoveSpeed;
+        attackMoveDuration = config.MeleeAttackMoveDuration;
+
+        invincibilityDuration = config.InvincibilityDuration;
+        flashDuration = config.InvincibilityFlashDuration;
+
+        hitDmgArea.gameObject.SetActive(false);
+
+        harpoonPullArea.gameObject.SetActive(false);
     }
 
     void Start()
@@ -72,8 +100,10 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
-        Attack();
-
+        if (!isStunned)
+        {
+            Attack();
+        }
     }
 
     void Attack()
@@ -169,7 +199,7 @@ public class PlayerCombat : MonoBehaviour
 
     IEnumerator DisableHarpoonPullArea()
     {
-        yield return new WaitForSeconds(0.2f); // Adjust time as needed
+        yield return new WaitForSeconds(0.2f);
         harpoonPullArea.gameObject.SetActive(false);
     }
 
@@ -229,7 +259,7 @@ public class PlayerCombat : MonoBehaviour
 
 
 
-    public void TakeDamage(int damage, Transform attacker)
+    public void TakeDamage(int damage, Transform attacker, float knockbackRange, AttackStatus statusEffect, float statusChance, float statusTime)
     {
         if (isInvincible) return;
 
@@ -237,16 +267,33 @@ public class PlayerCombat : MonoBehaviour
         knockback.GetKnockedBack(attacker, 15f);
         animator.SetBool("isHit", true);
 
-        StartCoroutine(InvincibilityCoroutine());
+        if (statusEffect == AttackStatus.Stun && Random.value <= statusChance)
+        {
+            StartCoroutine(ApplyStun(statusTime));
+        }
 
+        StartCoroutine(InvincibilityCoroutine());
         CheckDeath();
     }
+
+    private IEnumerator ApplyStun(float duration)
+    {
+        isStunned = true;
+        animator.SetBool("isStunned", true); // Optional: add animation feedback
+        spriteRenderer.color = new Color(0.5f, 0.5f, 0.5f, 1f);
+
+
+        yield return new WaitForSeconds(duration);
+        spriteRenderer.color = Color.white;
+        isStunned = false;
+        animator.SetBool("isStunned", false); // Optional: reset animation
+    }
+
 
     private IEnumerator InvincibilityCoroutine()
     {
         isInvincible = true;
 
-        float flashDuration = 0.1f;
         float elapsed = 0f;
 
         while (elapsed < invincibilityDuration)

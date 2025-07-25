@@ -270,9 +270,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 640511851712396857}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 235d79001a666e64d8c1b56f14cd17ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 916c80d6d28e06147a050ca23c97d8fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maximumHealth: 3
+  moveSpeed: 2
+  knockBackRange: 2
+  meleeRange: 1.5
+  rangedRange: 4
+  meleeDamage: 1
+  rangedDamage: 1
+  aoeDamage: 1
+  skill: 1
+  basicAttack: 1
+  spriteFacingRight: 0
+  projectilePrefab: {fileID: 3286646357669358039, guid: c60bb69ed5f1c984bb96fb002f3b06a4, type: 3}
+  projectileCount: 5
+  spreadAngle: 30
+  rangedProjectileSpeed: 10
+  maxTravelDistance: 10
+  hasHidingMode: 0
+  hidingMode: 0
+  useTrigger: 0
+  triggerRange: 1.5
+  flashDuration: 0.1
+  numberOfFlashes: 5
+  detectionArea: {fileID: 4507745253270419660}
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 8
+  waypoints: []
+  reachDistance: 0.1
+  waitTimeAtPoint: 0.5
+  loopPatrol: 1
+  aoePrefab: {fileID: 0}
+  aoeCooldown: 5
+  immediatelyTriggered: 0
+  aoeFireRate: 0.1
+  aoeDuration: 4
+  aoeProjectileSpeed: 2
+  damageInterval: 1
+  aoeLifetime: 1
 --- !u!114 &2162543742832439446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,9 +323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef26e625bf042946934ac8cefc4eac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  hidingMode: 0
-  flipStartsFacingRight: 0
 --- !u!114 &6531761326749783175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,10 +335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee32174fdab62a42955c85d05c00f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 10
-  spriteRenderer: {fileID: 0}
-  flashDuration: 0.1
-  numberOfFlashes: 5
 --- !u!114 &1889077434184104144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,15 +347,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f00bcabbaedd325468cbdadc6247e690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionArea: {fileID: 4507745253270419660}
-  isDetecting: 0
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 8
-  meleeRange: 1.5
-  rangedRange: 6
-  useTrigger: 0
-  triggerRange: 1.5
   currentTarget: {fileID: 0}
   hasLineOfSight: 0
 --- !u!114 &5226607809404224034
@@ -339,18 +361,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46762622d710164468a8d82bbd1b039a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  attackMode: 1
-  defaultFallbackMode: 1
-  projectilePrefab: {fileID: 3286646357669358039, guid: c60bb69ed5f1c984bb96fb002f3b06a4, type: 3}
-  projectileCount: 5
-  spreadAngle: 30
-  aoePrefab: {fileID: 0}
-  aoeCooldown: 5
-  firstAOETriggered: 0
-  aoeFireRate: 0.1
-  aoeDuration: 4
-  aoeProjectileSpeed: 2
 --- !u!114 &3720550274367774204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,10 +373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c503fd235f8d0429c14d0a1d3d5e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
-  reachDistance: 0.1
-  waitTimeAtPoint: 0.5
-  loop: 1
 --- !u!114 &-915983924706461515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,5 +385,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1ff12a36d520d45a419e3e80dc5a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackTime: 0.2
   isPlayer: 0

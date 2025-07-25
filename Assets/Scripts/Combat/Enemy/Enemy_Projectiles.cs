@@ -4,16 +4,21 @@ public enum DamageType { OnHit, PerSecond }
 
 public class Enemy_Projectiles : MonoBehaviour
 {
-    [Header("Damage Settings")]
-    [SerializeField] public int damage = 1;
-    [SerializeField] private DamageType damageType = DamageType.PerSecond;
-    [SerializeField] private float damageInterval = 10f; 
+    public int damage;
+    private DamageType damageType { get; set; }
+    public float damageInterval { get; set; }
 
     [Header("Movement Settings")]
-    [SerializeField] public float speed = 10f;
-    [SerializeField] public float maxTravelDistance = 15f;
+    public float speed { get; set; }
+    public float maxTravelDistance { get; set; }
+    public float knockbackRange { get; set; }
 
-    [SerializeField] private float aoeLifetime = 7f;  // Add this field
+    public AttackStatus attackStatus { get; set; }
+    public float statusChance { get; set; }
+    public float statusDuration { get; set; }
+
+
+    public float aoeLifetime { get; set; }
     private float spawnTime;
 
     private Vector2 direction;
@@ -27,7 +32,7 @@ public class Enemy_Projectiles : MonoBehaviour
 
     private void Awake()
     {
-        lastDamageTime = Time.time - damageInterval; // allow immediate tick
+        lastDamageTime = Time.time - damageInterval;
     }
 
 
@@ -72,7 +77,7 @@ public class Enemy_Projectiles : MonoBehaviour
 
         if (other.name == "Hitbox" && PlayerCombat.instance != null)
         {
-            PlayerCombat.instance.TakeDamage(damage, transform);
+            PlayerCombat.instance.TakeDamage(damage, transform, knockbackRange, attackStatus, statusChance, statusDuration);
             Destroy(gameObject);
         }
     }
@@ -92,7 +97,7 @@ public class Enemy_Projectiles : MonoBehaviour
                 if (PlayerCombat.instance != null)
                 {
                     Debug.Log("AOE damage applied");
-                    PlayerCombat.instance.TakeDamage(damage, transform);
+                    PlayerCombat.instance.TakeDamage(damage, transform, knockbackRange, attackStatus, statusChance, statusDuration);
                 }
             }
         }
