@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bd912f9fbe23ad241875d9890141e0ab
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255068
+  packageName: Modern 2D Water
+  packageVersion: 2.0v
+  assetPath: Assets/ModernWater2D/Resources/Shaders/3d/ToonRamp.hlsl
+  uploadId: 670077

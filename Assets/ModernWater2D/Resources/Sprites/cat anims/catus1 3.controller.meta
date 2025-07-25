@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 64810d4bb1807ed4da5b4d20d7a5a06e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255068
+  packageName: Modern 2D Water
+  packageVersion: 2.0v
+  assetPath: Assets/ModernWater2D/Resources/Sprites/cat anims/catus1 3.controller
+  uploadId: 670077

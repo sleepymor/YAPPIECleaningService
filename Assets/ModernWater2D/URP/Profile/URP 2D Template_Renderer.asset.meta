@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e03aa8f2d2062cb479a46812dc2d0ff7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255068
+  packageName: Modern 2D Water
+  packageVersion: 2.0v
+  assetPath: Assets/ModernWater2D/URP/Profile/URP 2D Template_Renderer.asset
+  uploadId: 670077
