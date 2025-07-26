@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2494336562306976768
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 10
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -20,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Water
-  m_Shader: {fileID: -6465566751694194690, guid: f3551bf8dc4335144b969c30ca4f79d6, type: 3}
+  m_Name: Pixel Water
+  m_Shader: {fileID: -6465566751694194690, guid: c3babc485061839448330bf5a9ed4ad3, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -29,7 +16,7 @@ Material:
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
@@ -67,15 +54,34 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.341
+    - _Alpha: 0.72
+    - _Density: 10.7
     - _EnableExternalAlpha: 0
+    - _Pixelation: 42.85
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _RippleSize: 5.5
+    - _Speed: 2.5
     - _ZWrite: 0
     m_Colors:
-    - _Base_Color: {r: 0.082352854, g: 0.36749035, b: 0.90588236, a: 1}
+    - _Base_Color: {r: 0, g: 0.59379387, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Line_Color: {r: 0.6179246, g: 0.8561082, b: 1, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Ripple_Color: {r: 0.99056596, g: 0.99056596, b: 0.99056596, a: 0}
+    - _Ripple_Res: {r: 0, g: 0, b: 0, a: 0}
+    - _Wave_Speed: {r: 0.04, g: 0.04, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
+--- !u!114 &5179432522680881055
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 10
