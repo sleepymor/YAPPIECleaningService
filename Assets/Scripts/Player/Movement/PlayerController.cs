@@ -3,16 +3,18 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
+    private PlayerConfig config;
     public Vector2 LastMoveDirection { get; private set; }
     public bool canMove = true;
 
-    [SerializeField] private float moveSpeed = 2f;
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private Animator _animator;
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private float dashSpeed = 30f;
-    [SerializeField] private float dashDuration = 0.3f;
-    [SerializeField] private float dashCooldown = 0.5f;
+    private float moveSpeed;
+    private SpriteRenderer spriteRenderer;
+    private Animator _animator;
+    private Rigidbody2D rb;
+
+    private float dashSpeed;
+    private float dashDuration;
+    private float dashCooldown;
 
     private bool isDashing = false;
     private bool canDash = true;
@@ -20,12 +22,21 @@ public class PlayerController : MonoBehaviour
     private float lastFacingX = 1f; 
 
     public Controller controller;
-    public Vector2 movement;
+    public Vector2 movement { get; set;}
 
     private void Awake()
     {
         instance = this;
+        config = GetComponent<PlayerConfig>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+
         controller = new Controller();
+        moveSpeed = config.MoveSpeed;
+        dashSpeed = config.DashSpeed;
+        dashCooldown = config.DashCooldown;
+        dashDuration = config.DashDuration;
     }
 
 
@@ -41,10 +52,16 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        PlayerInput();
-        if (controller.Movement.Dash.triggered && canDash && !isDashing)
+        if (PlayerCombat.instance.isStunned == false)
         {
-            StartCoroutine(Dash());
+            PlayerInput();
+            if (controller.Movement.Dash.triggered && canDash && !isDashing)
+            {
+                StartCoroutine(Dash());
+            }
+        } else
+        {
+            rb.MovePosition(rb.position + movement * (0 * Time.fixedDeltaTime));
         }
     }
 

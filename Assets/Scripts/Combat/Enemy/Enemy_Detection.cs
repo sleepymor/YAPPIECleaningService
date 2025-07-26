@@ -2,16 +2,14 @@ using UnityEngine;
 
 public class Enemy_Detection : MonoBehaviour
 {
-    [Header("Detection Settings")]
-    [SerializeField] public Transform detectionArea;
-    [SerializeField] public bool isDetecting = false;
-    [SerializeField] private LayerMask obstacleMask;
+    public Transform detectionArea { get; set; }
+    public bool isDetecting { get; set; }
+    private LayerMask obstacleMask;
 
-    [Header("Attack Ranges")]
-    [SerializeField] public float meleeRange = 1.5f;
-    [SerializeField] public float rangedRange = 4f;
-    [SerializeField] public bool useTrigger = false;
-    [SerializeField] public float triggerRange = 1.5f;
+    public float meleeRange { get; set; }
+    public float rangedRange { get; set; }
+    private bool useTrigger;
+    private float triggerRange;
 
     [HideInInspector] public Transform currentTarget;
     [HideInInspector] public bool hasLineOfSight;
@@ -19,13 +17,25 @@ public class Enemy_Detection : MonoBehaviour
     private Animator animator;
     private Enemy_Pathfinding pathfinding;
     private Enemy_Attack enemyAttack;
+    private Enemy_Config config;
 
     private void Start()
     {
+        isDetecting = false;
+        config = GetComponent<Enemy_Config>();
         animator = GetComponent<Animator>();
         pathfinding = GetComponent<Enemy_Pathfinding>();
         enemyAttack = GetComponent<Enemy_Attack>();
+
+        useTrigger = config.UseTrigger;
+        triggerRange = config.TriggerRange;
+        meleeRange = config.MeleeRange;
+        rangedRange = config.RangedRange;
+        detectionArea = config.DetectionArea;
+        obstacleMask = config.ObstacleMask;
+
         detectionArea.gameObject.SetActive(true);
+
     }
 
     private float GetEffectiveRange()

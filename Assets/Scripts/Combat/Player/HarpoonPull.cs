@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class HarpoonPull : MonoBehaviour
 {
-    [SerializeField] private int damageAmount = 1;
-    [SerializeField] private float reuseCooldown = 0.2f;
-
     private bool hasHit = false;
     private float lastHitTime = -999f;
 
@@ -15,13 +12,15 @@ public class HarpoonPull : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        int damageAmount = PlayerConfig.c.HarpoonDamage;
+        float reuseCooldown = PlayerConfig.c.HarpoonCooldown;
+
         if (hasHit || Time.time - lastHitTime < reuseCooldown) return;
 
         Enemy_Health[] enemies = FindObjectsOfType<Enemy_Health>();
 
         if (enemies.Length == 0) return;
 
-        // Find nearest enemy to this harpoon
         Enemy_Health nearestEnemy = null;
         float closestDistance = float.MaxValue;
 

@@ -5,7 +5,7 @@ public class KnockbackEffect : MonoBehaviour
 {
     public bool gettingKnockedBack { get; private set; }
 
-    [SerializeField] private float knockBackTime = 0.2f;
+    private float knockBackTime = 0.2f;
     [SerializeField] private bool isPlayer = false;
 
     private Rigidbody2D rb;

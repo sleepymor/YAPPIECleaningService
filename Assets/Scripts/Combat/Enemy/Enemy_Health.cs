@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Enemy_Health : MonoBehaviour
 {
-    [SerializeField] private int startingHealth = 3;
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private float flashDuration = 0.1f;
-    [SerializeField] private int numberOfFlashes = 5;
+    private int startingHealth;
+    private SpriteRenderer spriteRenderer;
+    private float flashDuration;
+    private int numberOfFlashes;
 
     public static event System.Action<Enemy_Health> OnEnemyDeath;
 
@@ -16,10 +16,17 @@ public class Enemy_Health : MonoBehaviour
     private Animator animator;
     private Color originalColor;
 
+    Enemy_Config config;
+
     private void Awake()
     {
+        config = GetComponent<Enemy_Config>();
+        startingHealth = config.MaximumHealth;
+        flashDuration = config.FlashDuration;
+        numberOfFlashes = config.NumberOfFlashes;
         knockback = GetComponent<KnockbackEffect>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()

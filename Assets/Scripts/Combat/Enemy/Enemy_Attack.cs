@@ -5,26 +5,42 @@ public enum AttackMode { Melee, Ranged, AOE }
 
 public class Enemy_Attack : MonoBehaviour
 {
-    [Header("General Settings")]
-    [SerializeField] private int damage = 1;
-    [SerializeField] private AttackMode attackMode = AttackMode.Melee;
-    [SerializeField] private AttackMode defaultFallbackMode = AttackMode.Melee;
+    private int meleeDamage;
+    private int rangedDamage;
+    private int AOEDamage;
+    private AttackMode attackMode;
+    private AttackMode defaultFallbackMode;
+    private GameObject projectilePrefab;
+    private int projectileCount;
+    private float spreadAngle;
+    private float rangedProjectileSpeed;
+    private float maxProjTravelDistance;
 
-    [Header("Projectile Settings (Ranged)")]
-    [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private int projectileCount = 5;
-    [SerializeField] private float spreadAngle = 30f;
-
-    [Header("AOE Settings")]
-    [SerializeField] private GameObject aoePrefab;
-    [SerializeField] private float aoeCooldown = 5f;
-    [SerializeField] private bool firstAOETriggered = false;
+    private GameObject aoePrefab;
+    private float aoeCooldown = 5f;
+    private bool firstAOETriggered = false;
 
 
     [Header("AOE Spam Settings")]
-    [SerializeField] private float aoeFireRate = 0.1f; // Time between each projectile
-    [SerializeField] private float aoeDuration = 4f;    // Total time to spam projectiles
-    [SerializeField] private float aoeProjectileSpeed = 2f; // Speed for vomit projectiles
+    private float aoeFireRate;
+    private float aoeDuration;
+    private float aoeProjectileSpeed;
+    private float aoeDamageInterval;
+    private float maxAoeLifetime;
+
+
+    private AttackStatus meleeAttackStatus;
+    private float meleeAttackStatusChance;
+    private float meleeAttackStatusDuration;
+
+    private AttackStatus rangedAttackStatus;
+    private float rangedAttackStatusChance;
+    private float rangedAttackStatusDuration;
+
+    private AttackStatus aoeAttackStatus;
+    private float aoeAttackStatusChance;
+    private float aoeAttackStatusDuration;
+
 
     public AttackMode CurrentAttackMode => attackMode;
 
@@ -32,11 +48,47 @@ public class Enemy_Attack : MonoBehaviour
 
     private Animator animator;
     private Enemy_Detection enemyDetection;
+    private Enemy_Config config;
+    private float knockbackRange;
 
     private void Awake()
     {
+        config = GetComponent<Enemy_Config>();
         animator = GetComponent<Animator>();
         enemyDetection = GetComponent<Enemy_Detection>();
+
+        meleeDamage = config.MeleeDamage;
+        rangedDamage = config.RangedDamage;
+        AOEDamage = config.AOEDamage;
+        attackMode = config.Skill;
+        defaultFallbackMode = config.BasicAttack;
+        projectilePrefab = config.ProjectilePrefab;
+        projectileCount = config.ProjectileCount;
+        rangedProjectileSpeed = config.RangedProjectileSpeed;
+        maxProjTravelDistance = config.MaxProjTravelDistance;
+        spreadAngle = config.SpreadAngle;
+
+        meleeAttackStatus = config.MeleeAttackStatus;
+        meleeAttackStatusChance = config.MeleeAttackStatusChance;
+        meleeAttackStatusDuration = config.MeleeAttackStatusDuration;
+
+        rangedAttackStatus = config.RangedAttackStatus;
+        rangedAttackStatusChance = config.RangedAttackStatusChance;
+        rangedAttackStatusDuration = config.RangedAttackStatusDuration;
+
+        aoeAttackStatus = config.AOEAttackStatus;
+        aoeAttackStatusChance = config.AOEAttackStatusChance;
+        aoeAttackStatusDuration = config.AOEAttackStatusDuration;
+
+        aoePrefab = config.AOEPrefab;
+        aoeDuration = config.AOEDuration;
+        aoeFireRate = config.AOEFireRate;
+        firstAOETriggered = config.ImmediatelyTriggered; 
+        maxAoeLifetime = config.MaxAOELifetime;
+        aoeProjectileSpeed = config.AOEProjectileSpeed;
+        aoeDamageInterval = config.AOEDamageInterval;
+
+        knockbackRange = config.KnockbackRange;
     }
 
     public void OnDamageSent()
@@ -78,12 +130,11 @@ public class Enemy_Attack : MonoBehaviour
                     return;
                 }
 
-                // Allow first AOE to fire without cooldown
                 if (!firstAOETriggered || Time.time >= lastAOETimestamp + aoeCooldown)
                 {
                     TriggerAOE();
                     lastAOETimestamp = Time.time;
-                    firstAOETriggered = true; // after first shot, enable cooldown
+                    firstAOETriggered = true; 
                 }
                 else
                 {
@@ -124,7 +175,8 @@ public class Enemy_Attack : MonoBehaviour
     private void DoMeleeAttack()
     {
         Debug.Log("Performing melee attack.");
-        PlayerCombat.instance.TakeDamage(damage, transform);
+
+        PlayerCombat.instance.TakeDamage(meleeDamage, transform, knockbackRange, meleeAttackStatus, meleeAttackStatusChance, meleeAttackStatusDuration);
     }
 
     private void FireProjectile(Vector2 targetPosition)
@@ -147,7 +199,16 @@ public class Enemy_Attack : MonoBehaviour
             Enemy_Projectiles projectile = proj.GetComponent<Enemy_Projectiles>();
             if (projectile != null)
             {
-                projectile.damage = damage;
+                projectile.damage = rangedDamage;
+                projectile.SetDamageType(DamageType.OnHit);
+                projectile.damageInterval = 0;
+                projectile.attackStatus = rangedAttackStatus;
+                projectile.statusChance = rangedAttackStatusChance;
+                projectile.statusDuration = rangedAttackStatusDuration;
+                projectile.knockbackRange = knockbackRange;
+                projectile.maxTravelDistance = maxProjTravelDistance;
+                projectile.aoeLifetime = 0;
+                projectile.speed = rangedProjectileSpeed;
                 projectile.Initialize(shootDir);
             }
         }
@@ -155,7 +216,7 @@ public class Enemy_Attack : MonoBehaviour
 
     private void TriggerAOE()
     {
-        if (projectilePrefab == null)
+        if (aoePrefab == null)
         {
             Debug.LogWarning("AOE projectilePrefab missing.");
             return;
@@ -182,14 +243,21 @@ public class Enemy_Attack : MonoBehaviour
 
                 Vector2 spawnPos = (Vector2)transform.position + shootDir * 0.5f;
 
-                GameObject proj = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
+                GameObject proj = Instantiate(aoePrefab, spawnPos, Quaternion.identity);
                 Enemy_Projectiles projectile = proj.GetComponent<Enemy_Projectiles>();
                 if (projectile != null)
                 {
-                    projectile.damage = damage;
-                    projectile.Initialize(shootDir);
+                    projectile.damage = AOEDamage;
+                    projectile.damageInterval = aoeDamageInterval;
                     projectile.SetDamageType(DamageType.PerSecond);
-                    projectile.speed = aoeProjectileSpeed; // override speed
+                    projectile.maxTravelDistance = 0;
+                    projectile.attackStatus = aoeAttackStatus;
+                    projectile.statusChance = aoeAttackStatusChance;
+                    projectile.statusDuration = aoeAttackStatusDuration;
+                    projectile.knockbackRange = knockbackRange;
+                    projectile.aoeLifetime = maxAoeLifetime;
+                    projectile.speed = aoeProjectileSpeed;
+                    projectile.Initialize(shootDir);
                 }
             }
 

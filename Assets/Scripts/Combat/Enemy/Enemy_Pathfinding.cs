@@ -3,12 +3,10 @@ using System.Collections;
 
 public class Enemy_Pathfinding : MonoBehaviour
 {
-    [Header("Movement Settings")]
-    [SerializeField] private float moveSpeed = 2f;
-    [SerializeField] public bool hidingMode = false;
+    private float moveSpeed;
+    public bool hidingMode { get; private set; }
 
-    [Header("Sprite Orientation")]
-    [SerializeField] private bool flipStartsFacingRight = true;
+    private bool flipStartsFacingRight;
 
     private Rigidbody2D rb;
     private Vector2 moveDir;
@@ -16,6 +14,7 @@ public class Enemy_Pathfinding : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private KnockbackEffect knockback;
     private Enemy_Health enemyHealth;
+    private Enemy_Config config;
 
     public void stopHide()
     {
@@ -25,10 +24,14 @@ public class Enemy_Pathfinding : MonoBehaviour
     private void Awake()
     {
         knockback = GetComponent<KnockbackEffect>();
+        config = GetComponent<Enemy_Config>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyHealth = GetComponent<Enemy_Health>();
+        hidingMode = config.HidingMode;
+        moveSpeed = config.MoveSpeed;
+        flipStartsFacingRight = config.SpriteFacingRight;
     }
 
     private void FixedUpdate()
