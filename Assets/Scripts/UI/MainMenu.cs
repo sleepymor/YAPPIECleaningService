@@ -6,12 +6,12 @@ public class MainMenu : MonoBehaviour
 
     public void StartNewGame()
     {
-        SceneManager.LoadScene("Level Design");
+        SceneManager.LoadScene("MainGame");
     }
 
     public void Continue()
     {
-        SceneManager.LoadScene("Level Design");
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void QuitApp()
