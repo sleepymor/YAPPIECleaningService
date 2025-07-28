@@ -283,7 +283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54ca578c6a861747b54ddf39c3d35ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 1
 --- !u!1 &3078138856141815172
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,8 +374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb9c248ed5258f540835252220b71bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 1
-  reuseCooldown: 0.2
 --- !u!1 &4236011337253573336
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +538,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maximumHealth: 5
   moveSpeed: 10
+  meleeDamage: 1
+  harpoonDamage: 1
+  knockBackRange: 2
   attackMoveSpeed: 3
   attackMoveDuration: 0.2
   dashSpeed: 20
@@ -548,6 +548,7 @@ MonoBehaviour:
   dashCooldown: 0.5
   harpoonRange: 4
   harpoonHoldTime: 0.5
+  harpoonCooldown: 1
   invincibilityDuration: 1
   invincibilityFlashDuration: 0.1
   meleeDmgArea: {fileID: 8004367055302414096}

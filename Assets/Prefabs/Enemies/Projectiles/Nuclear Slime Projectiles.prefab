@@ -114,8 +114,8 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &551293073974808775
 BoxCollider2D:
@@ -176,8 +176,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  damageType: 1
-  damageInterval: 10
-  speed: 10
-  maxTravelDistance: 15
-  aoeLifetime: 7
