@@ -49,7 +49,7 @@ public class PlayerCombat : MonoBehaviour
     public void Awake()
     {
         isStunned = false;
-        instance = this;
+        
         combat = new Combat();
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -73,14 +73,36 @@ public class PlayerCombat : MonoBehaviour
         hitDmgArea.gameObject.SetActive(false);
 
         harpoonPullArea.gameObject.SetActive(false);
+
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject); // Prevent duplicates
+            return;
+        }
+        instance = this;
     }
 
     void Start()
     {
-        currentHealth = startingHealth;
         animator = GetComponent<Animator>();
         hitDmgArea.gameObject.SetActive(false);
         harpoonPullArea.gameObject.SetActive(false);
+
+        if (DataManager.instance.PlayerHealth == -99999999)
+        {
+            currentHealth = startingHealth;
+        } else
+        {
+            currentHealth = DataManager.instance.PlayerHealth;
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (DataManager.instance != null)
+        {
+            DataManager.instance.PlayerHealth = currentHealth;
+        }
     }
 
     private void OnEnable()
