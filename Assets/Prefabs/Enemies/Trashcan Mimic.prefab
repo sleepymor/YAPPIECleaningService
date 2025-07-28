@@ -213,7 +213,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1350819893242509078
@@ -279,9 +279,19 @@ MonoBehaviour:
   knockBackRange: 2
   meleeRange: 1.5
   rangedRange: 4
+  environment: 0
   meleeDamage: 1
+  meleeAttackStatus: 0
+  meleeAttackStatusChance: 0
+  meleeAttackStatusDuration: 0
   rangedDamage: 1
+  rangedAttackStatus: 0
+  rangedAttackStatusChance: 0
+  rangedAttackStatusDuration: 0
   aoeDamage: 1
+  aoeAttackStatus: 0
+  aoeAttackStatusChance: 0
+  aoeAttackStatusDuration: 0
   skill: 2
   basicAttack: 0
   spriteFacingRight: 0

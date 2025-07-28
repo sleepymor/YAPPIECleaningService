@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Prefabs/UI/GameOver.unity
     guid: 4b6ced82c8d399f44a4b1621e755dbcc
+  - enabled: 1
+    path: Assets/Scenes/Backup/Level Design.unity
+    guid: 154a820c1f7010a408f8cd6e1b9c5b15
+  - enabled: 1
+    path: Assets/Scenes/MainGame.unity
+    guid: a56f8239d4379df4aa79b85edeaa2ded
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 8b66c47bfc3347a45b936d0c3c3033b2, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -15,6 +15,7 @@ public class Enemy_Health : MonoBehaviour
     private KnockbackEffect knockback;
     private Animator animator;
     private Color originalColor;
+    private EnemyEnvironment environment;
 
     Enemy_Config config;
 
@@ -24,6 +25,7 @@ public class Enemy_Health : MonoBehaviour
         startingHealth = config.MaximumHealth;
         flashDuration = config.FlashDuration;
         numberOfFlashes = config.NumberOfFlashes;
+        environment = config.Environment;
         knockback = GetComponent<KnockbackEffect>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -34,8 +36,8 @@ public class Enemy_Health : MonoBehaviour
         currentHealth = startingHealth;
         if (spriteRenderer == null)
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-
         originalColor = spriteRenderer.color;
+        EnvironmentManager.Instance.RegisterEnemy(environment);
     }
 
     public void TakeDamage(int damage)
@@ -73,6 +75,7 @@ public class Enemy_Health : MonoBehaviour
 
     public void ClearDeath()
     {
+        EnvironmentManager.Instance.EnemyKilled(environment);
         Destroy(gameObject);
     }
 
