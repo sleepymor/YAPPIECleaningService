@@ -97,3 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9041f862fbab2a04bb06e9678748bb8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: MainGame
+  loadingScreen: {fileID: 3798444567469421744, guid: 4da2f575c64c85a40ad7cd332e2e33bd, type: 3}
+  progressBar: {fileID: 0}

@@ -9,6 +9,9 @@ public class Enemy_Health : MonoBehaviour
 
     public static event System.Action<Enemy_Health> OnEnemyDeath;
 
+    private int enemyID;
+
+
     public bool IsDead { get; private set; } = false;
 
     private int currentHealth;
@@ -29,11 +32,13 @@ public class Enemy_Health : MonoBehaviour
         knockback = GetComponent<KnockbackEffect>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        enemyID = DataManager.instance.RegisterEnemyHealth(startingHealth);
     }
 
     private void Start()
     {
-        currentHealth = startingHealth;
+        int savedHealth = DataManager.instance.GetEnemyHealth(enemyID);
+        currentHealth = savedHealth != -1 ? savedHealth : startingHealth;
         if (spriteRenderer == null)
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         originalColor = spriteRenderer.color;
@@ -46,10 +51,13 @@ public class Enemy_Health : MonoBehaviour
 
         currentHealth -= damage;
         Debug.Log(currentHealth);
+        DataManager.instance.UpdateEnemyHealth(enemyID, currentHealth);
 
         knockback.GetKnockedBack(PlayerController.instance.transform, 15f);
         DetectDeath();
     }
+
+
 
     public void PullDamage(int damage)
     {
@@ -57,6 +65,8 @@ public class Enemy_Health : MonoBehaviour
 
         currentHealth -= damage;
         Debug.Log(currentHealth);
+
+        DataManager.instance.UpdateEnemyHealth(enemyID, currentHealth);
 
         knockback.PullToward(PlayerController.instance.transform, 80f);
         DetectDeath();
