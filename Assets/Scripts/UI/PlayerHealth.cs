@@ -8,6 +8,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        healthMeterText.text = "Yappie Health : " + PlayerCombat.instance.currentHealth.ToString();
+        healthMeterText.text = "X " + PlayerCombat.instance.currentHealth.ToString();
     }
 }
