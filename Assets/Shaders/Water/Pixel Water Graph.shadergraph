@@ -4049,7 +4049,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Scale",
     "m_StageCapability": 3,
-    "m_Value": 5.639999866485596,
+    "m_Value": 3.0199999809265138,
     "m_DefaultValue": 10.0,
     "m_Labels": []
 }
