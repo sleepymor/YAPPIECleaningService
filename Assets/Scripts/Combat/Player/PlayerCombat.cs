@@ -8,7 +8,7 @@ public class PlayerCombat : MonoBehaviour
 {
     public static PlayerCombat instance;
 
-    private int startingHealth;
+    public int startingHealth { get; set; }
     public int currentHealth { get; set; }
     public bool isStunned { get; set; }
 
@@ -29,6 +29,8 @@ public class PlayerCombat : MonoBehaviour
 
     private GameObject harpoonAimPrefab;
     private GameObject harpoonAimInstance;
+    private float harpoonCooldown;
+    private float lastHarpoonTime = -Mathf.Infinity;
 
     private float holdTime = 0f;
     private bool isHolding = false;
@@ -63,6 +65,7 @@ public class PlayerCombat : MonoBehaviour
         harpoonPullArea = config.HarpoonDmgArea;
         harpoonRange = config.HarpoonRange;
         harpoonAimPrefab = config.HarpoonAimPrefab;
+        harpoonCooldown = config.HarpoonCooldown;
 
         attackMoveSpeed = config.MeleeAttackMoveSpeed;
         attackMoveDuration = config.MeleeAttackMoveDuration;
@@ -144,11 +147,12 @@ public class PlayerCombat : MonoBehaviour
 
             holdTime += Time.deltaTime;
 
-            if (holdTime >= requiredHoldTime)
+            if (holdTime >= requiredHoldTime && Time.time >= lastHarpoonTime + harpoonCooldown)
             {
                 if (harpoonAimInstance == null)
                 {
                     harpoonAimInstance = Instantiate(harpoonAimPrefab);
+                    SkillUI.instance.TriggerHarpoonCooldown();
                     Debug.Log("Harpoon Aim muncul");
                 }
 
@@ -156,6 +160,7 @@ public class PlayerCombat : MonoBehaviour
                 mouseWorld.z = 0f;
                 harpoonAimInstance.transform.position = mouseWorld;
             }
+
             if (holdTime < requiredHoldTime && !hasAttacked)
             {
                 hasAttacked = true; // Prevent repeated triggering
@@ -171,6 +176,7 @@ public class PlayerCombat : MonoBehaviour
         {
             if (harpoonAimInstance != null && holdTime >= requiredHoldTime)
             {
+                lastHarpoonTime = Time.time; // Start cooldown timer
                 Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 mouseWorld.z = 0f;
 
@@ -334,6 +340,7 @@ public class PlayerCombat : MonoBehaviour
     public void ChargeFull()
     {
         currentHealth = startingHealth;
+        StartCoroutine(InvincibilityCoroutine());
     }
 
     public void CheckDeath()

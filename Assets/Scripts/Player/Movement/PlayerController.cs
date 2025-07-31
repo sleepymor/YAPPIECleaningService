@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        transform.SetParent(null); // Detach from parent
         instance = this;
         config = GetComponent<PlayerConfig>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -89,10 +90,10 @@ public class PlayerController : MonoBehaviour
 
         isDashing = false;
         canMove = true;
-
-        // Start cooldown timer
+        SkillUI.instance.TriggerDashCooldown();
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+
     }
 
 
