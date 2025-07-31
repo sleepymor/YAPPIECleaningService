@@ -17,7 +17,7 @@ public class FloatingCityScript : MonoBehaviour
         {
             FloatingCityEnvHealth = EnvironmentManager.Instance.GetEnvironmentProgress(EnemyEnvironment.FloatingCity);
             EnvironmentBar.instance.SetArrowPosition(FloatingCityEnvHealth);
-            Debug.Log(FloatingCityEnvHealth);
+            //Debug.Log(FloatingCityEnvHealth);
         }
     }
 }

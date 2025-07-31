@@ -43,10 +43,15 @@ public class PlayerCombat : MonoBehaviour
     private PlayerConfig config;
 
     private Combat combat;
+    private Vector2 lastHarpoonDirection = Vector2.right;
+
 
     [HideInInspector]
     public bool isAttacking;
     private Vector2 lastMoveDirection = Vector2.right;
+
+    private LineRenderer harpoonLine;
+
 
     public void Awake()
     {
@@ -83,6 +88,16 @@ public class PlayerCombat : MonoBehaviour
             return;
         }
         instance = this;
+
+        harpoonLine = gameObject.AddComponent<LineRenderer>();
+        harpoonLine.startWidth = 0.05f;
+        harpoonLine.endWidth = 0.05f;
+        harpoonLine.sortingOrder = 9;
+        Color brown = new Color(0.59f, 0.29f, 0.0f); // RGB(150, 75, 0)
+        harpoonLine.material = new Material(Shader.Find("Sprites/Default"));
+        harpoonLine.startColor = brown;
+        harpoonLine.endColor = brown;
+        harpoonLine.positionCount = 0;
     }
 
     void Start()
@@ -129,7 +144,25 @@ public class PlayerCombat : MonoBehaviour
         {
             Attack();
         }
+
+        UpdateHarpoonLine();
+
     }
+
+    void UpdateHarpoonLine()
+    {
+        if (harpoonTipInstance != null)
+        {
+            harpoonLine.positionCount = 2;
+            harpoonLine.SetPosition(0, transform.position);
+            harpoonLine.SetPosition(1, harpoonTipInstance.transform.position);
+        }
+        else
+        {
+            harpoonLine.positionCount = 0;
+        }
+    }
+
 
     void Attack()
     {
@@ -183,12 +216,13 @@ public class PlayerCombat : MonoBehaviour
                 Vector2 direction = (mouseWorld - transform.position).normalized;
                 UpdateHarpoonDirection(direction);
 
-                harpoonPullArea.gameObject.SetActive(true);
-                StartCoroutine(DisableHarpoonPullArea());
+                //harpoonPullArea.gameObject.SetActive(true);
+                //StartCoroutine(DisableHarpoonPullArea());
 
-                spriteRenderer.flipX = direction.x < 0f;
+                //spriteRenderer.flipX = direction.x < 0f;
 
-                StartCoroutine(TemporarilyDisableMovement(0.3f));
+                //StartCoroutine(TemporarilyDisableMovement(0.3f));
+                ShootHarpoon(lastHarpoonDirection);
             }
 
             if (harpoonAimInstance != null)
@@ -216,13 +250,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if (dir == Vector2.zero) return;
 
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        float offset = 1f;
-
-        Vector3 newPosition = new Vector3(dir.x, dir.y, 0) * offset;
-
-        harpoonPullArea.localRotation = Quaternion.Euler(0, 0, angle);
-        harpoonPullArea.localPosition = newPosition;
+        lastHarpoonDirection = dir.normalized;
     }
 
     IEnumerator DisableHarpoonPullArea()
@@ -231,7 +259,31 @@ public class PlayerCombat : MonoBehaviour
         harpoonPullArea.gameObject.SetActive(false);
     }
 
+    public GameObject harpoonTipPrefab;
 
+
+    private GameObject harpoonTipInstance;
+
+    private void ShootHarpoon(Vector2 direction)
+    {
+        if (harpoonTipPrefab == null) return;
+
+        direction = direction.normalized;
+        Vector2 spawnPos = (Vector2)transform.position + direction * 0.5f;
+
+        GameObject proj = Instantiate(harpoonTipPrefab, spawnPos, Quaternion.identity);
+        harpoonTipInstance = proj; // Save instance for line tracking
+
+        Harpoon_Tip projectile = proj.GetComponent<Harpoon_Tip>();
+        if (projectile != null)
+        {
+            projectile.damage = 1;
+            projectile.maxTravelDistance = 10f;
+            projectile.speed = 50f;
+            projectile.playerPos = transform;
+            projectile.Initialize(direction);
+        }
+    }
 
 
 
@@ -315,6 +367,11 @@ public class PlayerCombat : MonoBehaviour
         spriteRenderer.color = Color.white;
         isStunned = false;
         animator.SetBool("isStunned", false); // Optional: reset animation
+    }
+
+    public void ClearHarpoonReference()
+    {
+        harpoonTipInstance = null;
     }
 
 
