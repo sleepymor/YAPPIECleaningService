@@ -17,16 +17,19 @@ public class DataManager : MonoBehaviour
 
     void Awake()
     {
+        transform.SetParent(null); // Detach from parent
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);  // Keep the DataManager across scenes
+            transform.SetParent(null); // Detach from parent to become a root GameObject
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);  // Ensure there's only one DataManager
         }
     }
+
 
     // Generate a new unique ID for each enemy and store their health
     public int RegisterEnemyHealth(int health)

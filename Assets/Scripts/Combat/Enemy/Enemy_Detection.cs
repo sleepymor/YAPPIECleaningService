@@ -100,18 +100,7 @@ public class Enemy_Detection : MonoBehaviour
             }
         }
     }
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.name == "Hitbox")
-        {
-            Transform playerRoot = other.transform.root;
-            if (playerRoot.GetComponent<PlayerController>())
-            {
-                currentTarget = other.transform;
-                isDetecting = true;
-            }
-        }
-    }
+
     private void DrawRangeCircle(Vector2 center, float radius)
     {
         int segments = 30;
@@ -127,10 +116,22 @@ public class Enemy_Detection : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.transform.name == "Hitbox" && other.transform.root.GetComponent<PlayerController>() != null)
+        {
+            Transform playerRoot = other.transform.root;
+            if (playerRoot.GetComponent<PlayerController>())
+            {
+                currentTarget = other.transform;
+                isDetecting = true;
+            }
+        }
+    }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.name == "Hitbox")
+        if (other.transform.name == "Hitbox" && other.transform.root.GetComponent<PlayerController>() != null)
         {
             Transform playerRoot = other.transform.root;
             if (playerRoot.GetComponent<PlayerController>())

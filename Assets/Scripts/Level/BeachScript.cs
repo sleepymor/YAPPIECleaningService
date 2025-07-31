@@ -16,7 +16,7 @@ public class BeachScript : MonoBehaviour
         {
             BeachEnvHealth = EnvironmentManager.Instance.GetEnvironmentProgress(EnemyEnvironment.Beach);
             EnvironmentBar.instance.SetArrowPosition(BeachEnvHealth);
-            Debug.Log(BeachEnvHealth);
+            //Debug.Log(BeachEnvHealth);
         }
     }
 }
