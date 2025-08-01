@@ -6,6 +6,7 @@ public class Enemy_Health : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private float flashDuration;
     private int numberOfFlashes;
+    private string killMissionName;
 
     public static event System.Action<Enemy_Health> OnEnemyDeath;
 
@@ -29,6 +30,7 @@ public class Enemy_Health : MonoBehaviour
         flashDuration = config.FlashDuration;
         numberOfFlashes = config.NumberOfFlashes;
         environment = config.Environment;
+        killMissionName = config.KillMissionName;
         knockback = GetComponent<KnockbackEffect>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -86,6 +88,10 @@ public class Enemy_Health : MonoBehaviour
     public void ClearDeath()
     {
         EnvironmentManager.Instance.EnemyKilled(environment);
+        if (!string.IsNullOrEmpty(killMissionName))
+        {
+            MissionManager.instance.UpdateEnemyKill(killMissionName);
+        }
         Destroy(gameObject);
     }
 
