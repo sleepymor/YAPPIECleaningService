@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
+
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -14,6 +16,16 @@ public class PlayerHealth : MonoBehaviour
             healthSlider.minValue = 0f;
             healthSlider.maxValue = 1f;
         }
+
+        MissionManager.instance.ActivateMission("Slay 5 Monsters");
+
+        List<string> dialog = new List<string>{
+                "Welcome to the cave.",
+                "It’s dangerous to go alone.",
+                "Take this sword and good luck!"
+        };
+
+        DialogManager.instance.StartDialog(dialog, 4f);
     }
 
     void Update()

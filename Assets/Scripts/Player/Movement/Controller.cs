@@ -117,6 +117,15 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SkipDialog"",
+                    ""type"": ""Button"",
+                    ""id"": ""81ceb865-a0d8-4fd8-9bb2-ee55e4aeae2e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -196,6 +205,17 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""action"": ""Interract"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""706faafa-ca89-4e3d-9d47-7fea04580e54"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkipDialog"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -207,6 +227,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         m_Movement_Move = m_Movement.FindAction("Move", throwIfNotFound: true);
         m_Movement_Dash = m_Movement.FindAction("Dash", throwIfNotFound: true);
         m_Movement_Interract = m_Movement.FindAction("Interract", throwIfNotFound: true);
+        m_Movement_SkipDialog = m_Movement.FindAction("SkipDialog", throwIfNotFound: true);
     }
 
     ~@Controller()
@@ -290,6 +311,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
     private readonly InputAction m_Movement_Move;
     private readonly InputAction m_Movement_Dash;
     private readonly InputAction m_Movement_Interract;
+    private readonly InputAction m_Movement_SkipDialog;
     /// <summary>
     /// Provides access to input actions defined in input action map "Movement".
     /// </summary>
@@ -313,6 +335,10 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Movement/Interract".
         /// </summary>
         public InputAction @Interract => m_Wrapper.m_Movement_Interract;
+        /// <summary>
+        /// Provides access to the underlying input action "Movement/SkipDialog".
+        /// </summary>
+        public InputAction @SkipDialog => m_Wrapper.m_Movement_SkipDialog;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -348,6 +374,9 @@ public partial class @Controller: IInputActionCollection2, IDisposable
             @Interract.started += instance.OnInterract;
             @Interract.performed += instance.OnInterract;
             @Interract.canceled += instance.OnInterract;
+            @SkipDialog.started += instance.OnSkipDialog;
+            @SkipDialog.performed += instance.OnSkipDialog;
+            @SkipDialog.canceled += instance.OnSkipDialog;
         }
 
         /// <summary>
@@ -368,6 +397,9 @@ public partial class @Controller: IInputActionCollection2, IDisposable
             @Interract.started -= instance.OnInterract;
             @Interract.performed -= instance.OnInterract;
             @Interract.canceled -= instance.OnInterract;
+            @SkipDialog.started -= instance.OnSkipDialog;
+            @SkipDialog.performed -= instance.OnSkipDialog;
+            @SkipDialog.canceled -= instance.OnSkipDialog;
         }
 
         /// <summary>
@@ -429,5 +461,12 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInterract(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SkipDialog" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSkipDialog(InputAction.CallbackContext context);
     }
 }

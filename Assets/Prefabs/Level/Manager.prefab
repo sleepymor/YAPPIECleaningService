@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2562646048803333436}
   - component: {fileID: 1451719462481927287}
+  - component: {fileID: 8537617936231763592}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -45,3 +46,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHealth: -99999999
+--- !u!114 &8537617936231763592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861546580272309082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6e179d8f6e4224bb82f887e012c331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionText: {fileID: 0}

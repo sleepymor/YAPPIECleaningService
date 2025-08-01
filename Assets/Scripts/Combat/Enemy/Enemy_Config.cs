@@ -5,7 +5,7 @@ public enum EnemyEnvironment { Beach, FloatingCity, DeadCoralReefs}
 
 public class Enemy_Config : MonoBehaviour
 {
-
+    [SerializeField] private string killMissionName = "";
     [Header("Basic Settings")]
     [Tooltip("Basic settings of the enemy.")]
     [SerializeField] private int maximumHealth = 3;
@@ -82,6 +82,8 @@ public class Enemy_Config : MonoBehaviour
 
 
     // Public Getters
+    public string KillMissionName => killMissionName;
+
     public int MaximumHealth => maximumHealth;
     public float MoveSpeed => moveSpeed;
     public int MeleeDamage => meleeDamage;
