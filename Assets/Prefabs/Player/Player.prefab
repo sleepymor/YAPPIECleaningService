@@ -61,7 +61,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 32767
   m_TargetDisplay: 0
 --- !u!114 &5784497563347991547
 MonoBehaviour:
@@ -822,7 +822,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttacking: 0
-  harpoonRayPrefab: {fileID: 1221735991869699235, guid: e2f1097e675dc6241b3aed14feeed7d8, type: 3}
   harpoonTipPrefab: {fileID: 7543354035499503555, guid: c6ece3c4170a57b4d809d0b0a8f7741b, type: 3}
 --- !u!114 &6783049725239749118
 MonoBehaviour:
