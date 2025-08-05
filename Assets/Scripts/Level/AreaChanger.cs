@@ -10,7 +10,7 @@ public class AreaChanger : MonoBehaviour
     private GameObject loadingScreen;
     private Slider progressBar;
 
-    void Awake()
+    void Start()
     {
         Collider2D collider2D = GetComponent<Collider2D>();
         collider2D.gameObject.SetActive(true);

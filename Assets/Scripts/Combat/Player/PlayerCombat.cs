@@ -14,7 +14,7 @@ public class PlayerCombat : MonoBehaviour
 
     public Animator animator { get; set; }
     private SpriteRenderer spriteRenderer;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb { get; set; }
 
     private float attackMoveSpeed;
     private float attackMoveDuration;
@@ -106,14 +106,30 @@ public class PlayerCombat : MonoBehaviour
         hitDmgArea.gameObject.SetActive(false);
         harpoonPullArea.gameObject.SetActive(false);
 
+        Initialize();
+    }
+
+    public void Initialize()
+    {
         if (DataManager.instance.PlayerHealth == -99999999)
         {
             currentHealth = startingHealth;
-        } else
+        }
+        else
         {
             currentHealth = DataManager.instance.PlayerHealth;
         }
+
+        if (DataManager.instance.savedPlayerPos != null)
+        {
+            rb.position = DataManager.instance.savedPlayerPos;
+            transform.position = DataManager.instance.savedPlayerPos;
+
+        }
+
+        Debug.Log("Initialized at position: " + rb.position);
     }
+
 
     void OnDestroy()
     {

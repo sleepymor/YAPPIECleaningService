@@ -64,6 +64,8 @@ public class PlayerController : MonoBehaviour
         {
             rb.MovePosition(rb.position + movement * (0 * Time.fixedDeltaTime));
         }
+
+        DataManager.instance.playerPos = transform.position;
     }
 
     private void FixedUpdate()

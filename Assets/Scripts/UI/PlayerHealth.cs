@@ -30,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        float currentHealth = PlayerCombat.instance.currentHealth;
+        int currentHealth = PlayerCombat.instance.currentHealth;
         float startingHealth = PlayerCombat.instance.startingHealth;
 
         float healthPercent = Mathf.Clamp01(currentHealth / startingHealth);

@@ -5,6 +5,8 @@ using UnityEngine;
 public class DataManager : MonoBehaviour
 {
     public static DataManager instance;
+    public Vector2 playerPos;
+    public Vector2 savedPlayerPos;
 
     // Player data
     public int PlayerHealth = -99999999;
@@ -28,7 +30,23 @@ public class DataManager : MonoBehaviour
         {
             Destroy(gameObject);  // Ensure there's only one DataManager
         }
+
     }
+
+    void Update()
+    {
+    }
+
+    public void Save()
+    {
+        GameSaveManager.SaveGame(this);
+    }
+
+    public void Load()
+    {
+        GameSaveManager.LoadGame(this);
+    }
+
 
 
     // Generate a new unique ID for each enemy and store their health
@@ -78,4 +96,24 @@ public class DataManager : MonoBehaviour
             Debug.LogWarning("Enemy ID not found to remove: " + enemyID);
         }
     }
+
+    public Dictionary<int, int> GetAllEnemyHealth()
+    {
+        return new Dictionary<int, int>(enemyHealthData);
+    }
+
+    public void ClearAllEnemies()
+    {
+        enemyHealthData.Clear();
+        currentEnemyID = 0;
+    }
+
+    // Used only during load to avoid triggering new IDs
+    public void ForceSetEnemyHealth(int id, int health)
+    {
+        enemyHealthData[id] = health;
+        if (id >= currentEnemyID)
+            currentEnemyID = id + 1;
+    }
 }
+
