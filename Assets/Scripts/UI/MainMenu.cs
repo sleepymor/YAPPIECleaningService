@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject loadingScreen;
     [SerializeField] private Slider progressBar;
+    [SerializeField] private DataManager dataManager;
 
     public void StartNewGame()
     {
@@ -15,7 +16,8 @@ public class MainMenu : MonoBehaviour
 
     public void Continue()
     {
-        LoadScene("SampleScene");
+        GameSaveManager.LoadGame(dataManager);
+        LoadScene("MainGame");
     }
 
     public void QuitApp()
