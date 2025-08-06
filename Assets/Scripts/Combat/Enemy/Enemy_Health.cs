@@ -20,6 +20,7 @@ public class Enemy_Health : MonoBehaviour
     private Animator animator;
     private Color originalColor;
     private EnemyEnvironment environment;
+    private bool canHarpooned;
 
     Enemy_Config config;
 
@@ -31,6 +32,7 @@ public class Enemy_Health : MonoBehaviour
         numberOfFlashes = config.NumberOfFlashes;
         environment = config.Environment;
         killMissionName = config.KillMissionName;
+	    canHarpooned = config.CanHarpooned;
         knockback = GetComponent<KnockbackEffect>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -64,6 +66,7 @@ public class Enemy_Health : MonoBehaviour
     public void PullDamage(int damage)
     {
         if (IsDead) return;
+	    if (!canHarpooned) return;
 
         currentHealth -= damage;
         Debug.Log(currentHealth);

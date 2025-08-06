@@ -274,11 +274,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916c80d6d28e06147a050ca23c97d8fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  killMissionName: 
   maximumHealth: 3
   moveSpeed: 2
   knockBackRange: 2
   meleeRange: 1.5
   rangedRange: 4
+  canHarpooned: 0
   environment: 0
   meleeDamage: 1
   meleeAttackStatus: 0

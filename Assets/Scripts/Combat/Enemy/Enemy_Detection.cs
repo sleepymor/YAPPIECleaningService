@@ -9,6 +9,7 @@ public class Enemy_Detection : MonoBehaviour
     public float meleeRange { get; set; }
     public float rangedRange { get; set; }
     private bool useTrigger;
+    private bool isBoss;
     private float triggerRange;
 
     [HideInInspector] public Transform currentTarget;
@@ -18,6 +19,8 @@ public class Enemy_Detection : MonoBehaviour
     private Enemy_Pathfinding pathfinding;
     private Enemy_Attack enemyAttack;
     private Enemy_Config config;
+
+    private Enemy_Boss enemyBoss;
 
     private void Start()
     {
@@ -33,6 +36,12 @@ public class Enemy_Detection : MonoBehaviour
         rangedRange = config.RangedRange;
         detectionArea = config.DetectionArea;
         obstacleMask = config.ObstacleMask;
+        isBoss = config.IsBoss;
+
+        if (isBoss)
+        {
+            enemyBoss = GetComponent<Enemy_Boss>();
+        }
 
         detectionArea.gameObject.SetActive(true);
 
@@ -69,7 +78,7 @@ public class Enemy_Detection : MonoBehaviour
 
                 Vector2 direction = (end - start).normalized;
                 float distanceToTarget = Vector2.Distance(start, end);
-                float effectiveRange = GetEffectiveRange(); // Uses smart logic
+                float effectiveRange = GetEffectiveRange();
 
                 DrawRangeCircle(start, effectiveRange);
 
@@ -85,11 +94,24 @@ public class Enemy_Detection : MonoBehaviour
                     }
 
                     pathfinding.MoveTo(Vector2.zero);
-                    enemyAttack.Attack();
+
+                    if (isBoss)
+                    {
+                       enemyBoss.randomAttack();
+                    } else
+                    {
+                       enemyAttack.Attack();
+                    }
                 }
                 else
                 {
-                    enemyAttack.StopAttack();
+                    if (isBoss)
+                    {
+                        enemyBoss.stopAttack();
+                    } else
+                    {
+                        enemyAttack.StopAttack();
+                    }
                     pathfinding.MoveTo(direction);
                 }
             }
@@ -153,5 +175,6 @@ public class Enemy_Detection : MonoBehaviour
         }
         return false;
     }
+
 
 }

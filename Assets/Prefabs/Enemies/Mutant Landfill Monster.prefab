@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 5226607809404224034}
   - component: {fileID: 3720550274367774204}
   - component: {fileID: -915983924706461515}
+  - component: {fileID: -2010736642623069851}
   m_Layer: 0
   m_Name: Mutant Landfill Monster
   m_TagString: Untagged
@@ -278,7 +279,9 @@ MonoBehaviour:
   moveSpeed: 2
   knockBackRange: 2
   meleeRange: 5
-  rangedRange: 4
+  rangedRange: 10
+  canHarpooned: 0
+  isBoss: 1
   environment: 0
   meleeDamage: 1
   meleeAttackStatus: 1
@@ -292,7 +295,7 @@ MonoBehaviour:
   aoeAttackStatus: 0
   aoeAttackStatusChance: 0
   aoeAttackStatusDuration: 0
-  skill: 0
+  skill: 2
   basicAttack: 0
   spriteFacingRight: 0
   projectilePrefab: {fileID: 0}
@@ -397,3 +400,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+--- !u!114 &-2010736642623069851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640511851712396857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bdd87aedb73c7e40827bb431b337d40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
