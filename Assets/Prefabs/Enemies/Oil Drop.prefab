@@ -280,6 +280,8 @@ MonoBehaviour:
   knockBackRange: 2
   meleeRange: 2
   rangedRange: 4
+  canHarpooned: 1
+  isBoss: 0
   environment: 0
   meleeDamage: 1
   meleeAttackStatus: 0
@@ -442,7 +444,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_Time: 3
   m_PreviewTimeScale: 1
   m_Parameters:

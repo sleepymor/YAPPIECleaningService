@@ -5,15 +5,40 @@ using System.Collections;
 public class BeachScript : MonoBehaviour
 {
     private float BeachEnvHealth = 0;
+
+    [Header("References")]
     [SerializeField] public Transform beachArea;
     [SerializeField] private Tilemap tilemap;
+    [SerializeField] private AudioSource beachAudio;
+
+    [Header("Settings")]
     [SerializeField] private float fadeDuration = 0.5f;
+
     private bool isVisible = true;
     private Coroutine fadeCoroutine;
 
-    public void Awake()
+    private void Awake()
     {
         beachArea.gameObject.SetActive(true);
+
+ 
+        if (beachAudio != null)
+        {
+            beachAudio.loop = true;
+            beachAudio.playOnAwake = false;
+            beachAudio.Stop();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.name == "Hitbox" && beachAudio != null)
+        {
+            if (!beachAudio.isPlaying)
+            {
+                beachAudio.Play();
+            }
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -25,14 +50,24 @@ public class BeachScript : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.name == "Hitbox" && beachAudio != null)
+        {
+            if (beachAudio.isPlaying)
+            {
+                StartCoroutine(FadeOutAudio(beachAudio, fadeDuration));
+            }
+        }
+    }
+
     void Update()
     {
-        if(EnvironmentManager.Instance.GetEnvironmentProgress(EnemyEnvironment.Beach) > 99)
+        if (EnvironmentManager.Instance.GetEnvironmentProgress(EnemyEnvironment.Beach) > 99)
         {
             ToggleTrash();
         }
     }
-
 
     public void ToggleTrash()
     {
@@ -42,7 +77,8 @@ public class BeachScript : MonoBehaviour
             if (fadeCoroutine != null)
                 StopCoroutine(fadeCoroutine);
 
-            fadeCoroutine = StartCoroutine(FadeTilemap(isVisible));
+            fadeCoroutine = StartCoroutine(FadeTilemap(false));
+
         }
     }
 
@@ -64,5 +100,21 @@ public class BeachScript : MonoBehaviour
         }
 
         tilemap.color = new Color(originalColor.r, originalColor.g, originalColor.b, targetAlpha);
+    }
+
+    private IEnumerator FadeOutAudio(AudioSource audioSource, float duration)
+    {
+        float startVolume = audioSource.volume;
+
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(startVolume, 0f, elapsed / duration);
+            yield return null;
+        }
+
+        audioSource.Stop();
+        audioSource.volume = startVolume; // Reset volume for future use
     }
 }

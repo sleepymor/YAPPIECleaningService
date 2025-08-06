@@ -5,8 +5,11 @@ using System.Collections;
 public class FloatingCityScript : MonoBehaviour
 {
     public static float FloatingCityEnvHealth = 0;
+
+    [Header("References")]
     [SerializeField] public Transform floatCityArea;
     [SerializeField] private Tilemap[] tilemaps;
+    [SerializeField] private AudioSource floatingCityAudio;
     [SerializeField] private float fadeDuration = 0.5f;
     private bool isVisible = true;
     private Coroutine fadeCoroutine;
@@ -14,16 +17,43 @@ public class FloatingCityScript : MonoBehaviour
     public void Awake()
     {
         floatCityArea.gameObject.SetActive(true);
+        if (floatingCityAudio != null)
+        {
+            floatingCityAudio.loop = true;
+            floatingCityAudio.playOnAwake = false;
+            floatingCityAudio.Stop();
+        }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.name == "Hitbox" && floatingCityAudio != null)
+        {
+            if (!floatingCityAudio.isPlaying)
+            {
+                floatingCityAudio.Play();
+            }
+        }
+    }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.name == "Hitbox")
+        if (other.name == "Hitbox" && floatingCityAudio != null)
         {
             FloatingCityEnvHealth = EnvironmentManager.Instance.GetEnvironmentProgress(EnemyEnvironment.FloatingCity);
             EnvironmentBar.instance.SetArrowPosition(FloatingCityEnvHealth);
             //Debug.Log(FloatingCityEnvHealth);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.name == "Hitbox" && floatingCityAudio != null)
+        {
+            if (floatingCityAudio.isPlaying)
+            {
+                StartCoroutine(FadeOutAudio(floatingCityAudio, fadeDuration));
+            }
         }
     }
 
@@ -84,6 +114,21 @@ public class FloatingCityScript : MonoBehaviour
             Color c = originalColors[i];
             tilemaps[i].color = new Color(c.r, c.g, c.b, targetAlpha);
         }
+    }
+
+    private IEnumerator FadeOutAudio(AudioSource audioSource, float duration)
+    {
+        float startVolume = audioSource.volume;
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            audioSource.volume = Mathf.Lerp(startVolume, 0f, t);
+            yield return null;
+        }
+        audioSource.Stop();
+        audioSource.volume = startVolume; // Reset volume to original after stopping
     }
 
 }
