@@ -5,7 +5,7 @@ public class GameOver : MonoBehaviour
 {
     public void Continue()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("MainGame");
     }
 
     public void BackToMainMenu()

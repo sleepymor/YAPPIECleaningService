@@ -4,7 +4,7 @@ using System.Collections;
 
 public class BeachScript : MonoBehaviour
 {
-    private float BeachEnvHealth = 100;
+    private float BeachEnvHealth = 0;
     [SerializeField] public Transform beachArea;
     [SerializeField] private Tilemap tilemap;
     [SerializeField] private float fadeDuration = 0.5f;

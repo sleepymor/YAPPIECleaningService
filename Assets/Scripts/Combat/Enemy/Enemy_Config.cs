@@ -13,6 +13,8 @@ public class Enemy_Config : MonoBehaviour
     [SerializeField] private float knockBackRange = 2f;
     [SerializeField] private float meleeRange = 1.5f;
     [SerializeField] private float rangedRange = 4f;
+    [SerializeField] private bool canHarpooned = true;
+    [SerializeField] private bool isBoss = false;
     [SerializeField] private EnemyEnvironment environment = EnemyEnvironment.Beach;
 
     [SerializeField] private int meleeDamage = 1;
@@ -93,6 +95,8 @@ public class Enemy_Config : MonoBehaviour
     public bool SpriteFacingRight => spriteFacingRight;
     public float MeleeRange => meleeRange;
     public float RangedRange => rangedRange;
+    public bool CanHarpooned => canHarpooned;
+    public bool IsBoss => isBoss;
     public EnemyEnvironment Environment => environment;
 
     public AttackStatus MeleeAttackStatus => meleeAttackStatus;

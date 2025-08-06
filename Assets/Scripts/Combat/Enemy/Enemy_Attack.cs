@@ -280,9 +280,6 @@ public class Enemy_Attack : MonoBehaviour
         return !firstAOETriggered || Time.time >= lastAOETimestamp + aoeCooldown;
     }
 
-
-
-
     public void Attack()
     {
         if (animator) animator.SetBool("attack", true);

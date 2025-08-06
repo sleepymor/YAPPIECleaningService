@@ -857,11 +857,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4236011337253573336}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 7b4df09bc02e2b34f9bedc0e730c27d9, type: 3}
+  m_Resource: {fileID: 8300000, guid: 6a275c6c9ce797842a173377d66fff29, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
