@@ -7,7 +7,7 @@ public class AreaChanger : MonoBehaviour
 {
     [Tooltip("Change to your target scene")]
     [SerializeField] private string sceneName = "";
-    private GameObject loadingScreen;
+    [SerializeField] private GameObject loadingScreen;
     private Slider progressBar;
 
     void Start()
@@ -15,20 +15,9 @@ public class AreaChanger : MonoBehaviour
         Collider2D collider2D = GetComponent<Collider2D>();
         collider2D.gameObject.SetActive(true);
 
-        if (loadingScreen == null)
-        {
-            GameObject found = GameObject.Find("LoadingScreen");
-            if (found != null)
-            {
-                loadingScreen = found;
-                progressBar = loadingScreen.GetComponentInChildren<Slider>();
-                loadingScreen.SetActive(false); // Hide it at start
-            }
-            else
-            {
-                Debug.LogWarning("LoadingScreen GameObject not found in scene!");
-            }
-        }
+      
+        loadingScreen.SetActive(false); // Hide it at start
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
