@@ -420,7 +420,25 @@ public class PlayerCombat : MonoBehaviour
     {
         if(currentHealth < 1)
         {
+            CleanupDontDestroyOnLoad();
             SceneManager.LoadScene("GameOver");
         }
     }
+
+    void CleanupDontDestroyOnLoad()
+    {
+        GameObject temp = new GameObject("TempCleanup");
+        DontDestroyOnLoad(temp);
+
+        Scene dontDestroyScene = temp.scene;
+
+        Destroy(temp);
+
+        // Destroy all root GameObjects in the DontDestroyOnLoad scene
+        foreach (GameObject obj in dontDestroyScene.GetRootGameObjects())
+        {
+            Destroy(obj);
+        }
+    }
+
 }
