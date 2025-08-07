@@ -1,31 +1,25 @@
 fileFormatVersion: 2
-guid: dca64222ca091e54c960722a1f122cf1
+guid: f5f2de0e4ed5fea4b8456234465ef358
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2697458120324895310
-    second: Workshop Inside_0
+      213: -2323316878180231414
+    second: Workshop_Inside_0
   - first:
-      213: 5056296202830205857
-    second: Workshop Inside_1
+      213: 2142903393454810301
+    second: Workshop_Inside_1
   - first:
-      213: 3502819680504910797
-    second: Workshop Inside_2
+      213: -5435505761489865996
+    second: Workshop_Inside_2
   - first:
-      213: 3010088064953953353
-    second: Workshop Inside_3
+      213: -6111482051779444084
+    second: Workshop_Inside_3
   - first:
-      213: -1102867777996889847
-    second: Workshop Inside_4
+      213: 4369934297568127658
+    second: Workshop_Inside_4
   - first:
-      213: -5482170683877246804
-    second: Workshop Inside_5
-  - first:
-      213: 8342570604106489198
-    second: Workshop Inside_6
-  - first:
-      213: 8083673314944035801
-    second: Workshop Inside_7
+      213: 7812483483909896986
+    second: Workshop_Inside_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Workshop Inside_0
+      name: Workshop_Inside_0
       rect:
         serializedVersion: 2
         x: 0
@@ -136,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2bdaa8d9124b09ad0800000000000000
-      internalID: -2697458120324895310
+      spriteID: a07d567db9be1cfd0800000000000000
+      internalID: -2323316878180231414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_1
+      name: Workshop_Inside_1
       rect:
         serializedVersion: 2
         x: 16
@@ -158,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a3d9d86b929b2640800000000000000
-      internalID: 5056296202830205857
+      spriteID: db46ad2684f1dbd10800000000000000
+      internalID: 2142903393454810301
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_2
+      name: Workshop_Inside_2
       rect:
         serializedVersion: 2
         x: 32
@@ -180,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dc31eb0d0f38c9030800000000000000
-      internalID: 3502819680504910797
+      spriteID: 4f2bec7fe443194b0800000000000000
+      internalID: -5435505761489865996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_3
+      name: Workshop_Inside_3
       rect:
         serializedVersion: 2
         x: 48
@@ -202,14 +196,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94c293e952bf5c920800000000000000
-      internalID: 3010088064953953353
+      spriteID: c82c2843477af2ba0800000000000000
+      internalID: -6111482051779444084
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_4
+      name: Workshop_Inside_4
       rect:
         serializedVersion: 2
         x: 64
@@ -224,36 +218,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 90165426993d1b0f0800000000000000
-      internalID: -1102867777996889847
+      spriteID: aaa285a371025ac30800000000000000
+      internalID: 4369934297568127658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ca8bf6d0fca6be3b0800000000000000
-      internalID: -5482170683877246804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Workshop Inside_6
+      name: Workshop_Inside_5
       rect:
         serializedVersion: 2
         x: 96
@@ -268,36 +240,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e6d126b73c3c6c370800000000000000
-      internalID: 8342570604106489198
+      spriteID: a1b3e0816548b6c60800000000000000
+      internalID: 7812483483909896986
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_7
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9db2b810d0afe2070800000000000000
-      internalID: 8083673314944035801
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Workshop Inside_8
+      name: Workshop_Inside_6
       rect:
         serializedVersion: 2
         x: 0
@@ -312,14 +262,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82d7f869bc341d94792c47f57bf1a0a2
-      internalID: -1217727104
+      spriteID: f94b1d093a4254541ba8b1828a8d9db1
+      internalID: 726271461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_9
+      name: Workshop_Inside_7
       rect:
         serializedVersion: 2
         x: 16
@@ -334,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e27875c6ea05be4898eae7790510fdb
-      internalID: -1236314365
+      spriteID: ea0a6db5e19f4974882fbae6a96a3549
+      internalID: 725599930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_10
+      name: Workshop_Inside_8
       rect:
         serializedVersion: 2
         x: 32
@@ -356,14 +306,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36ec559dfcdd69c4fb56d44e388f33a3
-      internalID: 1247159223
+      spriteID: 1388c01311592e74f89e7454a25aaa49
+      internalID: 31496573
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_11
+      name: Workshop_Inside_9
       rect:
         serializedVersion: 2
         x: 48
@@ -378,14 +328,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90f41d2a0d3bb9b40b72bd6a5e61c240
-      internalID: -1286670305
+      spriteID: 46ffb5c97409775489ea171f8975ea4b
+      internalID: -1595930757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_12
+      name: Workshop_Inside_10
       rect:
         serializedVersion: 2
         x: 64
@@ -400,14 +350,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 850a8e2cf1ba8c94a837c3c0c55f4e67
-      internalID: 1445255428
+      spriteID: 64622a886239ed84097afc853d6fb6db
+      internalID: -857907733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_13
+      name: Workshop_Inside_11
       rect:
         serializedVersion: 2
         x: 80
@@ -422,20 +372,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bee882ee0b05744d9b0f1b399eeba84
-      internalID: -1342559011
+      spriteID: 1f690c045486b73469cbfae6f6166dd0
+      internalID: 1900240345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_14
+      name: Workshop_Inside_12
       rect:
         serializedVersion: 2
         x: 96
-        y: 100
-        width: 15
-        height: 12
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -444,20 +394,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 145814f48a713594aae986494bdcae04
-      internalID: -1254815249
+      spriteID: faaf9d734e06f7a43b025626ec316664
+      internalID: 1919565318
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_15
+      name: Workshop_Inside_13
       rect:
         serializedVersion: 2
         x: 112
-        y: 100
+        y: 96
         width: 16
-        height: 12
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -466,14 +416,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e29cd50431c557d4f9f1253ec60c2ecd
-      internalID: -491762184
+      spriteID: d9960a8e19be2754c995383655752b4f
+      internalID: 846780945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_16
+      name: Workshop_Inside_14
       rect:
         serializedVersion: 2
         x: 0
@@ -488,14 +438,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ebc3b4b856e8924589e7e26c16a3c35
-      internalID: -885578898
+      spriteID: e083679e6e2e44f4b8935e0e0ce2b935
+      internalID: 1165070495
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_17
+      name: Workshop_Inside_15
       rect:
         serializedVersion: 2
         x: 16
@@ -510,14 +460,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b127295f4a3401d4f8cc951ed02ddd6f
-      internalID: 618547734
+      spriteID: e6e8732cff05ec44c96b6ac85f7e2f1a
+      internalID: -1576361280
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_18
+      name: Workshop_Inside_16
       rect:
         serializedVersion: 2
         x: 32
@@ -532,14 +482,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee2c2d82c7facf64d8e658e37680bf19
-      internalID: 406768409
+      spriteID: 3af958cb05fdf0b419395b1e386544cc
+      internalID: 1764336625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_19
+      name: Workshop_Inside_17
       rect:
         serializedVersion: 2
         x: 48
@@ -554,14 +504,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be754448793585445aa63034fc914e7a
-      internalID: 1789507126
+      spriteID: 200ab4411ee4bd1479e88d47e59fc130
+      internalID: 502005206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_20
+      name: Workshop_Inside_18
       rect:
         serializedVersion: 2
         x: 64
@@ -576,17 +526,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6dd122097c3458e4a9bc5a8d7064e396
-      internalID: 803525280
+      spriteID: bc095ecbc49f26b4e9054172b93be74c
+      internalID: 712596350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_21
+      name: Workshop_Inside_19
       rect:
         serializedVersion: 2
-        x: 80
+        x: 96
         y: 80
         width: 16
         height: 16
@@ -598,58 +548,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 933eedf0addfd7b4ab694547a7be5f19
-      internalID: -2040756077
+      spriteID: 72e7306ab90adc146ba972b74ca46f3b
+      internalID: -392322022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_22
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 80
-        width: 16
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc74eb0cdf7f1ac41856ce4759ab92bc
-      internalID: 155824282
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Workshop Inside_23
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 80
-        width: 16
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 766ce9ebff563404b83e735705714dae
-      internalID: -563938914
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Workshop Inside_24
+      name: Workshop_Inside_20
       rect:
         serializedVersion: 2
         x: 0
@@ -664,14 +570,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e71d09db6d675b47b7787d5ab1e8e11
-      internalID: -2035731632
+      spriteID: 450d99e213aa01743a5b5078285be80c
+      internalID: -1931794392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_25
+      name: Workshop_Inside_21
       rect:
         serializedVersion: 2
         x: 16
@@ -686,14 +592,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f7798ba8f2cbd247bbb688fc0d9a537
-      internalID: 869053188
+      spriteID: 69e53d9c82be44144a7be2933e82cf25
+      internalID: 393642545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_26
+      name: Workshop_Inside_22
       rect:
         serializedVersion: 2
         x: 32
@@ -708,14 +614,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c2493075d6e2c84eb97a0c52b1a2e5d
-      internalID: 894395269
+      spriteID: 3cbb6c54087be7b43b8396c8fb6efa8e
+      internalID: -637717417
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_27
+      name: Workshop_Inside_23
       rect:
         serializedVersion: 2
         x: 48
@@ -730,14 +636,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0a8b0686bfd0ea4da4c6794e0c0da08
-      internalID: 394145538
+      spriteID: c714d9800a2011d4d9eec3eb3f9b6fda
+      internalID: -345479778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_28
+      name: Workshop_Inside_24
       rect:
         serializedVersion: 2
         x: 64
@@ -752,80 +658,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5085bc6b8b6b19642ba77878a7f5e31d
-      internalID: -2062545615
+      spriteID: 667e6a4b3086b2941a80e5db2b70415d
+      internalID: -338893574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_29
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ade94cb80c873eb498f8efdc46f593eb
-      internalID: -970445801
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Workshop Inside_30
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5b9a877cd4f94e43a50857aaba5397e
-      internalID: -185599319
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Workshop Inside_31
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad33bdb816384484ab205449b37804fb
-      internalID: 1485747151
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Workshop Inside_32
+      name: Workshop_Inside_25
       rect:
         serializedVersion: 2
         x: 0
@@ -840,14 +680,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c1e07be767c7f24a88e78252657c787
-      internalID: 1513867007
+      spriteID: a4689302d70325c4cadd214939e44102
+      internalID: 533985536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_33
+      name: Workshop_Inside_26
       rect:
         serializedVersion: 2
         x: 16
@@ -862,14 +702,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20714aa6fd61120448216849bcd46bb6
-      internalID: -2118902816
+      spriteID: 0e0322450fd6c0f4cb1c6b8eacf2e9c1
+      internalID: 624535094
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_34
+      name: Workshop_Inside_27
       rect:
         serializedVersion: 2
         x: 32
@@ -884,14 +724,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e90937194a580ad4a96270b6f61c3cb3
-      internalID: 723184928
+      spriteID: 38a7e24118c27de4b962868c43e89bd8
+      internalID: 692903365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_35
+      name: Workshop_Inside_28
       rect:
         serializedVersion: 2
         x: 48
@@ -906,14 +746,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08a205e2efa8d3b4bbe810c242d8bcf2
-      internalID: -1523302234
+      spriteID: 68beccea69e1d0b4f842b3aec55b11e6
+      internalID: -383996329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workshop Inside_36
+      name: Workshop_Inside_29
       rect:
         serializedVersion: 2
         x: 64
@@ -928,8 +768,184 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a59190307b19d644a84ba90324aac55
-      internalID: 1515407185
+      spriteID: 5ecea64788422bc4fbcdd12d561d2c77
+      internalID: 897850823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Workshop_Inside_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dcd9eddcee551246ac8898f63977be5
+      internalID: -867266604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Workshop_Inside_31
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59d663747e4de8a40b4c16617f2440f3
+      internalID: -1601236351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Workshop_Inside_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aff51232524ac244a4dffa8cc3c8c53
+      internalID: -1941257148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Workshop_Inside_33
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa0ec05cb491b64fa926bd24b219277
+      internalID: 2011680912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Workshop_Inside_34
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4a24d2d8d9357641a05874c7c548a59
+      internalID: 444653584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Workshop_Inside_35
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64717df18dc239d499997d90e5de1f8e
+      internalID: 1660305605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Workshop_Inside_36
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e64f535ee203249884f9d8d14939d9
+      internalID: 533699565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Workshop_Inside_37
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82a92aa40563e40469450b23df42ccf2
+      internalID: 403181547
       vertices: []
       indices: 
       edges: []
@@ -938,7 +954,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 89fb4bf849f027e4fa4068d14eaecae8
+    spriteID: 5c627cb2e81e5814bba26d70ad66e77c
     internalID: 0
     vertices: []
     indices: 
@@ -948,43 +964,44 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Workshop Inside_0: -2697458120324895310
-      Workshop Inside_1: 5056296202830205857
-      Workshop Inside_10: 1247159223
-      Workshop Inside_11: -1286670305
-      Workshop Inside_12: 1445255428
-      Workshop Inside_13: -1342559011
-      Workshop Inside_14: -1254815249
-      Workshop Inside_15: -491762184
-      Workshop Inside_16: -885578898
-      Workshop Inside_17: 618547734
-      Workshop Inside_18: 406768409
-      Workshop Inside_19: 1789507126
-      Workshop Inside_2: 3502819680504910797
-      Workshop Inside_20: 803525280
-      Workshop Inside_21: -2040756077
-      Workshop Inside_22: 155824282
-      Workshop Inside_23: -563938914
-      Workshop Inside_24: -2035731632
-      Workshop Inside_25: 869053188
-      Workshop Inside_26: 894395269
-      Workshop Inside_27: 394145538
-      Workshop Inside_28: -2062545615
-      Workshop Inside_29: -970445801
-      Workshop Inside_3: 3010088064953953353
-      Workshop Inside_30: -185599319
-      Workshop Inside_31: 1485747151
-      Workshop Inside_32: 1513867007
-      Workshop Inside_33: -2118902816
-      Workshop Inside_34: 723184928
-      Workshop Inside_35: -1523302234
-      Workshop Inside_36: 1515407185
-      Workshop Inside_4: -1102867777996889847
-      Workshop Inside_5: -5482170683877246804
-      Workshop Inside_6: 8342570604106489198
-      Workshop Inside_7: 8083673314944035801
-      Workshop Inside_8: -1217727104
-      Workshop Inside_9: -1236314365
+      Workshop_Inside_0: -2323316878180231414
+      Workshop_Inside_1: 2142903393454810301
+      Workshop_Inside_10: -857907733
+      Workshop_Inside_11: 1900240345
+      Workshop_Inside_12: 1919565318
+      Workshop_Inside_13: 846780945
+      Workshop_Inside_14: 1165070495
+      Workshop_Inside_15: -1576361280
+      Workshop_Inside_16: 1764336625
+      Workshop_Inside_17: 502005206
+      Workshop_Inside_18: 712596350
+      Workshop_Inside_19: -392322022
+      Workshop_Inside_2: -5435505761489865996
+      Workshop_Inside_20: -1931794392
+      Workshop_Inside_21: 393642545
+      Workshop_Inside_22: -637717417
+      Workshop_Inside_23: -345479778
+      Workshop_Inside_24: -338893574
+      Workshop_Inside_25: 533985536
+      Workshop_Inside_26: 624535094
+      Workshop_Inside_27: 692903365
+      Workshop_Inside_28: -383996329
+      Workshop_Inside_29: 897850823
+      Workshop_Inside_3: -6111482051779444084
+      Workshop_Inside_30: -867266604
+      Workshop_Inside_31: -1601236351
+      Workshop_Inside_32: -1941257148
+      Workshop_Inside_33: 2011680912
+      Workshop_Inside_34: 444653584
+      Workshop_Inside_35: 1660305605
+      Workshop_Inside_36: 533699565
+      Workshop_Inside_37: 403181547
+      Workshop_Inside_4: 4369934297568127658
+      Workshop_Inside_5: 7812483483909896986
+      Workshop_Inside_6: 726271461
+      Workshop_Inside_7: 725599930
+      Workshop_Inside_8: 31496573
+      Workshop_Inside_9: -1595930757
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
