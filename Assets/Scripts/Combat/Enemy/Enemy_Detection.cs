@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Enemy_Detection : MonoBehaviour
 {
+    private float detectionTickInterval = 0.2f; // how often to check detection (seconds)
+    private float lastTickTime = 0f;
+
     public Transform detectionArea { get; set; }
     public bool isDetecting { get; set; }
     private LayerMask obstacleMask;
@@ -64,57 +67,53 @@ public class Enemy_Detection : MonoBehaviour
 
     private void FixedUpdate()
     {
+        bool shouldCheckRaycast = Time.time - lastTickTime >= detectionTickInterval;
+
+        if (shouldCheckRaycast)
+            lastTickTime = Time.time;
+
         if (isDetecting && currentTarget != null)
         {
             Vector2 start = transform.position;
             Vector2 end = currentTarget.position;
+            Vector2 direction = (end - start).normalized;
+            float distanceToTarget = Vector2.Distance(start, end);
+            float effectiveRange = GetEffectiveRange();
 
-            RaycastHit2D hit = Physics2D.Linecast(start, end, obstacleMask);
-
-            if (hit.collider == null)
+            if (shouldCheckRaycast)
             {
-                hasLineOfSight = true;
-                Debug.DrawLine(start, end, Color.green);
+                RaycastHit2D hit = Physics2D.Linecast(start, end, obstacleMask);
+                hasLineOfSight = hit.collider == null;
+                Debug.DrawLine(start, end, hasLineOfSight ? Color.green : Color.red);
+            }
 
-                Vector2 direction = (end - start).normalized;
-                float distanceToTarget = Vector2.Distance(start, end);
-                float effectiveRange = GetEffectiveRange();
-
+            if (hasLineOfSight)
+            {
                 DrawRangeCircle(start, effectiveRange);
 
                 if (distanceToTarget <= effectiveRange)
                 {
-
                     if (HasBoolParam(animator, "isHiding") && useTrigger && distanceToTarget <= triggerRange)
-                    { 
+                    {
                         animator.SetBool("isHiding", false);
-                    } 
+                    }
+
                     pathfinding.MoveTo(Vector2.zero);
 
                     if (isBoss)
-                    {
-                       enemyBoss.randomAttack();
-                    } else
-                    {
-                       enemyAttack.Attack();
-                    }
+                        enemyBoss.randomAttack();
+                    else
+                        enemyAttack.Attack();
                 }
                 else
                 {
                     if (isBoss)
-                    {
                         enemyBoss.stopAttack();
-                    } else
-                    {
+                    else
                         enemyAttack.StopAttack();
-                    }
-                    pathfinding.MoveTo(direction);
+
+                    pathfinding.MoveTo(direction); // <<< this should be every FixedUpdate!
                 }
-            }
-            else
-            {
-                hasLineOfSight = false;
-                Debug.DrawLine(start, end, Color.red);
             }
         }
     }

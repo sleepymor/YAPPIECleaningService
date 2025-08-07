@@ -214,7 +214,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!61 &1350819893242509078
 BoxCollider2D:
@@ -275,18 +275,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killMissionName: 
-  maximumHealth: 3
-  moveSpeed: 2
+  maximumHealth: 20
+  moveSpeed: 4
   knockBackRange: 2
   meleeRange: 1.5
   rangedRange: 4
   canHarpooned: 0
+  isBoss: 0
   environment: 0
-  meleeDamage: 1
+  meleeDamage: 2
   meleeAttackStatus: 0
   meleeAttackStatusChance: 0
   meleeAttackStatusDuration: 0
-  rangedDamage: 1
+  rangedDamage: 3
   rangedAttackStatus: 0
   rangedAttackStatusChance: 0
   rangedAttackStatusDuration: 0
@@ -298,7 +299,7 @@ MonoBehaviour:
   basicAttack: 1
   spriteFacingRight: 0
   projectilePrefab: {fileID: 3286646357669358039, guid: c60bb69ed5f1c984bb96fb002f3b06a4, type: 3}
-  projectileCount: 5
+  projectileCount: 8
   spreadAngle: 30
   rangedProjectileSpeed: 10
   maxTravelDistance: 10
