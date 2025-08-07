@@ -52,7 +52,10 @@ public class MissionManager : MonoBehaviour
             currentCount = targetCount;
             isCompleted = true;
             completionTime = Time.time;
+
+            DataManager.instance?.activeMissionList.RemoveAll(m => m.name == name);
         }
+
 
         public bool ShouldDisplay => isActive && (!isCompleted || (Time.time - completionTime < displayDuration + fadeDuration));
 
@@ -101,7 +104,6 @@ public class MissionManager : MonoBehaviour
             instance = this;
             transform.SetParent(null);
             DontDestroyOnLoad(gameObject);
-            DefineAllMissions();
         }
         else
         {
@@ -138,11 +140,11 @@ public class MissionManager : MonoBehaviour
         UpdateMissionText();
     }
 
-    private void DefineAllMissions()
+    public void DefineAllMissions()
     {
         allMissions["Reach the Cave"] = new Mission("Reach the Cave", 1, MissionType.Destination);
         allMissions["To the beach!"] = new Mission("To the beach!", 1, MissionType.Destination);
-        allMissions["Slay 5 Monsters"] = new Mission("Slay 5 Monsters", 5, MissionType.Slaying);
+        allMissions["Slay 5 Oil Drop"] = new Mission("Slay 5 Oil Drop", 5, MissionType.Slaying);
         allMissions["Escape the Dungeon"] = new Mission("Escape the Dungeon", 1, MissionType.Escape);
     }
 
@@ -157,18 +159,43 @@ public class MissionManager : MonoBehaviour
                 mission.destinationPosition = destination.Value;
             }
 
+            // Add to DataManager list
+            if (!DataManager.instance.activeMissionList.Exists(m => m.name == mission.name))
+            {
+                DataManager.instance.activeMissionList.Add(
+                    new ActiveMissionData(
+                        mission.name,
+                        mission.type,
+                        mission.currentCount,
+                        mission.targetCount,
+                        mission.destinationPosition
+                    )
+                );
+            }
+
             UpdateMissionText();
         }
     }
 
+
     public void UpdateEnemyKill(string missionName)
     {
-        if (allMissions.TryGetValue(missionName, out Mission mission) && mission.type == MissionType.Slaying)
+        if (allMissions.TryGetValue(missionName, out Mission mission) && mission.isActive && !mission.isCompleted)
         {
-            mission.IncrementProgress();
+            mission.IncrementProgress(); // This updates mission.currentCount++
+
+            var activeData = DataManager.instance.activeMissionList
+                .Find(m => m.name == mission.name);
+
+            if (activeData != null)
+            {
+                activeData.currentCount = mission.currentCount;
+            }
+
             UpdateMissionText();
         }
     }
+
 
     public void UpdateDestination(string missionName)
     {
@@ -210,4 +237,29 @@ public class MissionManager : MonoBehaviour
 
         missionText.text = text;
     }
+
+    public void ReloadActiveMissionsFromDataManager()
+    {
+        DefineAllMissions(); // Make sure allMissions is populated
+
+        foreach (var missionData in DataManager.instance.activeMissionList)
+        {
+            if (allMissions.TryGetValue(missionData.name, out Mission mission))
+            {
+                mission.isActive = true;
+                mission.isCompleted = false;
+
+                mission.type = missionData.type;
+                mission.currentCount = missionData.currentCount;
+                mission.targetCount = missionData.targetCount;
+
+                if (missionData.type == MissionType.Destination)
+                    mission.destinationPosition = missionData.destinationPosition;
+
+                UpdateMissionText();
+            }
+        }
+    }
+
+
 }

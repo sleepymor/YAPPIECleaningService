@@ -93,17 +93,17 @@ public class Enemy_Attack : MonoBehaviour
 
     public void OnDamageSent()
     {
-        Debug.Log($"[{name}] OnDamageSent triggered. Mode: {attackMode}");
+        //Debug.Log($"[{name}] OnDamageSent triggered. Mode: {attackMode}");
 
         if (enemyDetection == null || enemyDetection.currentTarget == null)
         {
-            Debug.LogWarning("Enemy detection or target missing.");
+            //Debug.LogWarning("Enemy detection or target missing.");
             return;
         }
 
         if (PlayerCombat.instance == null)
         {
-            Debug.LogWarning("PlayerCombat instance missing.");
+            //Debug.LogWarning("PlayerCombat instance missing.");
             return;
         }
 
@@ -125,7 +125,7 @@ public class Enemy_Attack : MonoBehaviour
             {
                 if (aoePrefab == null)
                 {
-                    Debug.LogWarning("AOE attack selected but prefab is not assigned.");
+                    //Debug.LogWarning("AOE attack selected but prefab is not assigned.");
                     UseFallback(end);
                     return;
                 }
@@ -138,7 +138,7 @@ public class Enemy_Attack : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("AOE on cooldown, using fallback.");
+                    //Debug.Log("AOE on cooldown, using fallback.");
                     UseFallback(end);
                 }
             }
@@ -150,7 +150,7 @@ public class Enemy_Attack : MonoBehaviour
         }
         else
         {
-            Debug.Log("Target out of range.");
+            //Debug.Log("Target out of range.");
         }
     }
 
@@ -174,7 +174,7 @@ public class Enemy_Attack : MonoBehaviour
 
     private void DoMeleeAttack()
     {
-        Debug.Log("Performing melee attack.");
+        //Debug.Log("Performing melee attack.");
 
         PlayerCombat.instance.TakeDamage(meleeDamage, transform, knockbackRange, meleeAttackStatus, meleeAttackStatusChance, meleeAttackStatusDuration);
     }
@@ -265,7 +265,7 @@ public class Enemy_Attack : MonoBehaviour
             elapsed += aoeFireRate;
         }
 
-        Debug.Log("AOE spam complete.");
+        //Debug.Log("AOE spam complete.");
     }
 
 
