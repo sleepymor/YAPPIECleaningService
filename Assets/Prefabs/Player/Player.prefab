@@ -785,13 +785,13 @@ MonoBehaviour:
   harpoonDamage: 1
   knockBackRange: 2
   attackMoveSpeed: 3
-  attackMoveDuration: 0.2
-  dashSpeed: 20
-  dashDuration: 0.3
-  dashCooldown: 0.5
-  harpoonRange: 4
+  attackMoveDuration: 0.7
+  dashSpeed: 40
+  dashDuration: 0.2
+  dashCooldown: 2
+  harpoonRange: 6
   harpoonHoldTime: 0.5
-  harpoonCooldown: 1
+  harpoonCooldown: 5
   invincibilityDuration: 1
   invincibilityFlashDuration: 0.1
   meleeDmgArea: {fileID: 8004367055302414096}

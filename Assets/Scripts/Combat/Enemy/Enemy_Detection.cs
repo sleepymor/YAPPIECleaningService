@@ -88,11 +88,7 @@ public class Enemy_Detection : MonoBehaviour
                     if (HasBoolParam(animator, "isHiding") && useTrigger && distanceToTarget <= triggerRange)
                     { 
                         animator.SetBool("isHiding", false);
-                    } else
-                    {
-                        Debug.Log("False");
-                    }
-
+                    } 
                     pathfinding.MoveTo(Vector2.zero);
 
                     if (isBoss)

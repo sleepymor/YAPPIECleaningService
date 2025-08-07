@@ -38,8 +38,15 @@ public class PlayerController : MonoBehaviour
         dashSpeed = config.DashSpeed;
         dashCooldown = config.DashCooldown;
         dashDuration = config.DashDuration;
+
     }
 
+    void Start()
+    {
+        MissionManager.instance.DefineAllMissions();
+        MissionManager.instance.ActivateMission("Slay 5 Oil Drop");
+
+    }
 
     private void OnEnable()
     {

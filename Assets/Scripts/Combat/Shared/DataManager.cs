@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
+
     public static DataManager instance;
     public Vector2 playerPos;
     public Vector2 savedPlayerPos;
@@ -13,6 +14,9 @@ public class DataManager : MonoBehaviour
 
     // Dictionary to store enemy health data
     private Dictionary<int, int> enemyHealthData = new Dictionary<int, int>();
+
+    public List<ActiveMissionData> activeMissionList = new List<ActiveMissionData>();
+
 
     // To generate unique IDs
     private int currentEnemyID = 0;
@@ -45,6 +49,8 @@ public class DataManager : MonoBehaviour
     public void Load()
     {
         GameSaveManager.LoadGame(this);
+        MissionManager.instance?.ReloadActiveMissionsFromDataManager();
+
     }
 
 
@@ -115,5 +121,7 @@ public class DataManager : MonoBehaviour
         if (id >= currentEnemyID)
             currentEnemyID = id + 1;
     }
+
+
 }
 

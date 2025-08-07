@@ -107,6 +107,7 @@ public class PlayerCombat : MonoBehaviour
         harpoonPullArea.gameObject.SetActive(false);
 
         Initialize();
+        MissionManager.instance.ReloadActiveMissionsFromDataManager();
     }
 
     public void Initialize()
@@ -232,12 +233,12 @@ public class PlayerCombat : MonoBehaviour
                 Vector2 direction = (mouseWorld - transform.position).normalized;
                 UpdateHarpoonDirection(direction);
 
-                //harpoonPullArea.gameObject.SetActive(true);
-                //StartCoroutine(DisableHarpoonPullArea());
+                harpoonPullArea.gameObject.SetActive(true);
+                StartCoroutine(DisableHarpoonPullArea());
 
-                //spriteRenderer.flipX = direction.x < 0f;
+                spriteRenderer.flipX = direction.x < 0f;
 
-                //StartCoroutine(TemporarilyDisableMovement(0.3f));
+                StartCoroutine(TemporarilyDisableMovement(0.3f));
                 ShootHarpoon(lastHarpoonDirection);
             }
 
@@ -322,11 +323,11 @@ public class PlayerCombat : MonoBehaviour
             yield return null;
         }
 
-        while (timer < attackMoveDuration*2)
-        {
-            timer += Time.deltaTime;
-            yield return null;
-        }
+        //while (timer < attackMoveDuration*2)
+        //{
+        //    timer += Time.deltaTime;
+        //    yield return null;
+        //}
 
         isAttacking = false;
         hitDmgArea.gameObject.SetActive(false);

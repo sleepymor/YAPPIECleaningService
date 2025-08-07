@@ -19,10 +19,14 @@ public static class GameSaveManager
             saveData.enemies.Add(new EnemyData(kvp.Key, kvp.Value));
         }
 
+        // Save active missions
+        saveData.activeMissions = new List<ActiveMissionData>(data.activeMissionList);
+
         string json = JsonUtility.ToJson(saveData, true);
         File.WriteAllText(savePath, json);
         Debug.Log("Game saved to " + savePath);
     }
+
 
     public static void LoadGame(DataManager data)
     {
@@ -44,8 +48,12 @@ public static class GameSaveManager
             data.ForceSetEnemyHealth(enemy.id, enemy.health);
         }
 
+        // Load active missions
+        data.activeMissionList = new List<ActiveMissionData>(saveData.activeMissions);
+
         Debug.Log("Game loaded from " + savePath);
     }
+
 }
 
 
@@ -55,6 +63,8 @@ public class SaveDataContainer
     public int playerHealth;
     public List<EnemyData> enemies = new List<EnemyData>();
     public Vector2 playerPos;
+    public List<ActiveMissionData> activeMissions = new List<ActiveMissionData>();
+
 }
 
 [System.Serializable]
