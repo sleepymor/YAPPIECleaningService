@@ -143,6 +143,8 @@ public class PlayerController : MonoBehaviour
         if (movement != Vector2.zero)
         {
             _animator.SetBool("isRunning", true);
+            _animator.Play("Run");
+            PlayerCombat.instance.OnAttackEnds();
             _animator.SetFloat("moveX", movement.x);
             _animator.SetFloat("moveY", movement.y);
 

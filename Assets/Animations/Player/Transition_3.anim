@@ -74,7 +74,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: DisableAttack
+    functionName: OnFinalTransition
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.25
+    functionName: OnAttackEnds
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
