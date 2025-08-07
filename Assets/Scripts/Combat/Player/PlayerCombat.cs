@@ -111,6 +111,8 @@ public class PlayerCombat : MonoBehaviour
         MissionManager.instance.ReloadActiveMissionsFromDataManager();
     }
 
+    public Transform defaultSpawn;
+
     public void Initialize()
     {
         if (DataManager.instance.PlayerHealth == -99999999)
@@ -122,16 +124,19 @@ public class PlayerCombat : MonoBehaviour
             currentHealth = DataManager.instance.PlayerHealth;
         }
 
-        if (DataManager.instance.savedPlayerPos != null)
-        {
-            rb.position = DataManager.instance.savedPlayerPos;
-            transform.position = DataManager.instance.savedPlayerPos;
+        Vector2 savedPos = DataManager.instance.savedPlayerPos;
 
+        // If position is exactly (0, 0), assume it's invalid and use default spawn
+        if (savedPos == Vector2.zero)
+        {
+            savedPos = defaultSpawn.position;
         }
 
-        Debug.Log("Initialized at position: " + rb.position);
-    }
+        rb.position = savedPos;
+        transform.position = savedPos;
 
+        Debug.Log("Initialized at position: " + savedPos);
+    }
 
     void OnDestroy()
     {
