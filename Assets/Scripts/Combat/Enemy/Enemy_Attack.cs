@@ -264,8 +264,6 @@ public class Enemy_Attack : MonoBehaviour
             yield return new WaitForSeconds(aoeFireRate);
             elapsed += aoeFireRate;
         }
-
-        //Debug.Log("AOE spam complete.");
     }
 
 

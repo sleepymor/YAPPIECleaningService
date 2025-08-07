@@ -135,27 +135,19 @@ public class Enemy_Detection : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.transform.name == "Hitbox" && other.transform.root.GetComponent<PlayerController>() != null)
+        if (other.CompareTag("Player"))
         {
-            Transform playerRoot = other.transform.root;
-            if (playerRoot.GetComponent<PlayerController>())
-            {
                 currentTarget = other.transform;
                 isDetecting = true;
-            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.transform.name == "Hitbox" && other.transform.root.GetComponent<PlayerController>() != null)
+        if (other.CompareTag("Player"))
         {
-            Transform playerRoot = other.transform.root;
-            if (playerRoot.GetComponent<PlayerController>())
-            {
                 currentTarget = null;
                 isDetecting = false;
-            }
         }
     }
 

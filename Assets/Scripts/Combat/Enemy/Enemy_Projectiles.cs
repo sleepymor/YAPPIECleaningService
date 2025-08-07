@@ -75,7 +75,7 @@ public class Enemy_Projectiles : MonoBehaviour
     {
         if (damageType != DamageType.OnHit) return;
 
-        if (other.transform.name == "Hitbox" && other.transform.root.GetComponent<PlayerController>() != null)
+        if (other.CompareTag("Player"))
         {
             PlayerCombat.instance.TakeDamage(damage, transform, knockbackRange, attackStatus, statusChance, statusDuration);
             Destroy(gameObject);
@@ -86,7 +86,7 @@ public class Enemy_Projectiles : MonoBehaviour
     {
         if (damageType != DamageType.PerSecond) return;
 
-        if (other.transform.name == "Hitbox" && other.transform.root.GetComponent<PlayerController>() != null)
+        if (other.CompareTag("Player"))
         {
             Debug.Log("AOE hitbox overlap detected");
 

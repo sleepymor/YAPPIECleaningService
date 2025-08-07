@@ -22,7 +22,7 @@ public class AreaChanger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "Hitbox" && PlayerCombat.instance != null)
+        if (other.CompareTag("Player"))
         {
             LoadScene(sceneName);
         }

@@ -210,7 +210,6 @@ public class PlayerCombat : MonoBehaviour
                 if (harpoonAimInstance == null)
                 {
                     harpoonAimInstance = Instantiate(harpoonAimPrefab);
-                    SkillUI.instance.TriggerHarpoonCooldown();
                     Debug.Log("Harpoon Aim muncul");
                 }
 
@@ -258,6 +257,7 @@ public class PlayerCombat : MonoBehaviour
 
                 StartCoroutine(TemporarilyDisableMovement(0.3f));
                 ShootHarpoon(lastHarpoonDirection);
+                SkillUI.instance.TriggerHarpoonCooldown();
 
             }
 
