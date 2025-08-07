@@ -67,7 +67,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.1654892}
-  m_Radius: 9.989075
+  m_Radius: 10
 --- !u!1 &640511851712396857
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,13 +273,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916c80d6d28e06147a050ca23c97d8fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximumHealth: 3
-  moveSpeed: 2
+  killMissionName: 
+  maximumHealth: 5
+  moveSpeed: 3
   knockBackRange: 2
-  meleeRange: 1.5
+  meleeRange: 2
   rangedRange: 4
+  canHarpooned: 1
+  isBoss: 0
   environment: 0
-  meleeDamage: 1
+  meleeDamage: 2
   meleeAttackStatus: 0
   meleeAttackStatusChance: 0
   meleeAttackStatusDuration: 0

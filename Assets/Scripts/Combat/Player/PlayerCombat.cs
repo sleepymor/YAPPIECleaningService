@@ -16,8 +16,8 @@ public class PlayerCombat : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public Rigidbody2D rb { get; set; }
 
-    private float attackMoveSpeed;
-    private float attackMoveDuration;
+    public float attackMoveSpeed;
+    public float attackMoveDuration;
 
     public Transform hitDmgArea { get; set; }
     public Transform harpoonPullArea { get; set; }
@@ -51,6 +51,7 @@ public class PlayerCombat : MonoBehaviour
     private Vector2 lastMoveDirection = Vector2.right;
 
     private LineRenderer harpoonLine;
+    private bool isCharge = false;
 
 
     public void Awake()
@@ -181,6 +182,8 @@ public class PlayerCombat : MonoBehaviour
     }
 
 
+    private int currentCombo = 0;
+
     void Attack()
     {
         float input = combat.Fight.Attack.ReadValue<float>();
@@ -217,7 +220,17 @@ public class PlayerCombat : MonoBehaviour
                 isAttacking = true;
                 Vector2 currentDir = PlayerController.instance.LastMoveDirection;
                 UpdateDirection(currentDir);
-                StartCoroutine(AttackMove());
+                //StartCoroutine(AttackMove());
+                if(currentCombo == 0)
+                {
+                    Attack1();
+                } else if (currentCombo == 1) {
+                    Attack2();
+                } else
+                {
+                    Attack3();
+                    currentCombo = 0;
+                }
             }
 
         }
@@ -240,6 +253,7 @@ public class PlayerCombat : MonoBehaviour
 
                 StartCoroutine(TemporarilyDisableMovement(0.3f));
                 ShootHarpoon(lastHarpoonDirection);
+
             }
 
             if (harpoonAimInstance != null)
@@ -309,31 +323,6 @@ public class PlayerCombat : MonoBehaviour
         hitDmgArea.gameObject.SetActive(true);
     }
 
-    System.Collections.IEnumerator AttackMove()
-    {
-        PlayerController.instance.canMove = false;
-
-        float timer = 0f;
-        Vector2 dir = PlayerController.instance.LastMoveDirection;
-
-        while (timer < attackMoveDuration/2)
-        {
-            rb.MovePosition(rb.position + dir * (attackMoveSpeed * Time.fixedDeltaTime));
-            timer += Time.deltaTime;
-            yield return null;
-        }
-
-        //while (timer < attackMoveDuration*2)
-        //{
-        //    timer += Time.deltaTime;
-        //    yield return null;
-        //}
-
-        isAttacking = false;
-        hitDmgArea.gameObject.SetActive(false);
-        PlayerController.instance.canMove = true;
-    }
-
     void UpdateDirection(Vector2 dir)
     {
         if (dir == Vector2.zero) return;
@@ -341,6 +330,79 @@ public class PlayerCombat : MonoBehaviour
         lastMoveDirection = dir.normalized;
         UpdateHitDmgAreaDirection();
     }
+
+    private bool isCombo = false;
+
+    public void Attack1()
+    {
+        PlayerController.instance.canMove = false;
+        isCombo = true;
+        animator.SetBool("isCombo", true);
+        animator.SetBool("attack1", true);
+        animator.SetBool("attack2", false);
+        animator.SetBool("attack3", false);
+        currentCombo = 1;
+        isCharge = true;
+    }
+
+    public void OnAttackEnds()
+    {
+        isCombo = false;
+        isCharge = false;
+        currentCombo = 0;
+        animator.SetBool("isCombo", false);
+        animator.SetBool("attack1", false);
+        animator.SetBool("attack2", false);
+        animator.SetBool("attack3", false);
+
+    }
+
+    public void OnTransitionToAttack2()
+    {
+        PlayerController.instance.canMove = true;
+        isCharge = false;
+    }
+
+    public void Attack2()
+    {
+        PlayerController.instance.canMove = false;
+        isCombo = true;
+        isCharge = true;
+        animator.SetBool("attack2", true);
+        animator.SetBool("attack1", true);
+        animator.SetBool("attack3", false);
+        currentCombo = 2;
+    }
+
+    public void OnTransitionToAttack3()
+    {
+        PlayerController.instance.canMove = true; 
+        isCharge = false;
+
+    }
+
+    public void Attack3()
+    {
+        PlayerController.instance.canMove = false;
+        isCombo = true;
+        isCharge = true;
+        animator.SetBool("attack3", true);
+        animator.SetBool("attack2", true);
+        animator.SetBool("attack1", true);
+        currentCombo = 0;
+    }
+
+    public void ChargeFront()
+    {
+        rb.AddForce(lastMoveDirection * attackMoveSpeed, ForceMode2D.Impulse);
+    }
+
+    public void OnFinalTransition()
+    {
+        PlayerController.instance.canMove = true;
+        isCharge = false;
+    }
+
 
     void UpdateHitDmgAreaDirection()
     {
