@@ -27,7 +27,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -73,6 +73,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _belowWaterTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _colorGradient:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -147,15 +151,21 @@ Material:
     - _RForgColor: 0
     - _belowWaterTexAlpha: 0
     - _belowWaterTexDistortionStrength: 0
+    - _color_type: 3
     - _deep_mlp: 1
+    - _depthFromObstructors: 0
+    - _depthMlp: 16
     - _distortionFPRH: 0
     - _distortion_str: 0.1
+    - _edgeIgnoreTransparency: 1
+    - _edgeSize: 0.05
     - _enableFalloff: 0
     - _enable_nor: 0
     - _enable_obs: 1
     - _enable_pl: 0
     - _enable_plat: 1
     - _enable_ref: 1
+    - _enable_rm: 0
     - _enable_scrolling: 0
     - _enable_sim: 1
     - _enable_td: 1
@@ -175,7 +185,11 @@ Material:
     - _pixelArtUV: 0
     - _pixel_art: 0
     - _pixel_perfect: 0
+    - _raymarchFalloffEnd: 1
+    - _raymarchFalloffStart: 1
+    - _raymarchSteps: 32
     - _reflectionY: 0
+    - _rm_type2: 0
     - _scrStrength: 0
     - _strength: 0
     - _strips_alpha: 1
@@ -202,6 +216,7 @@ Material:
     - _distortion_speed: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _distortion_strength: {r: 0.04, g: 0.03, b: 0, a: 0}
     - _distortion_tiling: {r: 2, g: 2, b: 0, a: 0}
+    - _edgeColor: {r: 0.9245283, g: 0.8329477, b: 0.8329477, a: 0}
     - _foam_color: {r: 0.80451226, g: 0.9499255, b: 0.9528302, a: 0}
     - _foam_speed: {r: 0.3, g: 0.1, b: 0, a: 0}
     - _m_Color: {r: 0.6415094, g: 0.20879316, b: 0.20879316, a: 0}
@@ -211,7 +226,9 @@ Material:
     - _perspective: {r: 0, g: 0, b: 0, a: 0}
     - _perspective2: {r: 0, g: 0, b: 0, a: 0}
     - _playerPosition: {r: 0, g: 0, b: -10, a: 0}
+    - _refTexRes: {r: 1024, g: 1024, b: 0, a: 0}
     - _ref_transform: {r: 0, g: 0, b: 0, a: 0}
+    - _reflectionsColor: {r: 1, g: 1, b: 1, a: 1}
     - _simFoamColor: {r: 0.6399964, g: 0.8867924, b: 0.8758237, a: 1}
     - _simMinMaxWavesHeightFoam: {r: 0, g: 1.27, b: 0, a: 0}
     - _surfaceTexSpeed: {r: 0.2, g: 0, b: 0, a: 0}

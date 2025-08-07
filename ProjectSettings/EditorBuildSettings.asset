@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Prefabs/UI/GameOver.unity
     guid: 4b6ced82c8d399f44a4b1621e755dbcc
   - enabled: 1
+    path: Assets/Scenes/Workshop.unity
+    guid: e657165e5183b99448d357158dfdcf46
+  - enabled: 1
     path: Assets/Scenes/Underwater.unity
     guid: 63b978bd1cb0b9a47b6aa5caa41f781c
   m_configObjects:
