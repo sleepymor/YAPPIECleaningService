@@ -274,12 +274,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killMissionName: 
-  maximumHealth: 5
-  moveSpeed: 2
+  maximumHealth: 20
+  moveSpeed: 5
   knockBackRange: 2
-  meleeRange: 3
+  meleeRange: 5
   rangedRange: 4
-  canHarpooned: 1
+  canHarpooned: 0
   isBoss: 0
   environment: 0
   meleeDamage: 1

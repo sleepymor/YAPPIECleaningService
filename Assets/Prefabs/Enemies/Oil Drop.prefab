@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killMissionName: 
-  maximumHealth: 10
+  maximumHealth: 15
   moveSpeed: 3
   knockBackRange: 3
   meleeRange: 2
@@ -287,9 +287,9 @@ MonoBehaviour:
   meleeAttackStatus: 0
   meleeAttackStatusChance: 0
   meleeAttackStatusDuration: 0
-  rangedDamage: 1
+  rangedDamage: 3
   rangedAttackStatus: 0
-  rangedAttackStatusChance: 0
+  rangedAttackStatusChance: 0.5
   rangedAttackStatusDuration: 0
   aoeDamage: 1
   aoeAttackStatus: 0
@@ -301,7 +301,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3286646357669358039, guid: 6b6ae49d995af5c4db2fc95093e64e8d, type: 3}
   projectileCount: 3
   spreadAngle: 30
-  rangedProjectileSpeed: 10
+  rangedProjectileSpeed: 5
   maxTravelDistance: 10
   hasHidingMode: 0
   hidingMode: 0
@@ -424,7 +424,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 14ad35c3c061b5144ada7f28b1699c7a, type: 3}
+  - {fileID: 2100000, guid: 4d92a9dc0f6157d43b453bb2cfb1e60f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
