@@ -13,6 +13,7 @@ public class EnemyPatrolController : MonoBehaviour
     private bool isWaiting = false;
     private Enemy_Detection enemyDetection;
     private Enemy_Config config;
+
     private void Awake()
     {
         config = GetComponent<Enemy_Config>();
@@ -27,11 +28,11 @@ public class EnemyPatrolController : MonoBehaviour
 
     private void Update()
     {
-        if (enemyDetection.hasLineOfSight != null && enemyDetection.hasLineOfSight)
-        {
-            pathfinding.MoveTo(Vector2.zero);
-            return;
-        }
+        //if (enemyDetection.hasLineOfSight != null && enemyDetection.hasLineOfSight)
+        //{
+        //    pathfinding.MoveTo(Vector2.zero);
+        //    return;
+        //}
 
         if (isWaiting || waypoints.Length == 0) return;
 

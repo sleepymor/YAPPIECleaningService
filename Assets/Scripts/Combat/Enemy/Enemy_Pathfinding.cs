@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Enemy_Pathfinding : MonoBehaviour
 {
-    private float moveSpeed;
-    public bool hidingMode { get; private set; }
+    public float moveSpeed;
+    public bool hidingMode;
 
     private bool flipStartsFacingRight;
 
@@ -15,6 +15,9 @@ public class Enemy_Pathfinding : MonoBehaviour
     private KnockbackEffect knockback;
     private Enemy_Health enemyHealth;
     private Enemy_Config config;
+
+    // Internal speed multiplier
+    private float speedMultiplier = 1f;
 
     public void stopHide()
     {
@@ -40,7 +43,7 @@ public class Enemy_Pathfinding : MonoBehaviour
 
         if (!enemyHealth.IsDead && !hidingMode)
         {
-            rb.MovePosition(rb.position + moveDir * (moveSpeed * Time.fixedDeltaTime));
+            rb.MovePosition(rb.position + moveDir * (moveSpeed * speedMultiplier * Time.fixedDeltaTime));
         }
 
         if (moveDir != Vector2.zero)
@@ -55,8 +58,10 @@ public class Enemy_Pathfinding : MonoBehaviour
         }
     }
 
-    public void MoveTo(Vector2 targetPosition)
+    // Default speedMultiplier = 1 (normal speed)
+    public void MoveTo(Vector2 targetDirection, float speedMultiplier = 1f)
     {
-        moveDir = targetPosition;
+        this.moveDir = targetDirection;
+        this.speedMultiplier = speedMultiplier;
     }
 }

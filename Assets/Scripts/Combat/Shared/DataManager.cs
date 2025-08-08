@@ -9,25 +9,22 @@ public class DataManager : MonoBehaviour
     public Vector2 playerPos;
     public Vector2 savedPlayerPos;
 
-    // Player data
     public int PlayerHealth = -99999999;
 
-    // Dictionary to store enemy health data
     private Dictionary<int, int> enemyHealthData = new Dictionary<int, int>();
 
     public List<ActiveMissionData> activeMissionList = new List<ActiveMissionData>();
 
 
-    // To generate unique IDs
     private int currentEnemyID = 0;
 
     void Awake()
     {
-        transform.SetParent(null); // Detach from parent
+        transform.SetParent(null);
         if (instance == null)
         {
             instance = this;
-            transform.SetParent(null); // Detach from parent to become a root GameObject
+            transform.SetParent(null);
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -37,10 +34,6 @@ public class DataManager : MonoBehaviour
 
     }
 
-    void Update()
-    {
-    }
-
     public void Save()
     {
         GameSaveManager.SaveGame(this);
@@ -48,14 +41,11 @@ public class DataManager : MonoBehaviour
 
     public void Load()
     {
-        GameSaveManager.LoadGame(this);
-        MissionManager.instance?.ReloadActiveMissionsFromDataManager();
+        //GameSaveManager.LoadGame(this);
+        //MissionManager.instance?.ReloadActiveMissionsFromDataManager();
 
     }
 
-
-
-    // Generate a new unique ID for each enemy and store their health
     public int RegisterEnemyHealth(int health)
     {
         int enemyID = currentEnemyID++;  // Assign the next unique ID

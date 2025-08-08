@@ -43,8 +43,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        MissionManager.instance.DefineAllMissions();
-        MissionManager.instance.ActivateMission("Slay 5 Oil Drop");
+        //MissionManager.instance.DefineAllMissions();
+        //MissionManager.instance.ActivateMission("Go to nearest charging station!");
 
     }
 

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2562646048803333436}
   - component: {fileID: 1451719462481927287}
-  - component: {fileID: 8218260298332654864}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -49,15 +48,3 @@ MonoBehaviour:
   savedPlayerPos: {x: 0, y: 0}
   PlayerHealth: -99999999
   activeMissionList: []
---- !u!114 &8218260298332654864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2861546580272309082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3c3308146a8161498f80a4ac6b720b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
