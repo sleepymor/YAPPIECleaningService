@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartNewGame()
     {
+        //GameSaveManager.ResetSaveData(dataManager);
         LoadScene("MainGame");
     }
 

@@ -18,3 +18,19 @@ public class ActiveMissionData
         this.destinationPosition = destinationPosition;
     }
 }
+
+[System.Serializable]
+public class MissionPair
+{
+    public string[] missionsToComplete;  // misi yang harus selesai dulu
+    public string[] missionsToActivate;  // misi yang akan diaktifkan setelah semua misi di atas selesai
+}
+
+[System.Serializable]
+public class MissionData
+{
+    public string missionName;
+    public int targetCount;
+    public MissionType missionType;
+    public Vector3 destinationPosition;
+}

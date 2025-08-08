@@ -85,7 +85,7 @@ public class PlayerCombat : MonoBehaviour
 
         if (instance != null && instance != this)
         {
-            Destroy(gameObject); // Prevent duplicates
+            Destroy(gameObject);
             return;
         }
         instance = this;
@@ -194,7 +194,7 @@ public class PlayerCombat : MonoBehaviour
 
 
     private int currentCombo = 0;
-
+    public string harpoonMission;
     void Attack()
     {
         float input = combat.Fight.Attack.ReadValue<float>();
@@ -264,7 +264,10 @@ public class PlayerCombat : MonoBehaviour
                 StartCoroutine(TemporarilyDisableMovement(0.3f));
                 ShootHarpoon(lastHarpoonDirection);
                 SkillUI.instance.TriggerHarpoonCooldown();
-
+                if (harpoonMission != null)
+                {
+                    MissionManager.instance.ForceCompleteMission(harpoonMission);
+                }
             }
 
             if (harpoonAimInstance != null)

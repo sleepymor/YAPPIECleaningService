@@ -70,7 +70,7 @@ public class BeachScript : MonoBehaviour
         if (EnvironmentManager.Instance.GetEnvironmentProgress(EnemyEnvironment.Beach) > 99)
         {
             ToggleTrash();
-            //MissionManager.instance.ForceCompleteMission(completionMission);
+            MissionManager.instance.ForceCompleteMission(completionMission);
 
         }
     }

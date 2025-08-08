@@ -166,7 +166,6 @@ GameObject:
   - component: {fileID: 16582294034051129}
   - component: {fileID: 1946674381110152894}
   - component: {fileID: 986490384961932989}
-  - component: {fileID: 1189426971166442113}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -303,20 +302,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d34ccd2bede3e43a342417d8e91f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1189426971166442113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578606935075636490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a6e179d8f6e4224bb82f887e012c331, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  missionText: {fileID: 5982398293156268951}
-  playerTransform: {fileID: 0}
+  dialogPanel: {fileID: 0}
+  dialogText: {fileID: 0}
+  dialogLines: []
+  lineDisplayDuration: 3
+  fadeDuration: 0.5
 --- !u!1 &688266304740615135
 GameObject:
   m_ObjectHideFlags: 0
@@ -4365,16 +4355,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 8537617936231763592, guid: 3243d3b667ebec345a3dff292998b2f8, type: 3}
-      propertyPath: missionText
-      value: 
-      objectReference: {fileID: 5982398293156268951}
-    - target: {fileID: 8537617936231763592, guid: 3243d3b667ebec345a3dff292998b2f8, type: 3}
-      propertyPath: playerTransform
-      value: 
-      objectReference: {fileID: 2144289379218274626, guid: 965a12ab3df5b014c8c2f244b3119fb3, type: 3}
-    m_RemovedComponents:
-    - {fileID: 8537617936231763592, guid: 3243d3b667ebec345a3dff292998b2f8, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

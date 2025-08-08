@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public enum AttackStatus { None, Stun }
-public enum EnemyEnvironment { Beach, FloatingCity, DeadCoralReefs}
+public enum EnemyEnvironment { Beach, FloatingCity, DeadCoralReefs, None}
 
 public class Enemy_Config : MonoBehaviour
 {

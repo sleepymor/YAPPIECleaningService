@@ -10,18 +10,18 @@ public class AreaChanger : MonoBehaviour
     [SerializeField] private GameObject loadingScreen;
     private Slider progressBar;
 
+    public string[] missionsToUnlock;  // misi yang harus selesai dulu
+
     void Start()
     {
         Collider2D collider2D = GetComponent<Collider2D>();
         collider2D.gameObject.SetActive(true);
-
-        loadingScreen.SetActive(false); // Hide it at start
-
+        loadingScreen.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && AreAllMissionsCompleted())
         {
             DataManager.instance.isChangingArea = true;
             DataManager.instance.playerScene = "";
@@ -48,5 +48,15 @@ public class AreaChanger : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    bool AreAllMissionsCompleted()
+    {
+        foreach (string missionName in missionsToUnlock)
+        {
+            if (!MissionManager.instance.IsMissionCompleted(missionName))
+                return false;
+        }
+        return true;
     }
 }

@@ -10,6 +10,10 @@ public class MissionManager : MonoBehaviour
     public TextMeshProUGUI missionText;
     public Transform playerTransform;
 
+    [SerializeField]
+    private List<MissionData> missionsToDefine = new List<MissionData>();
+
+
     public class Mission
     {
         public string name;
@@ -24,6 +28,8 @@ public class MissionManager : MonoBehaviour
         public float fadeAlpha = 1f;
         public const float fadeDuration = 1.5f;
         public const float displayDuration = 2f;
+
+
 
         public Mission(string name, int targetCount, MissionType type, Vector3 destinationPosition = default)
         {
@@ -113,6 +119,7 @@ public class MissionManager : MonoBehaviour
 
     void Start()
     {
+        DefineAllMissions();
         if (playerTransform == null)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -142,10 +149,14 @@ public class MissionManager : MonoBehaviour
 
     public void DefineAllMissions()
     {
-        allMissions["Go to nearest charging station and heal!"] = new Mission("Go to nearest charging station!", 1, MissionType.Destination);
-        allMissions["Clean the Beach area by defeating The Living Garbage and Oil Drop monsters in the area"] = new Mission("Clean the Beach area by defeating The Living Garbage and Oil Drop monster in the area", 6, MissionType.Slaying);
-        allMissions["Clean the Floating City area by defeating TrashcanMimic and other monsters in the area"] = new Mission("Clean the Floating City area by defeating TrashcanMimic and other monsters in the area", 10, MissionType.Slaying);
-        allMissions["Clean the Underwater area by defeating Death Coral and Nuclear Slime"] = new Mission("Clean the Underwater area by defeating Death Coral and Nuclear Slime", 1, MissionType.Completion);
+        allMissions.Clear();
+
+        foreach (MissionData md in missionsToDefine)
+        {
+            allMissions[md.missionName] = new Mission(md.missionName, md.targetCount, md.missionType, md.destinationPosition);
+        }
+
+        Debug.Log("Defined");
     }
 
     public void ActivateMission(string missionName, Vector3? destination = null)
@@ -278,5 +289,13 @@ public class MissionManager : MonoBehaviour
         }
     }
 
+    public bool IsMissionCompleted(string missionName)
+    {
+        if (allMissions.TryGetValue(missionName, out Mission mission))
+        {
+            return mission.isCompleted;
+        }
+        return false;
+    }
 
 }
