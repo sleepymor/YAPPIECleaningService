@@ -2,21 +2,16 @@ using UnityEngine;
 
 public class Enemy_Detection : MonoBehaviour
 {
-    private float detectionTickInterval = 0.2f;
-    private float lastTickTime = 0f;
-
     public Transform detectionArea { get; set; }
     public bool isDetecting;
-    private LayerMask obstacleMask;
 
     public float meleeRange { get; set; }
     public float rangedRange { get; set; }
-    private bool useTrigger;
-    private bool isBoss;
-    private float triggerRange;
+    public bool useTrigger;
+    public bool isBoss;
+    public float triggerRange;
 
     [HideInInspector] public Transform currentTarget;
-    [HideInInspector] public bool hasLineOfSight;
 
     private Animator animator;
     private Enemy_Pathfinding pathfinding;
@@ -38,7 +33,6 @@ public class Enemy_Detection : MonoBehaviour
         meleeRange = config.MeleeRange;
         rangedRange = config.RangedRange;
         detectionArea = config.DetectionArea;
-        obstacleMask = config.ObstacleMask;
         isBoss = config.IsBoss;
 
         if (isBoss)
@@ -46,9 +40,9 @@ public class Enemy_Detection : MonoBehaviour
             enemyBoss = GetComponent<Enemy_Boss>();
         }
 
-        detectionArea.gameObject.SetActive(true);
+        if (detectionArea != null)
+            detectionArea.gameObject.SetActive(true);
     }
-
 
     private float GetEffectiveRange()
     {
@@ -67,69 +61,36 @@ public class Enemy_Detection : MonoBehaviour
 
     private void FixedUpdate()
     {
-        bool shouldCheckRaycast = Time.time - lastTickTime >= detectionTickInterval;
-
-        if (shouldCheckRaycast)
-            lastTickTime = Time.time;
-
         if (isDetecting && currentTarget != null)
         {
             Vector2 start = transform.position;
             Vector2 end = currentTarget.position;
+
             Vector2 direction = (end - start).normalized;
             float distanceToTarget = Vector2.Distance(start, end);
             float effectiveRange = GetEffectiveRange();
 
-            if (shouldCheckRaycast)
+            if (distanceToTarget <= effectiveRange)
             {
-                RaycastHit2D hit = Physics2D.Linecast(start, end, obstacleMask);
-                hasLineOfSight = hit.collider == null;
-                Debug.DrawLine(start, end, hasLineOfSight ? Color.green : Color.red);
+                if (HasBoolParam(animator, "isHiding") && useTrigger && distanceToTarget <= triggerRange)
+                {
+                    animator.SetBool("isHiding", false);
+                }
+
+                pathfinding.MoveTo(Vector2.zero); // stop moving
+                enemyAttack.Attack();
             }
-
-            if (hasLineOfSight)
+            else
             {
-                DrawRangeCircle(start, effectiveRange);
-
-                if (distanceToTarget <= effectiveRange)
-                {
-                    if (HasBoolParam(animator, "isHiding") && useTrigger && distanceToTarget <= triggerRange)
-                    {
-                        animator.SetBool("isHiding", false);
-                    }
-
-                    pathfinding.MoveTo(Vector2.zero);
-
-                    if (isBoss)
-                        enemyBoss.randomAttack();
-                    else
-                        enemyAttack.Attack();
-                }
-                else
-                {
-                    if (isBoss)
-                        enemyBoss.stopAttack();
-                    else
-                        enemyAttack.StopAttack();
-
-                    pathfinding.MoveTo(direction);
-                }
+                enemyAttack.StopAttack();
+                pathfinding.MoveTo(direction); // move towards player
             }
         }
-    }
-
-    private void DrawRangeCircle(Vector2 center, float radius)
-    {
-        int segments = 30;
-        float angleStep = 360f / segments;
-        Vector3 prevPoint = center + new Vector2(Mathf.Cos(0), Mathf.Sin(0)) * radius;
-
-        for (int i = 1; i <= segments; i++)
+        else
         {
-            float rad = Mathf.Deg2Rad * (i * angleStep);
-            Vector3 nextPoint = center + new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)) * radius;
-            Debug.DrawLine(prevPoint, nextPoint, Color.red);
-            prevPoint = nextPoint;
+            // No target detected: stop movement and attack
+            pathfinding.MoveTo(Vector2.zero);
+            enemyAttack.StopAttack();
         }
     }
 
@@ -137,8 +98,8 @@ public class Enemy_Detection : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-                currentTarget = other.transform;
-                isDetecting = true;
+            currentTarget = other.transform;
+            isDetecting = true;
         }
     }
 
@@ -146,8 +107,11 @@ public class Enemy_Detection : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-                currentTarget = null;
-                isDetecting = false;
+            currentTarget = null;
+            isDetecting = false;
+
+            pathfinding.MoveTo(Vector2.zero);
+            enemyAttack.StopAttack();
         }
     }
 
@@ -162,6 +126,4 @@ public class Enemy_Detection : MonoBehaviour
         }
         return false;
     }
-
-
 }

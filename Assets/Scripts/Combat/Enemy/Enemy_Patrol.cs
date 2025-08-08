@@ -28,11 +28,11 @@ public class EnemyPatrolController : MonoBehaviour
 
     private void Update()
     {
-        if (enemyDetection.hasLineOfSight != null && enemyDetection.hasLineOfSight)
-        {
-            pathfinding.MoveTo(Vector2.zero);
-            return;
-        }
+        //if (enemyDetection.hasLineOfSight != null && enemyDetection.hasLineOfSight)
+        //{
+        //    pathfinding.MoveTo(Vector2.zero);
+        //    return;
+        //}
 
         if (isWaiting || waypoints.Length == 0) return;
 

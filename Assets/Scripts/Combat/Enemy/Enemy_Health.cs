@@ -12,7 +12,6 @@ public class Enemy_Health : MonoBehaviour
 
     private int enemyID;
 
-
     public bool IsDead { get; private set; } = false;
 
     private int currentHealth;
@@ -36,12 +35,13 @@ public class Enemy_Health : MonoBehaviour
         knockback = GetComponent<KnockbackEffect>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        enemyID = DataManager.instance.RegisterEnemyHealth(startingHealth);
 
     }
 
     private void Start()
     {
+        enemyID = DataManager.instance.RegisterEnemyHealth(startingHealth);
+
         int savedHealth = DataManager.instance.GetEnemyHealth(enemyID);
         currentHealth = savedHealth != -1 ? savedHealth : startingHealth;
         if (spriteRenderer == null)

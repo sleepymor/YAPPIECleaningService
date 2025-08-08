@@ -11,6 +11,7 @@ public class FloatingCityScript : MonoBehaviour
     [SerializeField] private Tilemap[] tilemaps;
     [SerializeField] private AudioSource floatingCityAudio;
     [SerializeField] private float fadeDuration = 0.5f;
+    public string completionMission;
     private bool isVisible = true;
     private Coroutine fadeCoroutine;
 
@@ -62,6 +63,7 @@ public class FloatingCityScript : MonoBehaviour
         if (EnvironmentManager.Instance.GetEnvironmentProgress(EnemyEnvironment.FloatingCity) > 99)
         {
             ToggleTrash();
+            //MissionManager.instance.ForceCompleteMission(completionMission);
         }
     }
 

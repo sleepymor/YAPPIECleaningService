@@ -3,7 +3,7 @@ using System.Collections;
 
 public class KnockbackEffect : MonoBehaviour
 {
-    public bool gettingKnockedBack { get; private set; }
+    public bool gettingKnockedBack;
 
     private float knockBackTime = 0.2f;
     [SerializeField] private bool isPlayer = false;

@@ -17,6 +17,10 @@ public class BeachScript : MonoBehaviour
     private bool isVisible = true;
     private Coroutine fadeCoroutine;
 
+
+    public string completionMission;
+
+
     private void Awake()
     {
         beachArea.gameObject.SetActive(true);
@@ -66,6 +70,8 @@ public class BeachScript : MonoBehaviour
         if (EnvironmentManager.Instance.GetEnvironmentProgress(EnemyEnvironment.Beach) > 99)
         {
             ToggleTrash();
+            //MissionManager.instance.ForceCompleteMission(completionMission);
+
         }
     }
 

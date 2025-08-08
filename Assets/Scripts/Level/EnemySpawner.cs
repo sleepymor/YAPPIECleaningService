@@ -1,33 +1,66 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-[RequireComponent(typeof(Collider2D))]
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private int maxSpawn = 10;
     [SerializeField] private float spawnInterval = 10f;
     [SerializeField] private GameObject enemyPrefab;
 
+    [SerializeField] private bool spawnInfinitely = true;  // Toggle: true = keep spawning, false = spawn once up to max
+
     private float timer;
     private List<GameObject> activeEnemies = new List<GameObject>();
     [SerializeField] private Collider2D spawnArea;
+    [SerializeField] private Transform enemiesParent;
+
+    private bool hasReachedLimit = false;
 
     void Start()
     {
-        spawnArea = GetComponent<Collider2D>();
-        spawnArea.isTrigger = true; 
+        if (enemiesParent == null)
+        {
+            GameObject enemiesGO = GameObject.Find("Enemies");
+            if (enemiesGO != null)
+            {
+                enemiesParent = enemiesGO.transform;
+            }
+            else
+            {
+                Debug.LogWarning("Enemies GameObject not found in scene. Enemies will be spawned without parent.");
+            }
+        }
     }
 
     void Update()
     {
-        CleanupDestroyedEnemies();
-
         timer += Time.deltaTime;
 
-        if (timer >= spawnInterval && activeEnemies.Count < maxSpawn)
+        // Clean up null enemies to keep list accurate
+        CleanupDestroyedEnemies();
+
+        if (spawnInfinitely)
         {
-            timer = 0f;
-            SpawnEnemy();
+            // Spawn continuously while under maxSpawn
+            if (timer >= spawnInterval && activeEnemies.Count < maxSpawn)
+            {
+                SpawnEnemy();
+                timer = 0f;
+            }
+        }
+        else
+        {
+            // Spawn only once until maxSpawn reached
+            if (!hasReachedLimit && timer >= spawnInterval && activeEnemies.Count < maxSpawn)
+            {
+                SpawnEnemy();
+                timer = 0f;
+            }
+
+            if (activeEnemies.Count >= maxSpawn)
+            {
+                hasReachedLimit = true;  // Stop spawning further
+            }
         }
     }
 
@@ -35,11 +68,14 @@ public class EnemySpawner : MonoBehaviour
     {
         Vector2 spawnPos = GetRandomPointInBounds();
 
-        GameObject enemyObj = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
-        Enemy_Pathfinding pathfinding = enemyObj.GetComponent<Enemy_Pathfinding>();
-        pathfinding.stopHide();
-        pathfinding.MoveTo(spawnPos.normalized);
+        GameObject newEnemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
 
+        if (enemiesParent != null)
+        {
+            newEnemy.transform.parent = enemiesParent;
+        }
+
+        activeEnemies.Add(newEnemy);
     }
 
     void CleanupDestroyedEnemies()

@@ -1,184 +1,217 @@
-using UnityEngine;
+//using UnityEngine;
+//public enum BossAttack { Chase, Stomp, Powerstomp, Crush, Melee }
+//public class Enemy_Boss_Detection : MonoBehaviour
+//{
+//    public Transform detectionArea { get; set; }
+//    public bool isDetecting { get; set; }
+//    private LayerMask obstacleMask;
 
-public class Enemy_Boss_Detection : MonoBehaviour
-{
-    public Transform detectionArea { get; set; }
-    public bool isDetecting { get; set; }
-    private LayerMask obstacleMask;
+//    public float meleeRange = 2f;
+//    public float rangedRange = 6f;
+//    public float aoeRange = 4f;
+//    public float dashRange = 8f;
 
-    public float meleeRange = 2f;
-    public float rangedRange = 6f;
-    public float aoeRange = 4f;
-    public float dashRange = 8f;
+//    [HideInInspector] public Transform currentTarget;
+//    [HideInInspector] public bool hasLineOfSight;
 
-    [HideInInspector] public Transform currentTarget;
-    [HideInInspector] public bool hasLineOfSight;
+//    private Animator animator;
+//    private Enemy_Pathfinding pathfinding;
+//    private Enemy_Config config;
+//    private Enemy_Boss enemyBoss;
 
-    private Animator animator;
-    private Enemy_Pathfinding pathfinding;
-    private Enemy_Attack enemyAttack;
-    private Enemy_Config config;
-    private Enemy_Boss enemyBoss;
+//    private float attackCooldown = 2f;
+//    private float lastAttackTime = -999f;
 
-    private float attackCooldown = 2f;
-    private float lastAttackTime = -999f;
+//    private void Start()
+//    {
+//        isDetecting = false;
+//        config = GetComponent<Enemy_Config>();
+//        animator = GetComponent<Animator>();
+//        pathfinding = GetComponent<Enemy_Pathfinding>();
+//        enemyBoss = GetComponent<Enemy_Boss>();
 
-    private enum AttackType { Melee, AOE, Ranged, Dash }
-    private AttackType currentAttack;
+//        meleeRange = config.MeleeRange;
+//        rangedRange = config.RangedRange;
+//        detectionArea = config.DetectionArea;
+//        obstacleMask = config.ObstacleMask;
 
-    private void Start()
-    {
-        isDetecting = false;
-        config = GetComponent<Enemy_Config>();
-        animator = GetComponent<Animator>();
-        pathfinding = GetComponent<Enemy_Pathfinding>();
-        enemyAttack = GetComponent<Enemy_Attack>();
-        enemyBoss = GetComponent<Enemy_Boss>();
+//        detectionArea.gameObject.SetActive(true);
+//    }
 
-        meleeRange = config.MeleeRange;
-        rangedRange = config.RangedRange;
-        detectionArea = config.DetectionArea;
-        obstacleMask = config.ObstacleMask;
+//    private BossAttack currentAttack;
 
-        detectionArea.gameObject.SetActive(true);
-    }
+//    private void PickRandomAttack()
+//    {
+//        float rng = Random.value;
 
-    private float GetEffectiveRange()
-    {
-        switch (currentAttack)
-        {
-            case AttackType.Melee: return meleeRange;
-            case AttackType.AOE: return aoeRange;
-            case AttackType.Ranged: return rangedRange;
-            case AttackType.Dash: return dashRange;
-            default: return meleeRange;
-        }
-    }
+//        if (rng < 0.25f)
+//            currentAttack = BossAttack.Chase;
+//        else if (rng < 0.5f)
+//            currentAttack = BossAttack.Stomp;
+//        else if (rng < 0.75f)
+//            currentAttack = BossAttack.Powerstomp;
+//        else
+//            currentAttack = BossAttack.Crush;
 
-    private bool isAttacking = false;
+//        if (enemyBoss != null)
+//        {
+//            // Inform enemyBoss of current attack if needed
+//            // enemyBoss.SetCurrentAttack(currentAttack.ToString());
+//        }
+//    }
 
-    private void FixedUpdate()
-    {
-        if (!isDetecting || currentTarget == null) return;
+//    private bool isAttacking = false;
+//    private float GetDesiredAttackDistance()
+//    {
+//        switch (currentAttack)
+//        {
+//            case BossAttack.Chase:
+//                return dashRange;   // For chase/dash, get close but maybe further
+//            case BossAttack.Stomp:
+//                return meleeRange;  // Stomp = melee range (close)
+//            case BossAttack.Powerstomp:
+//                return aoeRange;    // Powerstomp = AOE range (mid range)
+//            case BossAttack.Crush:
+//                return rangedRange; // Crush = ranged attack (far)
+//            case BossAttack.Melee:
+//                return meleeRange;  // Melee same as stomp here
+//            default:
+//                return meleeRange;
+//        }
+//    }
 
-        Vector2 start = transform.position;
-        Vector2 end = currentTarget.position;
+//    private void FixedUpdate()
+//    {
+//        if (!isDetecting || currentTarget == null) return;
 
-        RaycastHit2D hit = Physics2D.Linecast(start, end, obstacleMask);
+//        Vector2 start = transform.position;
+//        Vector2 end = currentTarget.position;
 
-        if (hit.collider != null)
-        {
-            hasLineOfSight = false;
-            Debug.DrawLine(start, end, Color.red);
-            return;
-        }
+//        RaycastHit2D hit = Physics2D.Linecast(start, end, obstacleMask);
 
-        hasLineOfSight = true;
-        Debug.DrawLine(start, end, Color.green);
+//        if (hit.collider != null)
+//        {
+//            hasLineOfSight = false;
+//            Debug.DrawLine(start, end, Color.red);
+//            return;
+//        }
 
-        Vector2 direction = (end - start).normalized;
-        float distanceToTarget = Vector2.Distance(start, end);
-        float effectiveRange = GetEffectiveRange();
+//        hasLineOfSight = true;
+//        Debug.DrawLine(start, end, Color.green);
 
-        DrawRangeCircle(start, effectiveRange);
+//        Vector2 direction = (end - start).normalized;
+//        float distanceToTarget = Vector2.Distance(start, end);
 
-        if (distanceToTarget <= effectiveRange)
-        {
-            pathfinding.MoveTo(Vector2.zero);
+//        if (currentAttack == BossAttack.Chase)
+//        {
+//            // Chase logic: just rush toward player fast
+//            pathfinding.MoveTo(direction, speedMultiplier: 2f);
+//            return;  // no attack during chase itself
+//        }
 
-            if (!isAttacking && Time.time - lastAttackTime >= attackCooldown)
-            {
-                PickRandomAttack();
-                isAttacking = true; // Start attacking
-                lastAttackTime = Time.time;
+//        if (!isAttacking)
+//        {
+//            // Not currently attacking, pick a new attack and move to desired range
+//            PickRandomAttack();
+//        }
 
-                if (enemyAttack != null)
-                    enemyAttack.Attack(); // Attack type depends on enemyBoss state
-            }
-        }
-        else
-        {
-            if (isAttacking)
-            {
-                isAttacking = false;
-                enemyAttack.StopAttack();
-            }
+//        float desiredDistance = GetDesiredAttackDistance();
+//        DrawRangeCircle(start, desiredDistance);
 
-            pathfinding.MoveTo(direction);
-        }
-    }
+//        float margin = 0.2f;
 
+//        if (distanceToTarget > desiredDistance + margin)
+//        {
+//            // Move closer
+//            pathfinding.MoveTo(direction);
 
-    public void ResetAttack()
-    {
-        isAttacking = false;
-        enemyBoss.stopAttack();
-    }
+//            if (isAttacking)
+//            {
+//                isAttacking = false;
+//                enemyBoss.stopAttack();
+//            }
+//        }
+//        else if (distanceToTarget < desiredDistance - margin)
+//        {
+//            // Move away
+//            Vector2 away = (start - end).normalized;
+//            pathfinding.MoveTo(away);
 
-    private void PickRandomAttack()
-    {
-        float rng = Random.value;
+//            if (isAttacking)
+//            {
+//                isAttacking = false;
+//                enemyBoss.stopAttack();
+//            }
+//        }
+//        else
+//        {
+//            // Inside desired range, stop moving and attack
+//            pathfinding.MoveTo(Vector2.zero);
 
-        if (rng < 0.25f)
-            currentAttack = AttackType.Dash;
-        else if (rng < 0.5f)
-            currentAttack = AttackType.AOE;
-        else if (rng < 0.75f)
-            currentAttack = AttackType.Ranged;
-        else
-            currentAttack = AttackType.Melee;
+//            if (!isAttacking && Time.time - lastAttackTime >= attackCooldown)
+//            {
+//                isAttacking = true;
+//                lastAttackTime = Time.time;
 
-        if (enemyBoss != null)
-        {
-            //enemyBoss.SetCurrentAttack(currentAttack.ToString());
-        }
-    }
+//                if (enemyBoss != null)
+//                    enemyBoss.Attack(currentAttack);
+//            }
+//        }
+//    }
 
-    private void DrawRangeCircle(Vector2 center, float radius)
-    {
-        int segments = 30;
-        float angleStep = 360f / segments;
-        Vector3 prevPoint = center + new Vector2(Mathf.Cos(0), Mathf.Sin(0)) * radius;
+//    public void ResetAttack()
+//    {
+//        isAttacking = false;
+//        enemyBoss.stopAttack();
+//    }
 
-        for (int i = 1; i <= segments; i++)
-        {
-            float rad = Mathf.Deg2Rad * (i * angleStep);
-            Vector3 nextPoint = center + new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)) * radius;
-            Debug.DrawLine(prevPoint, nextPoint, Color.red);
-            prevPoint = nextPoint;
-        }
-    }
+    
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
+//    private void DrawRangeCircle(Vector2 center, float radius)
+//    {
+//        int segments = 30;
+//        float angleStep = 360f / segments;
+//        Vector3 prevPoint = center + new Vector2(Mathf.Cos(0), Mathf.Sin(0)) * radius;
 
-                currentTarget = other.transform;
-                isDetecting = true;
+//        for (int i = 1; i <= segments; i++)
+//        {
+//            float rad = Mathf.Deg2Rad * (i * angleStep);
+//            Vector3 nextPoint = center + new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)) * radius;
+//            Debug.DrawLine(prevPoint, nextPoint, Color.red);
+//            prevPoint = nextPoint;
+//        }
+//    }
+
+//    private void OnTriggerStay2D(Collider2D other)
+//    {
+//        if (other.CompareTag("Player"))
+//        {
+
+//                currentTarget = other.transform;
+//                isDetecting = true;
             
-        }
-    }
+//        }
+//    }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-                currentTarget = null;
-                isDetecting = false;
+//    private void OnTriggerExit2D(Collider2D other)
+//    {
+//        if (other.CompareTag("Player"))
+//        {
+//                currentTarget = null;
+//                isDetecting = false;
             
-        }
-    }
+//        }
+//    }
 
-    private bool HasBoolParam(Animator anim, string paramName)
-    {
-        if (anim == null) return false;
+//    private bool HasBoolParam(Animator anim, string paramName)
+//    {
+//        if (anim == null) return false;
 
-        foreach (var param in anim.parameters)
-        {
-            if (param.name == paramName && param.type == AnimatorControllerParameterType.Bool)
-                return true;
-        }
-        return false;
-    }
-}
+//        foreach (var param in anim.parameters)
+//        {
+//            if (param.name == paramName && param.type == AnimatorControllerParameterType.Bool)
+//                return true;
+//        }
+//        return false;
+//    }
+//}

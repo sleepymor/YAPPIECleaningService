@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 
-public enum MissionType { Slaying, Destination, Escape }
+public enum MissionType { Slaying, Destination, Escape, Completion }
 
 public class MissionManager : MonoBehaviour
 {
@@ -142,10 +142,10 @@ public class MissionManager : MonoBehaviour
 
     public void DefineAllMissions()
     {
-        allMissions["Reach the Cave"] = new Mission("Reach the Cave", 1, MissionType.Destination);
-        allMissions["To the beach!"] = new Mission("To the beach!", 1, MissionType.Destination);
-        allMissions["Slay 5 Oil Drop"] = new Mission("Slay 5 Oil Drop", 5, MissionType.Slaying);
-        allMissions["Escape the Dungeon"] = new Mission("Escape the Dungeon", 1, MissionType.Escape);
+        allMissions["Go to nearest charging station and heal!"] = new Mission("Go to nearest charging station!", 1, MissionType.Destination);
+        allMissions["Clean the Beach area by defeating The Living Garbage and Oil Drop monsters in the area"] = new Mission("Clean the Beach area by defeating The Living Garbage and Oil Drop monster in the area", 6, MissionType.Slaying);
+        allMissions["Clean the Floating City area by defeating TrashcanMimic and other monsters in the area"] = new Mission("Clean the Floating City area by defeating TrashcanMimic and other monsters in the area", 10, MissionType.Slaying);
+        allMissions["Clean the Underwater area by defeating Death Coral and Nuclear Slime"] = new Mission("Clean the Underwater area by defeating Death Coral and Nuclear Slime", 1, MissionType.Completion);
     }
 
     public void ActivateMission(string missionName, Vector3? destination = null)
@@ -258,6 +258,23 @@ public class MissionManager : MonoBehaviour
 
                 UpdateMissionText();
             }
+        }
+    }
+
+
+    public void ForceCompleteMission(string missionName)
+    {
+        if (allMissions.TryGetValue(missionName, out Mission mission) && mission.isActive && !mission.isCompleted)
+        {
+            mission.Complete();
+
+            var activeData = DataManager.instance.activeMissionList.Find(m => m.name == mission.name);
+            if (activeData != null)
+            {
+                DataManager.instance.activeMissionList.Remove(activeData);
+            }
+
+            UpdateMissionText();
         }
     }
 

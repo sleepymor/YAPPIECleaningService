@@ -17,15 +17,11 @@ public class PlayerHealth : MonoBehaviour
             healthSlider.maxValue = 1f;
         }
 
-        MissionManager.instance.ActivateMission("Slay 5 Monsters");
+        //List<string> dialog = new List<string>{
+        //        "Press WASD to move",
+        //};
 
-        List<string> dialog = new List<string>{
-                "Welcome to the cave.",
-                "It’s dangerous to go alone.",
-                "Take this sword and good luck!"
-        };
-
-        DialogManager.instance.StartDialog(dialog, 4f);
+        //DialogManager.instance.StartDialog(dialog, 4f);
     }
 
     void Update()
