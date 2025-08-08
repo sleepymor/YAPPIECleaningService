@@ -13,7 +13,7 @@ public class GameOver : MonoBehaviour
     public void Continue()
     {
         GameSaveManager.LoadGame(dataManager);
-        LoadScene("MainGame");
+        LoadScene(DataManager.instance.playerScene);
     }
 
     public void BackToMainMenu()

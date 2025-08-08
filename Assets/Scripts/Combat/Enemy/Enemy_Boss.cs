@@ -65,24 +65,25 @@ public class Enemy_Boss : MonoBehaviour
         stopAttack();
         float rand = Random.Range(0f, 100f);
 
-        //if (rand < 10f)
-        //{
-        //    powerStompAttack();
-        //}
-        //else if (rand < 40f)
-        //{
-        //    crushAttack();
-        //}
-        //else if (rand < 60f)
-        //{
-        //    stompAttack();
-        //}
-        //else
-        //{
-        //    meleeAttack();
-        //}
+        if (rand < 30f)
+        {
+            meleeAttack();
+        }
+        else if (rand == 400f)
+        {
 
-        powerStompAttack();
+
+        }
+        else if (rand == 460f)
+        {
+            stompAttack();
+        }
+        else
+        {
+            crushAttack();
+        }
+
+        //powerStompAttack();
     }
 
     public void stopAttack()
@@ -96,14 +97,14 @@ public class Enemy_Boss : MonoBehaviour
         Vector2 end = enemyDetection.currentTarget.position;
         float distanceToTarget = Vector2.Distance(start, end);
 
-        if (distanceToTarget <= 10f)
-        {
-            PlayerCombat.instance.TakeDamage(meleeDamage, transform, knockbackRange, meleeAttackStatus, meleeAttackStatusChance, meleeAttackStatusDuration);
-        }
-        if (distanceToTarget <= 20f)
-        {
-            PlayerCombat.instance.TakeDamage(meleeDamage, transform, knockbackRange, meleeAttackStatus, meleeAttackStatusChance, meleeAttackStatusDuration);
-        }
+        //if (distanceToTarget <= 10f)
+        //{
+        //    PlayerCombat.instance.TakeDamage(meleeDamage, transform, knockbackRange, meleeAttackStatus, meleeAttackStatusChance, meleeAttackStatusDuration);
+        //}
+        //if (distanceToTarget <= 20f)
+        //{
+        //    PlayerCombat.instance.TakeDamage(meleeDamage, transform, knockbackRange, meleeAttackStatus, meleeAttackStatusChance, meleeAttackStatusDuration);
+        //}
         smallArea.gameObject.SetActive(false);
         bigArea.gameObject.SetActive(false);
     }
@@ -153,6 +154,7 @@ public class Enemy_Boss : MonoBehaviour
             projectile.knockbackRange = knockbackRange;
             projectile.maxTravelDistance = maxProjTravelDistance;
             projectile.aoeLifetime = 0;
+		projectile.isChasing = true;
             projectile.speed = rangedProjectileSpeed;
             projectile.Initialize(direction);
         }
@@ -204,6 +206,43 @@ public class Enemy_Boss : MonoBehaviour
             }
         }
     }
+
+private void CounterAttack()
+{
+    if (projectilePrefab == null) return;
+
+    if (Random.value > 0.1f) // 10% chance
+        return;
+
+    int projectileCount = 10; // hardcoded 10 projectiles
+    float angleStep = 360f / projectileCount;
+
+    Vector2 spawnPosBase = transform.position;
+
+    for (int i = 0; i < projectileCount; i++)
+    {
+        float angle = i * angleStep;
+        Vector2 shootDir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
+        Vector2 spawnPos = spawnPosBase + shootDir * 0.5f;
+
+        GameObject proj = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
+        Enemy_Projectiles projectile = proj.GetComponent<Enemy_Projectiles>();
+        if (projectile != null)
+        {
+            projectile.damage = 2;
+            projectile.SetDamageType(DamageType.OnHit);
+            projectile.damageInterval = 0;
+            projectile.attackStatus = AttackStatus.Stun;
+            projectile.statusChance = 0.5f;
+            projectile.statusDuration = 0.1f;
+            projectile.knockbackRange = knockbackRange;
+            projectile.maxTravelDistance = maxProjTravelDistance;
+            projectile.aoeLifetime = 0;
+            projectile.speed = rangedProjectileSpeed;
+            projectile.Initialize(shootDir);
+        }
+    }
+}
 
 
 

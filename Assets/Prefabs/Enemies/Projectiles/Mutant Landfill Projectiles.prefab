@@ -176,3 +176,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 4
+  isChasing: 0
+  chaseTarget: {fileID: 0}

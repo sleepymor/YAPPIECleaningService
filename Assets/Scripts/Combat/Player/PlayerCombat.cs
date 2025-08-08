@@ -112,6 +112,8 @@ public class PlayerCombat : MonoBehaviour
     }
 
     public Transform defaultSpawn;
+    public Transform areaSpawn;
+
 
     public void Initialize()
     {
@@ -126,10 +128,14 @@ public class PlayerCombat : MonoBehaviour
 
         Vector2 savedPos = DataManager.instance.savedPlayerPos;
 
-        // If position is exactly (0, 0), assume it's invalid and use default spawn
         if (savedPos == Vector2.zero)
         {
             savedPos = defaultSpawn.position;
+        }
+
+        if (DataManager.instance.playerScene == "")
+        {
+            savedPos = areaSpawn.position;
         }
 
         rb.position = savedPos;
@@ -162,7 +168,7 @@ public class PlayerCombat : MonoBehaviour
     }
 
     void Update()
-    {
+    {        
         if (!isStunned)
         {
             Attack();
@@ -308,7 +314,7 @@ public class PlayerCombat : MonoBehaviour
         Vector2 spawnPos = (Vector2)transform.position + direction * 0.5f;
 
         GameObject proj = Instantiate(harpoonTipPrefab, spawnPos, Quaternion.identity);
-        harpoonTipInstance = proj; // Save instance for line tracking
+        harpoonTipInstance = proj;
 
         Harpoon_Tip projectile = proj.GetComponent<Harpoon_Tip>();
         if (projectile != null)
@@ -421,8 +427,6 @@ public class PlayerCombat : MonoBehaviour
         hitDmgArea.localPosition = newPosition;
     }
 
-
-
     public void TakeDamage(int damage, Transform attacker, float knockbackRange, AttackStatus statusEffect, float statusChance, float statusTime)
     {
         if (isInvincible) return;
@@ -445,7 +449,6 @@ public class PlayerCombat : MonoBehaviour
         isStunned = true;
         animator.SetBool("isStunned", true); // Optional: add animation feedback
         spriteRenderer.color = new Color(0.5f, 0.5f, 0.5f, 1f);
-
 
         yield return new WaitForSeconds(duration);
         spriteRenderer.color = Color.white;

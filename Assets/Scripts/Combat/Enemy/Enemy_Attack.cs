@@ -249,8 +249,8 @@ public class Enemy_Attack : MonoBehaviour
                 {
                     projectile.damage = AOEDamage;
                     projectile.damageInterval = aoeDamageInterval;
-                    projectile.SetDamageType(DamageType.PerSecond);
-                    projectile.maxTravelDistance = 0;
+                    projectile.SetDamageType(DamageType.OnHit);
+                    projectile.maxTravelDistance = 10;
                     projectile.attackStatus = aoeAttackStatus;
                     projectile.statusChance = aoeAttackStatusChance;
                     projectile.statusDuration = aoeAttackStatusDuration;

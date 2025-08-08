@@ -8,6 +8,9 @@ public class DataManager : MonoBehaviour
     public static DataManager instance;
     public Vector2 playerPos;
     public Vector2 savedPlayerPos;
+    public string playerScene = "MainGame";
+
+    public bool isChangingArea = false;
 
     public int PlayerHealth = -99999999;
 

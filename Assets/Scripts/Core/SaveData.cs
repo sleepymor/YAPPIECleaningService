@@ -11,7 +11,8 @@ public static class GameSaveManager
         SaveDataContainer saveData = new SaveDataContainer
         {
             playerHealth = data.PlayerHealth,
-            playerPos = data.playerPos
+            playerPos = data.playerPos,
+            playerScene = data.playerScene
         };
 
         foreach (var kvp in data.GetAllEnemyHealth())
@@ -41,6 +42,7 @@ public static class GameSaveManager
 
         data.PlayerHealth = saveData.playerHealth;
         data.savedPlayerPos = saveData.playerPos;
+        data.playerScene = saveData.playerScene;
         data.ClearAllEnemies();
 
         foreach (var enemy in saveData.enemies)
@@ -63,6 +65,7 @@ public class SaveDataContainer
     public int playerHealth;
     public List<EnemyData> enemies = new List<EnemyData>();
     public Vector2 playerPos;
+    public string playerScene;
     public List<ActiveMissionData> activeMissions = new List<ActiveMissionData>();
 
 }
