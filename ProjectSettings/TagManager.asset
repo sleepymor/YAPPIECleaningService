@@ -13,7 +13,7 @@ TagManager:
   - Water
   - UI
   - PlayerHitbox
-  - 
+  - Enemies
   - Obstructors
   - Reflections
   - WaterPostProcessing

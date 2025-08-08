@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Enemy_Detection : MonoBehaviour
 {
-    private float detectionTickInterval = 0.2f; // how often to check detection (seconds)
+    private float detectionTickInterval = 0.2f;
     private float lastTickTime = 0f;
 
     public Transform detectionArea { get; set; }
-    public bool isDetecting { get; set; }
+    public bool isDetecting;
     private LayerMask obstacleMask;
 
     public float meleeRange { get; set; }
@@ -25,7 +25,7 @@ public class Enemy_Detection : MonoBehaviour
 
     private Enemy_Boss enemyBoss;
 
-    private void Start()
+    private void Awake()
     {
         isDetecting = false;
         config = GetComponent<Enemy_Config>();
@@ -46,8 +46,12 @@ public class Enemy_Detection : MonoBehaviour
             enemyBoss = GetComponent<Enemy_Boss>();
         }
 
-        detectionArea.gameObject.SetActive(true);
 
+    }
+
+    void OnEnable()
+    {
+        detectionArea.gameObject.SetActive(true);
     }
 
     private float GetEffectiveRange()

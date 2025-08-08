@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4507745253270419660}
   - component: {fileID: 8827441615986171934}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DetectionArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 3720550274367774204}
   - component: {fileID: -915983924706461515}
   - component: {fileID: -2010736642623069851}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mutant Landfill Monster
   m_TagString: Enemy
   m_Icon: {fileID: 0}

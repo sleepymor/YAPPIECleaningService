@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2058146198446231102}
   - component: {fileID: 5784497563347991547}
   - component: {fileID: 9186285534539729770}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: InteractionIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 3752384414934400622}
   - component: {fileID: 2332469997021708933}
   - component: {fileID: 1742821972132208956}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: InterractBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 3969117827535605981}
   - component: {fileID: 3645343877720104318}
   - component: {fileID: 7322695346581553945}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: InteractionArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 8004367055302414096}
   - component: {fileID: 6472500624840686732}
   - component: {fileID: 472348436022863885}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MeleeHitArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1327029091383939328}
   - component: {fileID: 2966447534280866138}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 7542521088175497139}
   - component: {fileID: 732487681957237627}
   - component: {fileID: 9086351945697199812}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 1918204861481720751}
   - component: {fileID: 7232791678278284558}
   - component: {fileID: 1543588823376753469}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HarpoonHitArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 6783049725239749118}
   - component: {fileID: 4744115874390610952}
   - component: {fileID: 1632485647782245835}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -953,7 +953,7 @@ GameObject:
   - component: {fileID: 8933292671553508964}
   - component: {fileID: 7193676754331655318}
   - component: {fileID: 4816449372527162919}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1026,7 +1026,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3036693594521749649}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1062,7 +1062,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1956183249461461906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1099,7 +1099,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1177923711038575241}
   - component: {fileID: 4507070717046048542}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

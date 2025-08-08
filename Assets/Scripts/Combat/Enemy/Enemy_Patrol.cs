@@ -13,6 +13,7 @@ public class EnemyPatrolController : MonoBehaviour
     private bool isWaiting = false;
     private Enemy_Detection enemyDetection;
     private Enemy_Config config;
+
     private void Awake()
     {
         config = GetComponent<Enemy_Config>();

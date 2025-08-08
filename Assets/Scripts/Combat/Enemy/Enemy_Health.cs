@@ -37,16 +37,20 @@ public class Enemy_Health : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyID = DataManager.instance.RegisterEnemyHealth(startingHealth);
-    }
 
-    private void Start()
-    {
         int savedHealth = DataManager.instance.GetEnemyHealth(enemyID);
         currentHealth = savedHealth != -1 ? savedHealth : startingHealth;
+
         if (spriteRenderer == null)
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         originalColor = spriteRenderer.color;
+
         EnvironmentManager.Instance.RegisterEnemy(environment);
+    }
+
+    private void OnEnable()
+    {
+     
     }
 
     public void TakeDamage(int damage)

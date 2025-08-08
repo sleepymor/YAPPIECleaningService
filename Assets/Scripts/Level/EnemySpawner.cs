@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
     private List<GameObject> activeEnemies = new List<GameObject>();
     [SerializeField] private Collider2D spawnArea;
 
-    void Awake()
+    void Start()
     {
         spawnArea = GetComponent<Collider2D>();
         spawnArea.isTrigger = true; 
@@ -35,8 +35,11 @@ public class EnemySpawner : MonoBehaviour
     {
         Vector2 spawnPos = GetRandomPointInBounds();
 
-        GameObject newEnemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
-        activeEnemies.Add(newEnemy);
+        GameObject enemyObj = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+        Enemy_Pathfinding pathfinding = enemyObj.GetComponent<Enemy_Pathfinding>();
+        pathfinding.stopHide();
+        pathfinding.MoveTo(spawnPos.normalized);
+
     }
 
     void CleanupDestroyedEnemies()
