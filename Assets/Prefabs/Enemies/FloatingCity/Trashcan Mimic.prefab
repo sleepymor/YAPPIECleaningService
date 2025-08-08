@@ -288,7 +288,7 @@ MonoBehaviour:
   meleeAttackStatus: 0
   meleeAttackStatusChance: 0
   meleeAttackStatusDuration: 0
-  rangedDamage: 5
+  rangedDamage: 15
   rangedAttackStatus: 0
   rangedAttackStatusChance: 0
   rangedAttackStatusDuration: 0
