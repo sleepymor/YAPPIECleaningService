@@ -46,13 +46,9 @@ public class Enemy_Detection : MonoBehaviour
             enemyBoss = GetComponent<Enemy_Boss>();
         }
 
-
-    }
-
-    void OnEnable()
-    {
         detectionArea.gameObject.SetActive(true);
     }
+
 
     private float GetEffectiveRange()
     {
@@ -116,7 +112,7 @@ public class Enemy_Detection : MonoBehaviour
                     else
                         enemyAttack.StopAttack();
 
-                    pathfinding.MoveTo(direction); // <<< this should be every FixedUpdate!
+                    pathfinding.MoveTo(direction);
                 }
             }
         }
