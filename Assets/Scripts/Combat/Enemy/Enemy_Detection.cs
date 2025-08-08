@@ -78,11 +78,24 @@ public class Enemy_Detection : MonoBehaviour
                 }
 
                 pathfinding.MoveTo(Vector2.zero); // stop moving
-                enemyAttack.Attack();
+
+                if (!isBoss)
+                {
+                    enemyAttack.Attack();
+                } else
+                {
+                    enemyBoss.randomAttack();
+                }
             }
             else
             {
-                enemyAttack.StopAttack();
+                if (!isBoss)
+                {
+                    enemyAttack.StopAttack();
+                } else
+                {
+                    enemyBoss.stopAttack();
+                }
                 pathfinding.MoveTo(direction); // move towards player
             }
         }

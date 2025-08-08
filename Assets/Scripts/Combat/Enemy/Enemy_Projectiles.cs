@@ -17,13 +17,16 @@ public class Enemy_Projectiles : MonoBehaviour
     public float statusChance { get; set; }
     public float statusDuration { get; set; }
 
-
     public float aoeLifetime { get; set; }
     private float spawnTime;
 
     private Vector2 direction;
     private Vector2 startPosition;
     private float lastDamageTime;
+
+    // New properties for chaser
+    public bool isChasing = false;
+    public Transform chaseTarget;
 
     public void SetDamageType(DamageType type)
     {
@@ -35,8 +38,6 @@ public class Enemy_Projectiles : MonoBehaviour
         lastDamageTime = Time.time - damageInterval;
     }
 
-
-
     public void Initialize(Vector2 shootDirection)
     {
         direction = shootDirection.normalized;
@@ -47,13 +48,25 @@ public class Enemy_Projectiles : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-
     private void Update()
     {
+        if (isChasing && chaseTarget != null)
+        {
+            // Update direction toward target position every frame
+            Vector2 targetPos = chaseTarget.position;
+            Vector2 currentPos = transform.position;
+            direction = (targetPos - currentPos).normalized;
+
+            // Rotate bullet to face direction
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+
+        // Move bullet forward
+        transform.Translate(direction * speed * Time.deltaTime, Space.World);
+
         if (damageType == DamageType.PerSecond)
         {
-            transform.Translate(direction * speed * Time.deltaTime, Space.World);
-
             if (Time.time - spawnTime >= aoeLifetime)
             {
                 Destroy(gameObject);
@@ -61,15 +74,12 @@ public class Enemy_Projectiles : MonoBehaviour
         }
         else
         {
-            transform.Translate(direction * speed * Time.deltaTime, Space.World);
-
             if (Vector2.Distance(startPosition, transform.position) >= maxTravelDistance)
             {
                 Destroy(gameObject);
             }
         }
     }
-
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -88,19 +98,15 @@ public class Enemy_Projectiles : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            Debug.Log("AOE hitbox overlap detected");
-
             if (Time.time - lastDamageTime >= damageInterval)
             {
                 lastDamageTime = Time.time;
 
                 if (PlayerCombat.instance != null)
                 {
-                    Debug.Log("AOE damage applied");
                     PlayerCombat.instance.TakeDamage(damage, transform, knockbackRange, attackStatus, statusChance, statusDuration);
                 }
             }
         }
     }
-
 }

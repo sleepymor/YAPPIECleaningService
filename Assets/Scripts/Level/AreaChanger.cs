@@ -15,7 +15,6 @@ public class AreaChanger : MonoBehaviour
         Collider2D collider2D = GetComponent<Collider2D>();
         collider2D.gameObject.SetActive(true);
 
-      
         loadingScreen.SetActive(false); // Hide it at start
 
     }
@@ -24,6 +23,8 @@ public class AreaChanger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            DataManager.instance.isChangingArea = true;
+            DataManager.instance.playerScene = "";
             LoadScene(sceneName);
         }
     }
