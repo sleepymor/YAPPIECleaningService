@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: -915983924706461515}
   m_Layer: 0
   m_Name: Trashcan Mimic
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

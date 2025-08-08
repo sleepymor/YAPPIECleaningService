@@ -626,7 +626,6 @@ GameObject:
   - component: {fileID: 6783049725239749118}
   - component: {fileID: 4744115874390610952}
   - component: {fileID: 1632485647782245835}
-  - component: {fileID: 2042570538787079157}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -775,7 +774,7 @@ MonoBehaviour:
   moveSpeed: 10
   meleeDamage: 1
   harpoonDamage: 1
-  knockBackRange: 2
+  knockBackRange: 5
   attackMoveSpeed: 7
   attackMoveDuration: 0.7
   dashSpeed: 40
@@ -817,6 +816,7 @@ MonoBehaviour:
   attackMoveSpeed: 0
   attackMoveDuration: 0
   isAttacking: 0
+  defaultSpawn: {fileID: 0}
   harpoonTipPrefab: {fileID: 7543354035499503555, guid: c6ece3c4170a57b4d809d0b0a8f7741b, type: 3}
 --- !u!114 &6783049725239749118
 MonoBehaviour:
@@ -942,18 +942,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2042570538787079157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4236011337253573336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7d2f604edc27364b9deb0f1aa729358, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4404100219432331890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,7 +1179,7 @@ GameObject:
   - component: {fileID: 2947999575180660378}
   m_Layer: 6
   m_Name: Hitbox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -32,7 +32,7 @@ public class BeachScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "Hitbox" && beachAudio != null)
+        if (other.CompareTag("Player") && beachAudio != null)
         {
             if (!beachAudio.isPlaying)
             {
@@ -43,7 +43,7 @@ public class BeachScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.name == "Hitbox")
+        if (other.CompareTag("Player"))
         {
             BeachEnvHealth = EnvironmentManager.Instance.GetEnvironmentProgress(EnemyEnvironment.Beach);
             EnvironmentBar.instance.SetArrowPosition(BeachEnvHealth);
@@ -52,7 +52,7 @@ public class BeachScript : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.name == "Hitbox" && beachAudio != null)
+        if (other.CompareTag("Player") && beachAudio != null)
         {
             if (beachAudio.isPlaying)
             {

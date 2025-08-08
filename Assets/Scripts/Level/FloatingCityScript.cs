@@ -27,7 +27,7 @@ public class FloatingCityScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "Hitbox" && floatingCityAudio != null)
+        if (other.CompareTag("Player") && floatingCityAudio != null)
         {
             if (!floatingCityAudio.isPlaying)
             {
@@ -38,7 +38,7 @@ public class FloatingCityScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.name == "Hitbox" && floatingCityAudio != null)
+        if (other.CompareTag("Player") && floatingCityAudio != null)
         {
             FloatingCityEnvHealth = EnvironmentManager.Instance.GetEnvironmentProgress(EnemyEnvironment.FloatingCity);
             EnvironmentBar.instance.SetArrowPosition(FloatingCityEnvHealth);
@@ -48,7 +48,7 @@ public class FloatingCityScript : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.name == "Hitbox" && floatingCityAudio != null)
+        if (other.CompareTag("Player") && floatingCityAudio != null)
         {
             if (floatingCityAudio.isPlaying)
             {
