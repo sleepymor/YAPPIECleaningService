@@ -279,7 +279,7 @@ MonoBehaviour:
   moveSpeed: 4
   knockBackRange: 2
   meleeRange: 1.5
-  rangedRange: 10
+  rangedRange: 7
   canHarpooned: 0
   isBoss: 0
   environment: 2
@@ -301,7 +301,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3286646357669358039, guid: c60bb69ed5f1c984bb96fb002f3b06a4, type: 3}
   projectileCount: 8
   spreadAngle: 30
-  rangedProjectileSpeed: 10
+  rangedProjectileSpeed: 8
   maxTravelDistance: 10
   hasHidingMode: 0
   hidingMode: 0
