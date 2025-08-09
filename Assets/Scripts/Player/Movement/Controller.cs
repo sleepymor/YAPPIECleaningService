@@ -126,6 +126,15 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleMission"",
+                    ""type"": ""Button"",
+                    ""id"": ""47fa7c4c-06b9-4796-8669-03caddc31796"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -216,6 +225,17 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""action"": ""SkipDialog"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4017c39a-685a-45a6-abe2-844cc51d5f4d"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleMission"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -228,6 +248,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         m_Movement_Dash = m_Movement.FindAction("Dash", throwIfNotFound: true);
         m_Movement_Interract = m_Movement.FindAction("Interract", throwIfNotFound: true);
         m_Movement_SkipDialog = m_Movement.FindAction("SkipDialog", throwIfNotFound: true);
+        m_Movement_ToggleMission = m_Movement.FindAction("ToggleMission", throwIfNotFound: true);
     }
 
     ~@Controller()
@@ -312,6 +333,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
     private readonly InputAction m_Movement_Dash;
     private readonly InputAction m_Movement_Interract;
     private readonly InputAction m_Movement_SkipDialog;
+    private readonly InputAction m_Movement_ToggleMission;
     /// <summary>
     /// Provides access to input actions defined in input action map "Movement".
     /// </summary>
@@ -339,6 +361,10 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Movement/SkipDialog".
         /// </summary>
         public InputAction @SkipDialog => m_Wrapper.m_Movement_SkipDialog;
+        /// <summary>
+        /// Provides access to the underlying input action "Movement/ToggleMission".
+        /// </summary>
+        public InputAction @ToggleMission => m_Wrapper.m_Movement_ToggleMission;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -377,6 +403,9 @@ public partial class @Controller: IInputActionCollection2, IDisposable
             @SkipDialog.started += instance.OnSkipDialog;
             @SkipDialog.performed += instance.OnSkipDialog;
             @SkipDialog.canceled += instance.OnSkipDialog;
+            @ToggleMission.started += instance.OnToggleMission;
+            @ToggleMission.performed += instance.OnToggleMission;
+            @ToggleMission.canceled += instance.OnToggleMission;
         }
 
         /// <summary>
@@ -400,6 +429,9 @@ public partial class @Controller: IInputActionCollection2, IDisposable
             @SkipDialog.started -= instance.OnSkipDialog;
             @SkipDialog.performed -= instance.OnSkipDialog;
             @SkipDialog.canceled -= instance.OnSkipDialog;
+            @ToggleMission.started -= instance.OnToggleMission;
+            @ToggleMission.performed -= instance.OnToggleMission;
+            @ToggleMission.canceled -= instance.OnToggleMission;
         }
 
         /// <summary>
@@ -468,5 +500,12 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSkipDialog(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ToggleMission" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnToggleMission(InputAction.CallbackContext context);
     }
 }

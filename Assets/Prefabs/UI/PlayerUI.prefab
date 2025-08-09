@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 16582294034051129}
   - component: {fileID: 1946674381110152894}
   - component: {fileID: 986490384961932989}
+  - component: {fileID: 3004076135954442417}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -307,6 +308,19 @@ MonoBehaviour:
   dialogLines: []
   lineDisplayDuration: 3
   fadeDuration: 0.5
+--- !u!114 &3004076135954442417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578606935075636490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746026ae69f8238489d1e6bd76d543c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelGroup: {fileID: 5424927928808620620}
 --- !u!1 &688266304740615135
 GameObject:
   m_ObjectHideFlags: 0
@@ -3648,6 +3662,7 @@ GameObject:
   - component: {fileID: 3306715071698268681}
   - component: {fileID: 86245339232319847}
   - component: {fileID: 7734722086568715928}
+  - component: {fileID: 5424927928808620620}
   m_Layer: 0
   m_Name: MissionsPanel
   m_TagString: Untagged
@@ -3715,6 +3730,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &5424927928808620620
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8358286552084995120}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8378698067029931507
 GameObject:
   m_ObjectHideFlags: 0
