@@ -1,0 +1,182 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2861546580272309082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2562646048803333436}
+  - component: {fileID: 1451719462481927287}
+  - component: {fileID: -5996565458929278109}
+  - component: {fileID: 3717457315076288522}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2562646048803333436
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861546580272309082}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1451719462481927287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861546580272309082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fd3b37301dd9dc47b4ce27a534b22e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPos: {x: 0, y: 0}
+  savedPlayerPos: {x: 0, y: 0}
+  playerScene: MainGame
+  isChangingArea: 0
+  PlayerHealth: -99999999
+  activeMissionList: []
+--- !u!114 &-5996565458929278109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861546580272309082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46cd3b55b3f02cd4f93549bdae258c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionPairs:
+  - missionsToComplete: []
+    missionsToActivate:
+    - 'Tutorial: Move -> Use WASD to move and reach your first Charging Station'
+  - missionsToComplete:
+    - 'Tutorial: Move -> Use WASD to move and reach your first Charging Station'
+    missionsToActivate:
+    - 'Tutorial: Hold E to use Charging Station'
+  - missionsToComplete:
+    - 'Tutorial: Hold E to use Charging Station'
+    missionsToActivate:
+    - 'First Cleaning: Defeat 3 The Living Garbages, press LMB to attack'
+  - missionsToComplete:
+    - 'First Cleaning: Defeat 3 The Living Garbages, press LMB to attack'
+    missionsToActivate:
+    - 'Harpoon Tutorial: Hold LMB to aim, release to shoot'
+  - missionsToComplete:
+    - 'Harpoon Tutorial: Hold LMB to aim, release to shoot'
+    missionsToActivate:
+    - 'Defeat Oil Drops: Use Space To Dodge their ranged attacks'
+  - missionsToComplete:
+    - 'Defeat Oil Drops: Use Space To Dodge their ranged attacks'
+    missionsToActivate:
+    - Clean The Beach! Defeat all monsters on the beach!
+  - missionsToComplete:
+    - Clean The Beach! Defeat all monsters on the beach!
+    missionsToActivate:
+    - 'An abandoned city?: Go to the City'
+  - missionsToComplete:
+    - 'An abandoned city?: Go to the City'
+    missionsToActivate:
+    - Clean the city, beware of Trashcan Mimics!
+  - missionsToComplete:
+    - Clean the city, beware of Trashcan Mimics!
+    missionsToActivate:
+    - 'Lets dive in: Dive to underwater (Left of the beach)'
+  - missionsToComplete:
+    - 'Lets dive in: Dive to underwater (Left of the beach)'
+    missionsToActivate:
+    - Clean the Coral Maze
+  - missionsToComplete:
+    - Clean the Coral Maze
+    missionsToActivate:
+    - 'Final Boss?: Defeat Mutant Landfill Monster'
+  - missionsToComplete:
+    - 'Final Boss?: Defeat Mutant Landfill Monster'
+    missionsToActivate:
+    - Thank you for helping us in the development!
+  - missionsToComplete:
+    - Clean the Coral Maze
+    missionsToActivate:
+    - 'Final Boss?: Defeat Mutant Landfill Monster'
+--- !u!114 &3717457315076288522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861546580272309082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6e179d8f6e4224bb82f887e012c331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionText: {fileID: 0}
+  playerTransform: {fileID: 0}
+  missionsToDefine:
+  - missionName: 'Tutorial: Move -> Use WASD to move and reach your first Charging
+      Station'
+    targetCount: 1
+    missionType: 1
+    destinationPosition: {x: 0, y: 0, z: 0}
+  - missionName: 'Tutorial: Hold E to use Charging Station'
+    targetCount: 1
+    missionType: 3
+    destinationPosition: {x: 0, y: 0, z: 0}
+  - missionName: 'First Cleaning: Defeat 3 The Living Garbages, press LMB to attack'
+    targetCount: 3
+    missionType: 0
+    destinationPosition: {x: 0, y: 0, z: 0}
+  - missionName: 'Harpoon Tutorial: Hold LMB to aim, release to shoot'
+    targetCount: 1
+    missionType: 3
+    destinationPosition: {x: 0, y: 0, z: 0}
+  - missionName: 'Defeat Oil Drops: Use Space To Dodge their ranged attacks'
+    targetCount: 2
+    missionType: 0
+    destinationPosition: {x: 0, y: 0, z: 0}
+  - missionName: Clean The Beach! Defeat all monsters on the beach!
+    targetCount: 1
+    missionType: 3
+    destinationPosition: {x: 0, y: 0, z: 0}
+  - missionName: 'An abandoned city?: Go to the City'
+    targetCount: 1
+    missionType: 1
+    destinationPosition: {x: 0, y: 0, z: 0}
+  - missionName: Clean the city, beware of Trashcan Mimics!
+    targetCount: 1
+    missionType: 3
+    destinationPosition: {x: 0, y: 0, z: 0}
+  - missionName: 'Lets dive in: Dive to underwater (Left of the beach)'
+    targetCount: 1
+    missionType: 3
+    destinationPosition: {x: 0, y: 0, z: 0}
+  - missionName: Clean the Coral Maze
+    targetCount: 1
+    missionType: 3
+    destinationPosition: {x: 0, y: 0, z: 0}
+  - missionName: 'Final Boss?: Defeat Mutant Landfill Monster'
+    targetCount: 1
+    missionType: 0
+    destinationPosition: {x: 0, y: 0, z: 0}
+  - missionName: Thank you for helping us in the development!
+    targetCount: 1
+    missionType: 3
+    destinationPosition: {x: 0, y: 0, z: 0}

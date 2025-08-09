@@ -11,13 +11,14 @@ public class MainMenu : MonoBehaviour
 
     public void StartNewGame()
     {
+        //GameSaveManager.ResetSaveData(dataManager);
         LoadScene("MainGame");
     }
 
     public void Continue()
     {
         GameSaveManager.LoadGame(dataManager);
-        LoadScene("MainGame");
+        LoadScene(DataManager.instance.playerScene);
     }
 
     public void QuitApp()

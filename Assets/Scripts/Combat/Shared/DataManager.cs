@@ -44,9 +44,8 @@ public class DataManager : MonoBehaviour
 
     public void Load()
     {
-        //GameSaveManager.LoadGame(this);
-        //MissionManager.instance?.ReloadActiveMissionsFromDataManager();
-
+        GameSaveManager.LoadGame(this);
+        MissionManager.instance?.ReloadActiveMissionsFromDataManager();
     }
 
     public int RegisterEnemyHealth(int health)

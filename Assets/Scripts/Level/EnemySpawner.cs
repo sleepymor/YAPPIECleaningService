@@ -100,4 +100,14 @@ public class EnemySpawner : MonoBehaviour
             Gizmos.DrawWireCube(spawnArea.bounds.center, spawnArea.bounds.size);
         }
     }
+
+    bool AreAllMissionsCompleted(string[] missionsToCheck)
+    {
+        foreach (string missionName in missionsToCheck)
+        {
+            if (!MissionManager.instance.IsMissionCompleted(missionName))
+                return false;
+        }
+        return true;
+    }
 }

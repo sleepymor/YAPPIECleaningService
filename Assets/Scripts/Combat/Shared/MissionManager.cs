@@ -10,6 +10,12 @@ public class MissionManager : MonoBehaviour
     public TextMeshProUGUI missionText;
     public Transform playerTransform;
 
+    [SerializeField]
+    private List<MissionData> missionsToDefine = new List<MissionData>();
+
+    private bool hasFoundPlayer = false;
+    private bool hasFoundMissionText = false;
+
     public class Mission
     {
         public string name;
@@ -24,6 +30,8 @@ public class MissionManager : MonoBehaviour
         public float fadeAlpha = 1f;
         public const float fadeDuration = 1.5f;
         public const float displayDuration = 2f;
+
+
 
         public Mission(string name, int targetCount, MissionType type, Vector3 destinationPosition = default)
         {
@@ -113,6 +121,7 @@ public class MissionManager : MonoBehaviour
 
     void Start()
     {
+        DefineAllMissions();
         if (playerTransform == null)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -125,6 +134,39 @@ public class MissionManager : MonoBehaviour
 
     void Update()
     {
+        
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+            {
+                playerTransform = playerObj.transform;
+                hasFoundPlayer = true;
+                Debug.Log("Player transform found.");
+            }
+        
+
+        
+            GameObject missionTextObj = GameObject.FindGameObjectWithTag("MissionText");
+            if (missionTextObj != null)
+            {
+                missionText = missionTextObj.GetComponent<TextMeshProUGUI>();
+                if (missionText != null)
+                {
+                    hasFoundMissionText = true;
+                    Debug.Log("Mission Text found.");
+                }
+                else
+                {
+                    Debug.LogWarning("Object with tag 'MissionText' found but no TextMeshProUGUI component.");
+                }
+            }
+        
+
+        //// Kalau sudah ketemu semua, disable update biar gak boros
+        //if (hasFoundPlayer && hasFoundMissionText)
+        //{
+        //    enabled = false;
+        //}
+    
         foreach (var mission in allMissions.Values)
         {
             if (mission.isActive && !mission.isCompleted && mission.type == MissionType.Destination && playerTransform != null)
@@ -142,10 +184,14 @@ public class MissionManager : MonoBehaviour
 
     public void DefineAllMissions()
     {
-        allMissions["Go to nearest charging station and heal!"] = new Mission("Go to nearest charging station!", 1, MissionType.Destination);
-        allMissions["Clean the Beach area by defeating The Living Garbage and Oil Drop monsters in the area"] = new Mission("Clean the Beach area by defeating The Living Garbage and Oil Drop monster in the area", 6, MissionType.Slaying);
-        allMissions["Clean the Floating City area by defeating TrashcanMimic and other monsters in the area"] = new Mission("Clean the Floating City area by defeating TrashcanMimic and other monsters in the area", 10, MissionType.Slaying);
-        allMissions["Clean the Underwater area by defeating Death Coral and Nuclear Slime"] = new Mission("Clean the Underwater area by defeating Death Coral and Nuclear Slime", 1, MissionType.Completion);
+        allMissions.Clear();
+
+        foreach (MissionData md in missionsToDefine)
+        {
+            allMissions[md.missionName] = new Mission(md.missionName, md.targetCount, md.missionType, md.destinationPosition);
+        }
+
+        Debug.Log("Defined");
     }
 
     public void ActivateMission(string missionName, Vector3? destination = null)
@@ -168,7 +214,8 @@ public class MissionManager : MonoBehaviour
                         mission.type,
                         mission.currentCount,
                         mission.targetCount,
-                        mission.destinationPosition
+                        mission.destinationPosition,
+                        mission.isCompleted
                     )
                 );
             }
@@ -240,25 +287,30 @@ public class MissionManager : MonoBehaviour
 
     public void ReloadActiveMissionsFromDataManager()
     {
-        DefineAllMissions(); // Make sure allMissions is populated
+        DefineAllMissions(); // Reset missions
 
         foreach (var missionData in DataManager.instance.activeMissionList)
         {
             if (allMissions.TryGetValue(missionData.name, out Mission mission))
             {
-                mission.isActive = true;
-                mission.isCompleted = false;
+                mission.isActive = !missionData.isCompleted; // aktif kalau belum selesai
+                mission.isCompleted = missionData.isCompleted;
 
                 mission.type = missionData.type;
                 mission.currentCount = missionData.currentCount;
                 mission.targetCount = missionData.targetCount;
 
+                if (missionData.isCompleted)
+                {
+                    mission.Complete();
+                }
+
                 if (missionData.type == MissionType.Destination)
                     mission.destinationPosition = missionData.destinationPosition;
-
-                UpdateMissionText();
             }
         }
+
+        UpdateMissionText();
     }
 
 
@@ -278,5 +330,13 @@ public class MissionManager : MonoBehaviour
         }
     }
 
+    public bool IsMissionCompleted(string missionName)
+    {
+        if (allMissions.TryGetValue(missionName, out Mission mission))
+        {
+            return mission.isCompleted;
+        }
+        return false;
+    }
 
 }
