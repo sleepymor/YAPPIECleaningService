@@ -817,6 +817,8 @@ MonoBehaviour:
   attackMoveDuration: 0
   isAttacking: 0
   defaultSpawn: {fileID: 0}
+  areaSpawn: {fileID: 0}
+  harpoonMission: 
   harpoonTipPrefab: {fileID: 7543354035499503555, guid: c6ece3c4170a57b4d809d0b0a8f7741b, type: 3}
 --- !u!114 &6783049725239749118
 MonoBehaviour:
@@ -844,6 +846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1ff12a36d520d45a419e3e80dc5a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gettingKnockedBack: 0
   isPlayer: 1
 --- !u!82 &1632485647782245835
 AudioSource:
