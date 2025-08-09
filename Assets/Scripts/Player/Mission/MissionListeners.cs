@@ -3,6 +3,7 @@ using UnityEngine;
 public class MissionListeners : MonoBehaviour
 {
     public string[] missionsToUnlock;  // misi yang harus selesai dulu
+    public string missionToLock;  // misi yang harus selesai dulu
 
     void Start()
     {
@@ -12,6 +13,11 @@ public class MissionListeners : MonoBehaviour
 
     void Update()
     {
+        if (MissionManager.instance.IsMissionCompleted(missionToLock))
+        {
+            return;
+        }
+
         if (AreAllMissionsCompleted())
         {
             // Nyalakan semua child jika misi sudah selesai semua

@@ -77,6 +77,10 @@ MonoBehaviour:
     missionsToActivate:
     - 'First Cleaning: Defeat 3 The Living Garbages, press LMB to attack'
   - missionsToComplete:
+    - 'First Cleaning: Defeat 3 The Living Garbages, press LMB to attack'
+    missionsToActivate:
+    - 'Harpoon Tutorial: Hold LMB to aim, release to shoot'
+  - missionsToComplete:
     - 'Harpoon Tutorial: Hold LMB to aim, release to shoot'
     missionsToActivate:
     - 'Defeat Oil Drops: Use Space To Dodge their ranged attacks'

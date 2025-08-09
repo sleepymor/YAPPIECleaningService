@@ -63,7 +63,7 @@ public class FloatingCityScript : MonoBehaviour
         if (EnvironmentManager.Instance.GetEnvironmentProgress(EnemyEnvironment.FloatingCity) > 99)
         {
             ToggleTrash();
-            //MissionManager.instance.ForceCompleteMission(completionMission);
+            MissionManager.instance.ForceCompleteMission(completionMission);
         }
     }
 

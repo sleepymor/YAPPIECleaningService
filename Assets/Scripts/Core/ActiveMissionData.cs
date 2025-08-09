@@ -8,16 +8,19 @@ public class ActiveMissionData
     public int currentCount;
     public int targetCount;
     public Vector3 destinationPosition;
+    public bool isCompleted;
 
-    public ActiveMissionData(string name, MissionType type, int currentCount, int targetCount, Vector3 destinationPosition)
+    public ActiveMissionData(string name, MissionType type, int currentCount, int targetCount, Vector3 destinationPosition, bool isCompleted = false)
     {
         this.name = name;
         this.type = type;
         this.currentCount = currentCount;
         this.targetCount = targetCount;
         this.destinationPosition = destinationPosition;
+        this.isCompleted = isCompleted;
     }
 }
+
 
 [System.Serializable]
 public class MissionPair

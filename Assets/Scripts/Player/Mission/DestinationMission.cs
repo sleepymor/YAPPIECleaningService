@@ -14,7 +14,7 @@ public class DestinationMission : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!string.IsNullOrEmpty(missionName) && other.transform.name == "Hitbox" && other.transform.root.GetComponent<PlayerController>() != null)
+        if (other.CompareTag("Player"))
         {
             MissionManager.instance.UpdateDestination(missionName);
         }

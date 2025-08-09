@@ -1378,7 +1378,7 @@ GameObject:
   - component: {fileID: 5982398293156268951}
   m_Layer: 0
   m_Name: Missions
-  m_TagString: Untagged
+  m_TagString: MissionText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4354,6 +4354,14 @@ PrefabInstance:
     - target: {fileID: 2861546580272309082, guid: 3243d3b667ebec345a3dff292998b2f8, type: 3}
       propertyPath: m_Name
       value: Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3717457315076288522, guid: 3243d3b667ebec345a3dff292998b2f8, type: 3}
+      propertyPath: missionText
+      value: 
+      objectReference: {fileID: 5982398293156268951}
+    - target: {fileID: 3717457315076288522, guid: 3243d3b667ebec345a3dff292998b2f8, type: 3}
+      propertyPath: playerTransform
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

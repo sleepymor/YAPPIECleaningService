@@ -13,6 +13,8 @@ public class MissionManager : MonoBehaviour
     [SerializeField]
     private List<MissionData> missionsToDefine = new List<MissionData>();
 
+    private bool hasFoundPlayer = false;
+    private bool hasFoundMissionText = false;
 
     public class Mission
     {
@@ -132,6 +134,41 @@ public class MissionManager : MonoBehaviour
 
     void Update()
     {
+        if (!hasFoundPlayer)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+            {
+                playerTransform = playerObj.transform;
+                hasFoundPlayer = true;
+                Debug.Log("Player transform found.");
+            }
+        }
+
+        if (!hasFoundMissionText)
+        {
+            GameObject missionTextObj = GameObject.FindGameObjectWithTag("MissionText");
+            if (missionTextObj != null)
+            {
+                missionText = missionTextObj.GetComponent<TextMeshProUGUI>();
+                if (missionText != null)
+                {
+                    hasFoundMissionText = true;
+                    Debug.Log("Mission Text found.");
+                }
+                else
+                {
+                    Debug.LogWarning("Object with tag 'MissionText' found but no TextMeshProUGUI component.");
+                }
+            }
+        }
+
+        //// Kalau sudah ketemu semua, disable update biar gak boros
+        //if (hasFoundPlayer && hasFoundMissionText)
+        //{
+        //    enabled = false;
+        //}
+    
         foreach (var mission in allMissions.Values)
         {
             if (mission.isActive && !mission.isCompleted && mission.type == MissionType.Destination && playerTransform != null)
@@ -179,7 +216,8 @@ public class MissionManager : MonoBehaviour
                         mission.type,
                         mission.currentCount,
                         mission.targetCount,
-                        mission.destinationPosition
+                        mission.destinationPosition,
+                        mission.isCompleted
                     )
                 );
             }
@@ -251,25 +289,30 @@ public class MissionManager : MonoBehaviour
 
     public void ReloadActiveMissionsFromDataManager()
     {
-        DefineAllMissions(); // Make sure allMissions is populated
+        DefineAllMissions(); // Reset missions
 
         foreach (var missionData in DataManager.instance.activeMissionList)
         {
             if (allMissions.TryGetValue(missionData.name, out Mission mission))
             {
-                mission.isActive = true;
-                mission.isCompleted = false;
+                mission.isActive = !missionData.isCompleted; // aktif kalau belum selesai
+                mission.isCompleted = missionData.isCompleted;
 
                 mission.type = missionData.type;
                 mission.currentCount = missionData.currentCount;
                 mission.targetCount = missionData.targetCount;
 
+                if (missionData.isCompleted)
+                {
+                    mission.Complete();
+                }
+
                 if (missionData.type == MissionType.Destination)
                     mission.destinationPosition = missionData.destinationPosition;
-
-                UpdateMissionText();
             }
         }
+
+        UpdateMissionText();
     }
 
 
