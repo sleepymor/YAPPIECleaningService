@@ -288,9 +288,9 @@ MonoBehaviour:
   meleeAttackStatus: 0
   meleeAttackStatusChance: 0
   meleeAttackStatusDuration: 0
-  rangedDamage: 3
+  rangedDamage: 2
   rangedAttackStatus: 0
-  rangedAttackStatusChance: 0.5
+  rangedAttackStatusChance: 0.2
   rangedAttackStatusDuration: 0
   aoeDamage: 1
   aoeAttackStatus: 0
@@ -301,9 +301,9 @@ MonoBehaviour:
   spriteFacingRight: 0
   projectilePrefab: {fileID: 3286646357669358039, guid: 6b6ae49d995af5c4db2fc95093e64e8d, type: 3}
   projectileCount: 3
-  spreadAngle: 30
-  rangedProjectileSpeed: 5
-  maxTravelDistance: 10
+  spreadAngle: 20
+  rangedProjectileSpeed: 4
+  maxTravelDistance: 7
   hasHidingMode: 0
   hidingMode: 0
   useTrigger: 0
