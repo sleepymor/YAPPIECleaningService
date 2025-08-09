@@ -99,9 +99,9 @@ MonoBehaviour:
   - missionsToComplete:
     - Clean the city, beware of Trashcan Mimics!
     missionsToActivate:
-    - 'Lets dive in: Dive to the underwater'
+    - 'Lets dive in: Dive to underwater (Left of the beach)'
   - missionsToComplete:
-    - 'Lets dive in: Dive to the underwater'
+    - 'Lets dive in: Dive to underwater (Left of the beach)'
     missionsToActivate:
     - Clean the Coral Maze
   - missionsToComplete:
@@ -111,8 +111,7 @@ MonoBehaviour:
   - missionsToComplete:
     - 'Final Boss?: Defeat Mutant Landfill Monster'
     missionsToActivate:
-    - Thank you for helping us in the development! Now enemies are spawn infinitely,
-      you can fight them all or start a new  game! Thank you for playing!
+    - Thank you for helping us in the development!
   - missionsToComplete:
     - Clean the Coral Maze
     missionsToActivate:
@@ -165,9 +164,9 @@ MonoBehaviour:
     targetCount: 1
     missionType: 3
     destinationPosition: {x: 0, y: 0, z: 0}
-  - missionName: 'Lets dive in: Dive to the underwater'
+  - missionName: 'Lets dive in: Dive to underwater (Left of the beach)'
     targetCount: 1
-    missionType: 1
+    missionType: 3
     destinationPosition: {x: 0, y: 0, z: 0}
   - missionName: Clean the Coral Maze
     targetCount: 1
@@ -177,8 +176,7 @@ MonoBehaviour:
     targetCount: 1
     missionType: 0
     destinationPosition: {x: 0, y: 0, z: 0}
-  - missionName: Thank you for helping us in the development! Now enemies are spawn
-      infinitely, you can fight them all or start a new  game! Thank you for playing!
+  - missionName: Thank you for helping us in the development!
     targetCount: 1
     missionType: 3
     destinationPosition: {x: 0, y: 0, z: 0}

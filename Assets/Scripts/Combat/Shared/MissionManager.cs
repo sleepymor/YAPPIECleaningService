@@ -134,8 +134,7 @@ public class MissionManager : MonoBehaviour
 
     void Update()
     {
-        if (!hasFoundPlayer)
-        {
+        
             GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
             if (playerObj != null)
             {
@@ -143,10 +142,9 @@ public class MissionManager : MonoBehaviour
                 hasFoundPlayer = true;
                 Debug.Log("Player transform found.");
             }
-        }
+        
 
-        if (!hasFoundMissionText)
-        {
+        
             GameObject missionTextObj = GameObject.FindGameObjectWithTag("MissionText");
             if (missionTextObj != null)
             {
@@ -161,7 +159,7 @@ public class MissionManager : MonoBehaviour
                     Debug.LogWarning("Object with tag 'MissionText' found but no TextMeshProUGUI component.");
                 }
             }
-        }
+        
 
         //// Kalau sudah ketemu semua, disable update biar gak boros
         //if (hasFoundPlayer && hasFoundMissionText)

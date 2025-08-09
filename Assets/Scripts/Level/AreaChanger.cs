@@ -19,12 +19,14 @@ public class AreaChanger : MonoBehaviour
         loadingScreen.SetActive(false);
     }
 
+    public string missionName;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && AreAllMissionsCompleted())
         {
             DataManager.instance.isChangingArea = true;
             DataManager.instance.playerScene = "";
+            MissionManager.instance.ForceCompleteMission(missionName);
             LoadScene(sceneName);
         }
     }

@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
     public void Continue()
     {
         GameSaveManager.LoadGame(dataManager);
-        LoadScene("MainGame");
+        LoadScene(DataManager.instance.playerScene);
     }
 
     public void QuitApp()
