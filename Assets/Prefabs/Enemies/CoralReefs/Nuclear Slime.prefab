@@ -279,7 +279,7 @@ MonoBehaviour:
   moveSpeed: 4
   knockBackRange: 2
   meleeRange: 1.5
-  rangedRange: 4
+  rangedRange: 10
   canHarpooned: 0
   isBoss: 0
   environment: 2
