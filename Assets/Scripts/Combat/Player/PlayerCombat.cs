@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.EventSystems;
+
 
 
 public class PlayerCombat : MonoBehaviour
@@ -42,7 +44,7 @@ public class PlayerCombat : MonoBehaviour
 
     private PlayerConfig config;
 
-    private Combat combat;
+    public Combat combat;
     private Vector2 lastHarpoonDirection = Vector2.right;
 
 
@@ -168,17 +170,24 @@ public class PlayerCombat : MonoBehaviour
     }
 
     void Update()
-    {        
-        if (!isStunned)
+    {
+        if (!PauseMenu.instance.IsMouseOverPauseUI())
         {
-            Attack();
+            float input = combat.Fight.Attack.ReadValue<float>();
+            if (!isStunned)
+            {
+                Attack();
+            }
+
+            UpdateHarpoonLine();
+            
         }
 
-        UpdateHarpoonLine();
 
-    }
 
-    void UpdateHarpoonLine()
+        }
+
+        void UpdateHarpoonLine()
     {
         if (harpoonTipInstance != null)
         {
