@@ -7,9 +7,26 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject pauseBtn;
+    public bool isPaused = false;
 
     private RectTransform pausePanelRect;
     private RectTransform pauseBtnRect;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+                ResumeGame();
+            else
+                PauseGame();
+        }
+
+        if (isPaused && Input.GetKeyDown(KeyCode.X))
+        {
+            BackToMenu();
+        }
+    }
 
     private void Awake()
     {
@@ -23,6 +40,7 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
+        isPaused = true;
         Time.timeScale = 0f;
         PlayerController.instance.controller.Disable();
         PlayerCombat.instance.combat.Disable();
@@ -31,6 +49,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        isPaused = false;
         Time.timeScale = 1f;
         PlayerController.instance.controller.Enable();
         PlayerCombat.instance.combat.Enable();
@@ -39,6 +58,7 @@ public class PauseMenu : MonoBehaviour
 
     public void BackToMenu()
     {
+        isPaused = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
