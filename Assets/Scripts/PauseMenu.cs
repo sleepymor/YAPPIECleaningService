@@ -7,8 +7,8 @@ using UnityEngine.InputSystem;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseCanvas;
-    public GameObject loadingScreen;  
-    public Slider progressBar;        
+    public GameObject loadingScreen;
+    public Slider progressBar;
 
     public Controller controls;
 
@@ -22,6 +22,11 @@ public class PauseMenu : MonoBehaviour
                 Resume();
             else
                 Pause();
+        }
+
+        if (isPaused && Input.GetKeyDown(KeyCode.X))
+        {
+            BackToMainMenu();
         }
     }
 
@@ -45,8 +50,8 @@ public class PauseMenu : MonoBehaviour
         pauseCanvas.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
- 
-        controls.Movement.Disable();
+        PlayerController.instance.canMove = false;
+        controls.Disable();
     }
 
     public void Resume()
@@ -54,8 +59,8 @@ public class PauseMenu : MonoBehaviour
         pauseCanvas.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
-
-        controls.Movement.Enable();
+        PlayerController.instance.canMove = true;
+        controls.Enable();
     }
 
 
