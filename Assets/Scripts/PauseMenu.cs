@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
-public class PauseMenu : MonoBehaviour
+public class PaufseMenu : MonoBehaviour
 {
     public GameObject pauseCanvas;
     public GameObject loadingScreen;
