@@ -276,7 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killMissionName: Clean the Beach area by defeating The Living Garbage and Oil Drop
     monsters in the area
-  maximumHealth: 15
+  maximumHealth: 8
   moveSpeed: 3
   knockBackRange: 3
   meleeRange: 2
