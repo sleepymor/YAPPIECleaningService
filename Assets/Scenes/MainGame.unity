@@ -197,8 +197,8 @@ RenderTexture:
     Hash: 00000000000000000000000000000000
   m_IsAlphaChannelOptional: 0
   serializedVersion: 6
-  m_Width: 827
-  m_Height: 697
+  m_Width: 1194
+  m_Height: 1119
   m_AntiAliasing: 1
   m_MipCount: -1
   m_DepthStencilFormat: 93
@@ -291,7 +291,7 @@ MonoBehaviour:
     reflectionLayerIdx: 9
     copyMainBackground: 0
     lastOrtographicSize: 7.76
-    lastAspectRatio: 1.7784946
+    lastAspectRatio: 1.6005362
   _run: 0
   startupQF: 1
   pivotDetectionAlphaTreshold: 0
@@ -428,7 +428,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missionsToUnlock:
-  - 'Defeat Oil Drops: Use Space To Dodge their ranged attacks'
+  - Kalahkan Oil Drop, tekan Space untuk Dash, dan tahan tombol kiri mouse untuk
+    membidik harpoon
   missionToLock: 'An abandoned city?: Go to the City'
 --- !u!1001 &56355607
 PrefabInstance:
@@ -629,8 +630,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missionsToUnlock:
-  - 'Tutorial: Hold E to use Charging Station'
-  missionToLock: 'First Cleaning: Defeat 3 The Living Garbages, press LMB to attack'
+  - Tahan tombol E untuk healing di charging station
+  missionToLock: Kalahkan Oil Drop, tekan Space untuk Dash, dan tahan tombol kiri
+    mouse untuk membidik harpoon
 --- !u!1 &75299060
 GameObject:
   m_ObjectHideFlags: 0
@@ -10114,12 +10116,86 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1012498990}
     - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.data[0].missionName
+      value: Tutorial -> Gunakan WASD untuk bergerak ke charging station
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.data[1].missionName
+      value: Tahan tombol E untuk healing di charging station
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.data[2].missionName
+      value: Kalahkan 3 Monster (The Living Garbage)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.data[4].missionName
+      value: Kalahkan Oil Drop, tekan Space untuk Dash, dan tahan tombol kiri mouse
+        untuk membidik harpoon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.data[5].missionName
+      value: Bersihkan pantai! Kalahkan semua monster di pantai hingga indikator
+        ditengah atas menjadi hijau lagi!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.data[6].missionName
+      value: Selamat! Level pertama selesai (Fullnya gak bisa ditaroh disini wkwkw)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.data[6].missionType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.data[7].missionName
+      value: 'An abandoned city?: Go to the City'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.data[7].missionType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
       propertyPath: missionsToDefine.Array.data[8].missionName
-      value: 'Lets dive in: Dive to underwater (Left of the beach)'
+      value: Clean the city, beware of Trashcan Mimics!
       objectReference: {fileID: 0}
     - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
       propertyPath: missionsToDefine.Array.data[8].missionType
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.data[9].missionName
+      value: 'Lets dive in: Dive to underwater (Left of the beach)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.data[10].missionName
+      value: Clean the Coral Maze
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.data[10].missionType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.data[11].missionName
+      value: 'Final Boss?: Defeat Mutant Landfill Monster'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.data[11].missionType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.data[12].missionName
+      value: Thank you for helping us in the development!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.data[12].missionType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422753614200230756, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: missionsToDefine.Array.data[12].targetCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3511072308976106408, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -10166,32 +10242,56 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3517580139586043917, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: 'missionPairs.Array.data[0].missionsToActivate.Array.data[0]'
+      value: Tutorial -> Gunakan WASD untuk bergerak ke charging station
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517580139586043917, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: 'missionPairs.Array.data[1].missionsToActivate.Array.data[0]'
+      value: Tahan tombol E untuk healing di charging station
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517580139586043917, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: 'missionPairs.Array.data[1].missionsToComplete.Array.data[0]'
+      value: Tutorial -> Gunakan WASD untuk bergerak ke charging station
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517580139586043917, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: 'missionPairs.Array.data[2].missionsToActivate.Array.data[0]'
+      value: Kalahkan 3 Monster (The Living Garbage)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517580139586043917, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
+      propertyPath: 'missionPairs.Array.data[2].missionsToComplete.Array.data[0]'
+      value: Tahan tombol E untuk healing di charging station
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517580139586043917, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
       propertyPath: 'missionPairs.Array.data[3].missionsToActivate.Array.data[0]'
-      value: 'Harpoon Tutorial: Hold LMB to aim, release to shoot'
+      value: Kalahkan Oil Drop, tekan Space untuk Dash, dan tahan tombol kiri mouse
+        untuk membidik harpoon
       objectReference: {fileID: 0}
     - target: {fileID: 3517580139586043917, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
       propertyPath: 'missionPairs.Array.data[3].missionsToComplete.Array.data[0]'
-      value: 'First Cleaning: Defeat 3 The Living Garbages, press LMB to attack'
+      value: Kalahkan 3 Monster (The Living Garbage)
       objectReference: {fileID: 0}
     - target: {fileID: 3517580139586043917, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
       propertyPath: 'missionPairs.Array.data[4].missionsToActivate.Array.data[0]'
-      value: 'Defeat Oil Drops: Use Space To Dodge their ranged attacks'
+      value: Bersihkan pantai! Kalahkan semua monster di pantai hingga indikator
+        ditengah atas menjadi hijau lagi!
       objectReference: {fileID: 0}
     - target: {fileID: 3517580139586043917, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
       propertyPath: 'missionPairs.Array.data[4].missionsToComplete.Array.data[0]'
-      value: 'Harpoon Tutorial: Hold LMB to aim, release to shoot'
+      value: Kalahkan Oil Drop, tekan Space untuk Dash, dan tahan tombol kiri mouse
+        untuk membidik harpoon
       objectReference: {fileID: 0}
     - target: {fileID: 3517580139586043917, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
       propertyPath: 'missionPairs.Array.data[5].missionsToActivate.Array.data[0]'
-      value: Clean The Beach! Defeat all monsters on the beach!
+      value: Selamat! Level pertama selesai (Fullnya gak bisa ditaroh disini wkwkw)
       objectReference: {fileID: 0}
     - target: {fileID: 3517580139586043917, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
       propertyPath: 'missionPairs.Array.data[5].missionsToComplete.Array.data[0]'
-      value: 'Defeat Oil Drops: Use Space To Dodge their ranged attacks'
+      value: Bersihkan pantai! Kalahkan semua monster di pantai hingga indikator
+        ditengah atas menjadi hijau lagi!
       objectReference: {fileID: 0}
     - target: {fileID: 3517580139586043917, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
       propertyPath: 'missionPairs.Array.data[6].missionsToActivate.Array.data[0]'
-      value: 'An abandoned city?: Go to the City'
+      value: Selamat! Level pertama selesai (Fullnya gak bisa ditaroh disini wkwkw)
       objectReference: {fileID: 0}
     - target: {fileID: 3517580139586043917, guid: 00fdd97a7156da340b239d579e32bdb8, type: 3}
       propertyPath: 'missionPairs.Array.data[6].missionsToComplete.Array.data[0]'
@@ -10419,6 +10519,43 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: -4436055364962013191, guid: 0ab115e169c4f8345b06f01cf4436669, type: 3}
   m_PrefabInstance: {fileID: 639941819}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &122437724
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 6
+  m_Width: 384
+  m_Height: 584
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 92
+  m_ColorFormat: 46
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_UseDynamicScaleExplicit: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1001 &125173545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10650,7 +10787,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8230488398095317440, guid: 0ab115e169c4f8345b06f01cf4436669, type: 3}
       propertyPath: maxSpawn
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8230488398095317440, guid: 0ab115e169c4f8345b06f01cf4436669, type: 3}
       propertyPath: spawnArea
@@ -10674,19 +10811,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4436055364962013191, guid: 0ab115e169c4f8345b06f01cf4436669, type: 3}
       propertyPath: m_Size.x
-      value: 31.129347
+      value: 20.012825
       objectReference: {fileID: 0}
     - target: {fileID: -4436055364962013191, guid: 0ab115e169c4f8345b06f01cf4436669, type: 3}
       propertyPath: m_Size.y
-      value: 83.39624
+      value: 27.1003
       objectReference: {fileID: 0}
     - target: {fileID: -4436055364962013191, guid: 0ab115e169c4f8345b06f01cf4436669, type: 3}
       propertyPath: m_Offset.x
-      value: -9.725829
+      value: -15.28409
       objectReference: {fileID: 0}
     - target: {fileID: -4436055364962013191, guid: 0ab115e169c4f8345b06f01cf4436669, type: 3}
       propertyPath: m_Offset.y
-      value: 40.59674
+      value: 4.5227184
       objectReference: {fileID: 0}
     - target: {fileID: 5649220881130577261, guid: 0ab115e169c4f8345b06f01cf4436669, type: 3}
       propertyPath: m_Name
@@ -10900,43 +11037,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e331340ea867e944cbdda54153e52314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!84 &243723051
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 6
-  m_Width: 384
-  m_Height: 584
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 46
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_UseDynamicScaleExplicit: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &246321297
 GameObject:
   m_ObjectHideFlags: 0
@@ -11245,7 +11345,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2806451232791597443, guid: 9887fa49b47548343ac4a802969fd3a9, type: 3}
       propertyPath: killMissionName
-      value: 'Defeat Oil Drops: Use Space To Dodge their ranged attacks'
+      value: Kalahkan Oil Drop, tekan Space untuk Dash, dan tahan tombol kiri mouse
+        untuk membidik harpoon
       objectReference: {fileID: 0}
     - target: {fileID: 4434105707194845171, guid: 9887fa49b47548343ac4a802969fd3a9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11297,43 +11398,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4434105707194845171, guid: 9887fa49b47548343ac4a802969fd3a9, type: 3}
   m_PrefabInstance: {fileID: 374197724}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &380419427
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 6
-  m_Width: 259
-  m_Height: 146
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_UseDynamicScaleExplicit: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 0
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &380839309
 GameObject:
   m_ObjectHideFlags: 0
@@ -150173,7 +150237,7 @@ MonoBehaviour:
     reflectionLayerIdx: -1
     copyMainBackground: 0
     lastOrtographicSize: 11.64
-    lastAspectRatio: 1.1856631
+    lastAspectRatio: 1.0670241
   _run: 0
   startupQF: 1
   pivotDetectionAlphaTreshold: 0
@@ -150593,7 +150657,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2806451232791597443, guid: 9887fa49b47548343ac4a802969fd3a9, type: 3}
       propertyPath: killMissionName
-      value: 'Defeat Oil Drops: Use Space To Dodge their ranged attacks'
+      value: Kalahkan Oil Drop, tekan Space untuk Dash, dan tahan tombol kiri mouse
+        untuk membidik harpoon
       objectReference: {fileID: 0}
     - target: {fileID: 4434105707194845171, guid: 9887fa49b47548343ac4a802969fd3a9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -200275,8 +200340,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missionsToUnlock:
-  - 'Harpoon Tutorial: Hold LMB to aim, release to shoot'
-  missionToLock: 'Defeat Oil Drops: Use Space To Dodge their ranged attacks'
+  - Kalahkan 3 Monster (The Living Garbage)
+  missionToLock: Bersihkan pantai! Kalahkan semua monster di pantai hingga indikator
+    ditengah atas menjadi hijau lagi!
 --- !u!1 &625198191
 GameObject:
   m_ObjectHideFlags: 0
@@ -201563,7 +201629,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8230488398095317440, guid: 0ab115e169c4f8345b06f01cf4436669, type: 3}
       propertyPath: maxSpawn
-      value: 15
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8230488398095317440, guid: 0ab115e169c4f8345b06f01cf4436669, type: 3}
       propertyPath: spawnArea
@@ -201587,19 +201653,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4436055364962013191, guid: 0ab115e169c4f8345b06f01cf4436669, type: 3}
       propertyPath: m_Size.x
-      value: 47.801117
+      value: 28.069975
       objectReference: {fileID: 0}
     - target: {fileID: -4436055364962013191, guid: 0ab115e169c4f8345b06f01cf4436669, type: 3}
       propertyPath: m_Size.y
-      value: 71.87183
+      value: 35.789368
       objectReference: {fileID: 0}
     - target: {fileID: -4436055364962013191, guid: 0ab115e169c4f8345b06f01cf4436669, type: 3}
       propertyPath: m_Offset.x
-      value: -22.116539
+      value: -31.98211
       objectReference: {fileID: 0}
     - target: {fileID: -4436055364962013191, guid: 0ab115e169c4f8345b06f01cf4436669, type: 3}
       propertyPath: m_Offset.y
-      value: 29.74831
+      value: 11.707077
       objectReference: {fileID: 0}
     - target: {fileID: 5649220881130577261, guid: 0ab115e169c4f8345b06f01cf4436669, type: 3}
       propertyPath: m_Name
@@ -201758,7 +201824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2806451232791597443, guid: 58484cc7097c6cf428d4a0808becc8c8, type: 3}
       propertyPath: killMissionName
-      value: 'First Cleaning: Defeat 3 The Living Garbages, press LMB to attack'
+      value: Kalahkan 3 Monster (The Living Garbage)
       objectReference: {fileID: 0}
     - target: {fileID: 4434105707194845171, guid: 58484cc7097c6cf428d4a0808becc8c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -204017,6 +204083,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 368275852}
     m_Modifications:
+    - target: {fileID: -3332178211866635938, guid: f2132e7fc77889b4f809879c663be3e6, type: 3}
+      propertyPath: missionName
+      value: Tahan tombol E untuk healing di charging station
+      objectReference: {fileID: 0}
     - target: {fileID: 171048847374555480, guid: f2132e7fc77889b4f809879c663be3e6, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -204280,7 +204350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2806451232791597443, guid: 58484cc7097c6cf428d4a0808becc8c8, type: 3}
       propertyPath: killMissionName
-      value: 'First Cleaning: Defeat 3 The Living Garbages, press LMB to attack'
+      value: Kalahkan 3 Monster (The Living Garbage)
       objectReference: {fileID: 0}
     - target: {fileID: 4434105707194845171, guid: 58484cc7097c6cf428d4a0808becc8c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -204327,43 +204397,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58484cc7097c6cf428d4a0808becc8c8, type: 3}
---- !u!84 &793432878
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 6
-  m_Width: 259
-  m_Height: 146
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_UseDynamicScaleExplicit: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 0
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &796293628
 GameObject:
   m_ObjectHideFlags: 0
@@ -210401,231 +210434,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 14.345184, y: 3.8887482}
   m_EdgeRadius: 0
---- !u!21 &880799364
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: water
-  m_Shader: {fileID: -6465566751694194690, guid: 13326eeed13ec4b498f4eb0770b38c60, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MaskTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_6e24d4388be447eb97d29ddf82a9a802_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 03d9c4cfc0adea348b4dfdaf43005925, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TexelSize_41cd799c4d5c4671a2abaa82c24c2116_Texture_1:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TexelSize_e952e8381c61479c99b38609e01c5554_Texture_1:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Texture2DAsset_9e3a7e262db34ddea10b612088dd1860_Out_0:
-        m_Texture: {fileID: 2800000, guid: 7e1aff9652c0dac418d9aa42f5f24dc2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _alphaTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _belowWaterTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _colorGradient:
-        m_Texture: {fileID: 1705148782}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _distortion_tex:
-        m_Texture: {fileID: 2800000, guid: 63a3a961b343e5341a13f8efb4988815, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _pixelperfectuv_03f5e53fd18b43e19a2becb6e93e2e58_tex_258542073:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _pixelperfectuv_3a2b250062924f3da269ec1b910b2f57_tex_258542073:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _pixelperfectuv_660921aca76b4ccca33840e8e7c6d762_tex_258542073:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _pixelperfectuv_8e2ab4842edb4530b0c5c85605e2f077_tex_258542073:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _pixelperfectuv_b5263cc47d6b4a8d84a602eb760e7a19_tex_258542073:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _pixelperfectuv_b75d5bc4da1347da957eff4013b32203_tex_258542073:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _pixelperfectuv_c5a47b7d4821456281b0ca7cff8a55e1_tex_258542073:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _pixelperfectuv_f8eba3edd3e04eee97fe2c65a8a53d16_tex_258542073:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _reflectionsTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _simTex:
-        m_Texture: {fileID: 243723051}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _sun_strips:
-        m_Texture: {fileID: 2800000, guid: 02b9ccfabe688644ebd37eb70cbe2341, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _surfaceTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _EnableExternalAlpha: 0
-    - _RFalpha: 0
-    - _RForgColor: 0
-    - _belowWaterTexAlpha: 0
-    - _belowWaterTexDistortionStrength: 1
-    - _color_type: 1
-    - _deep_mlp: 1
-    - _depthFromObstructors: 0
-    - _depthMlp: 0
-    - _distortionFPRH: 0
-    - _distortion_str: 0.1
-    - _edgeIgnoreTransparency: 0
-    - _edgeSize: 0
-    - _enableFalloff: 0
-    - _enable_nor: 0
-    - _enable_obs: 1
-    - _enable_pl: 0
-    - _enable_plat: 1
-    - _enable_ref: 0
-    - _enable_rm: 0
-    - _enable_scrolling: 0
-    - _enable_sim: 1
-    - _enable_td: 1
-    - _enable_topdown: 0
-    - _falloffStart: 0
-    - _falloffStrength: 0
-    - _foam_alpha: 0.007
-    - _foam_density: 0.313
-    - _foam_size: 2.78
-    - _foam_speed: 0.37
-    - _foam_width: 0.179
-    - _lighting: 0
-    - _normStr: 0.07
-    - _num_of_pixels: 64
-    - _obstruction_alpha: 1
-    - _obstruction_width: 0.15
-    - _pixelArtUV: 0
-    - _pixel_art: 0
-    - _pixel_perfect: 0
-    - _raymarchFalloffEnd: 0
-    - _raymarchFalloffStart: 0
-    - _raymarchSteps: 0
-    - _reflectionY: 2.2545903
-    - _rm_type2: 0
-    - _scrStrength: 0
-    - _strength: 0
-    - _strips_alpha: 0.646
-    - _strips_density: 16
-    - _strips_scrolling_speed: 0
-    - _strips_size: 0.44
-    - _strips_speed: 0.89
-    - _surfaceAlpha: 0
-    - _surfaceTexAlpha: 0
-    - _useFoamSpeedForST: 0
-    - _usePerspective: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RFcolor: {r: 0, g: 0, b: 0, a: 0}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _belowWaterTexUV: {r: 0, g: 0, b: 1, a: 1}
-    - _color: {r: 0, g: 0.6939702, b: 1, a: 0}
-    - _deep_color: {r: 0.70358664, g: 0.88689333, b: 0.9150943, a: 0}
-    - _deep_minmax: {r: 0, g: 1, b: 0, a: 0}
-    - _deep_minmax_1: {r: 0.56, g: 1, b: 0, a: 0}
-    - _distortion_color: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
-    - _distortion_minmax: {r: 0, g: 3, b: 0, a: 0}
-    - _distortion_speed: {r: 0.06, g: 0.01, b: 0, a: 0}
-    - _distortion_strength: {r: 0.02, g: 0.02, b: 0, a: 0}
-    - _distortion_tiling: {r: 2, g: 2, b: 0, a: 0}
-    - _edgeColor: {r: 1, g: 1, b: 1, a: 1}
-    - _foam_color: {r: 0.86774653, g: 0.93894625, b: 0.9433962, a: 0}
-    - _foam_speed: {r: 0, g: 0, b: 0, a: 0}
-    - _m_Color: {r: 0.6415094, g: 0.20879316, b: 0.20879316, a: 0}
-    - _num_of_pixels: {r: 64, g: 64, b: 0, a: 0}
-    - _obs_transform: {r: 0.8, g: 0.8, b: 0.1, a: 0.1}
-    - _obstruction_color: {r: 1, g: 1, b: 1, a: 0}
-    - _perspective: {r: 1.59, g: -0.17, b: 0, a: 0}
-    - _perspective2: {r: 0, g: 0, b: 0, a: 0}
-    - _playerPosition: {r: 0, g: 0, b: -10, a: 0}
-    - _refTexRes: {r: 1920, g: 1620, b: 0, a: 0}
-    - _ref_transform: {r: 1, g: 0.6666666, b: 0, a: 0.16666667}
-    - _reflectionsColor: {r: 0.4433962, g: 0.31548905, b: 0.12758097, a: 0}
-    - _simFoamColor: {r: 1, g: 1, b: 1, a: 1}
-    - _simMinMaxWavesHeightFoam: {r: 0, g: 0.07, b: 0, a: 0}
-    - _surfaceTexSpeed: {r: 0, g: 0, b: 0, a: 0}
-    - _surfaceTexTiling: {r: 0, g: 0, b: 0, a: 0}
-    - _surfaceTexUV: {r: 0, g: 0, b: 1, a: 1}
-    - _tiling: {r: 1, g: 1, b: 0, a: 0}
-    - m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!4 &885540712 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6613857361393944154, guid: 331ff561124f34e438f9b0f87bea6988, type: 3}
@@ -271466,8 +271274,8 @@ RenderTexture:
     Hash: 00000000000000000000000000000000
   m_IsAlphaChannelOptional: 0
   serializedVersion: 6
-  m_Width: 827
-  m_Height: 465
+  m_Width: 1194
+  m_Height: 746
   m_AntiAliasing: 1
   m_MipCount: -1
   m_DepthStencilFormat: 93
@@ -271501,7 +271309,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3332178211866635938, guid: f2132e7fc77889b4f809879c663be3e6, type: 3}
       propertyPath: missionName
-      value: 'Tutorial: Hold E to use Charging Station'
+      value: Tahan tombol E untuk healing di charging station
       objectReference: {fileID: 0}
     - target: {fileID: 171048847374555480, guid: f2132e7fc77889b4f809879c663be3e6, type: 3}
       propertyPath: m_Layer
@@ -271709,7 +271517,7 @@ MonoBehaviour:
     reflectionLayerIdx: 8
     copyMainBackground: 0
     lastOrtographicSize: 9.700001
-    lastAspectRatio: 1.7784946
+    lastAspectRatio: 1.6005362
   _run: 1
   overrideMainCamera:
     _value: 0
@@ -271724,8 +271532,8 @@ MonoBehaviour:
   uvShader: {fileID: 0}
   jfMaterial: {fileID: 0}
   uvMaterial: {fileID: 0}
-  jfRenderTexture1: {fileID: 793432878}
-  jfRenderTexture2: {fileID: 380419427}
+  jfRenderTexture1: {fileID: 1035491459}
+  jfRenderTexture2: {fileID: 1259728159}
   _mainCamera: {fileID: 2096225846}
   genSDF: 0
 --- !u!20 &929270047
@@ -273548,8 +273356,8 @@ RenderTexture:
     Hash: 00000000000000000000000000000000
   m_IsAlphaChannelOptional: 0
   serializedVersion: 6
-  m_Width: 827
-  m_Height: 697
+  m_Width: 1194
+  m_Height: 1119
   m_AntiAliasing: 1
   m_MipCount: -1
   m_DepthStencilFormat: 93
@@ -273694,6 +273502,14 @@ PrefabInstance:
     - target: {fileID: 4507070717046048542, guid: 965a12ab3df5b014c8c2f244b3119fb3, type: 3}
       propertyPath: m_Offset.y
       value: -2.1433868
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889461115473972152, guid: 965a12ab3df5b014c8c2f244b3119fb3, type: 3}
+      propertyPath: meleeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889461115473972152, guid: 965a12ab3df5b014c8c2f244b3119fb3, type: 3}
+      propertyPath: maximumHealth
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7542521088175497139, guid: 965a12ab3df5b014c8c2f244b3119fb3, type: 3}
       propertyPath: m_AnchorMax.x
@@ -273872,6 +273688,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023931337}
   m_CullTransparentMesh: 1
+--- !u!84 &1035491459
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 6
+  m_Width: 375
+  m_Height: 234
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 92
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_UseDynamicScaleExplicit: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 0
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1001 &1095819018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -276095,7 +275948,7 @@ MonoBehaviour:
     reflectionLayerIdx: -1
     copyMainBackground: 0
     lastOrtographicSize: 11.64
-    lastAspectRatio: 1.1856631
+    lastAspectRatio: 1.0670241
   _run: 0
   startupQF: 1
   pivotDetectionAlphaTreshold: 0
@@ -276534,7 +276387,7 @@ MonoBehaviour:
     reflectionLayerIdx: -1
     copyMainBackground: 0
     lastOrtographicSize: 7.76
-    lastAspectRatio: 1.7784946
+    lastAspectRatio: 1.6005362
   _run: 0
 --- !u!4 &1198598839
 Transform:
@@ -282821,7 +282674,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3859409038064936276, guid: 331ff561124f34e438f9b0f87bea6988, type: 3}
       propertyPath: missionName
-      value: 'Tutorial: Move -> Use WASD to move and reach your first Charging Station'
+      value: Tutorial -> Gunakan WASD untuk bergerak ke charging station
       objectReference: {fileID: 0}
     - target: {fileID: 5235902515638323591, guid: 331ff561124f34e438f9b0f87bea6988, type: 3}
       propertyPath: m_Size.x
@@ -282888,6 +282741,43 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 331ff561124f34e438f9b0f87bea6988, type: 3}
+--- !u!84 &1259728159
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 6
+  m_Width: 375
+  m_Height: 234
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 92
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_UseDynamicScaleExplicit: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 0
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1001 &1286591668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -282906,7 +282796,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2806451232791597443, guid: 18374b04ae2031a4eb880a775d1615b8, type: 3}
       propertyPath: environment
-      value: 3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806451232791597443, guid: 18374b04ae2031a4eb880a775d1615b8, type: 3}
+      propertyPath: maximumHealth
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4434105707194845171, guid: 18374b04ae2031a4eb880a775d1615b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -284031,6 +283925,52 @@ Transform:
   - {fileID: 587878505}
   m_Father: {fileID: 1800560541}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!28 &1327972233
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 3
+  m_Width: 128
+  m_Height: 1
+  m_CompleteImageSize: 512
+  m_MipsStripped: 0
+  m_TextureFormat: 5
+  m_MipCount: 1
+  m_IsReadable: 1
+  m_IsPreProcessed: 0
+  m_IgnoreMipmapLimit: 1
+  m_MipmapLimitGroupName: 
+  m_StreamingMipmaps: 0
+  m_StreamingMipmapsPriority: 0
+  m_VTOnly: 0
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  m_PlatformBlob: 
+  image data: 512
+  _typelessdata: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &1351416234
 GameObject:
   m_ObjectHideFlags: 0
@@ -379194,63 +379134,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!21 &1575777172
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: bokeh blur
-  m_Shader: {fileID: -6465566751694194690, guid: cdc4d123c2923ef419308dc1041672ed, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex2:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _area: 0.01
-    - _falloffE: 1
-    - _falloffP: 0
-    - _falloffS: 0
-    - _falloffU: 0
-    - _gamma: 10.5
-    - _hardness: 0.6
-    - _quality: 12
-    - _ratio: 1.85
-    m_Colors: []
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1001 &1592520986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -379269,7 +379152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2806451232791597443, guid: 58484cc7097c6cf428d4a0808becc8c8, type: 3}
       propertyPath: killMissionName
-      value: 'First Cleaning: Defeat 3 The Living Garbages, press LMB to attack'
+      value: Kalahkan 3 Monster (The Living Garbage)
       objectReference: {fileID: 0}
     - target: {fileID: 4434105707194845171, guid: 58484cc7097c6cf428d4a0808becc8c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -381265,52 +381148,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 6.6364784, y: 3.8887482}
   m_EdgeRadius: 0
---- !u!28 &1705148782
-Texture2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 3
-  m_Width: 128
-  m_Height: 1
-  m_CompleteImageSize: 512
-  m_MipsStripped: 0
-  m_TextureFormat: 5
-  m_MipCount: 1
-  m_IsReadable: 1
-  m_IsPreProcessed: 0
-  m_IgnoreMipmapLimit: 1
-  m_MipmapLimitGroupName: 
-  m_StreamingMipmaps: 0
-  m_StreamingMipmapsPriority: 0
-  m_VTOnly: 0
-  m_AlphaIsTransparency: 0
-  m_ImageCount: 1
-  m_TextureDimension: 2
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_LightmapFormat: 0
-  m_ColorSpace: 1
-  m_PlatformBlob: 
-  image data: 512
-  _typelessdata: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!1001 &1711523157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -382032,8 +381869,8 @@ RenderTexture:
     Hash: 00000000000000000000000000000000
   m_IsAlphaChannelOptional: 0
   serializedVersion: 6
-  m_Width: 827
-  m_Height: 465
+  m_Width: 1194
+  m_Height: 746
   m_AntiAliasing: 1
   m_MipCount: -1
   m_DepthStencilFormat: 93
@@ -479627,6 +479464,63 @@ Transform:
   - {fileID: 2094153463}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1877162478
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: bokeh blur
+  m_Shader: {fileID: -6465566751694194690, guid: cdc4d123c2923ef419308dc1041672ed, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _area: 0.01
+    - _falloffE: 1
+    - _falloffP: 0
+    - _falloffS: 0
+    - _falloffU: 0
+    - _gamma: 10.5
+    - _hardness: 0.6
+    - _quality: 12
+    - _ratio: 1.85
+    m_Colors: []
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &1877747200
 GameObject:
   m_ObjectHideFlags: 0
@@ -479921,6 +479815,231 @@ Transform:
   - {fileID: 617243945}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1904913174
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: water
+  m_Shader: {fileID: -6465566751694194690, guid: 13326eeed13ec4b498f4eb0770b38c60, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_6e24d4388be447eb97d29ddf82a9a802_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 03d9c4cfc0adea348b4dfdaf43005925, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TexelSize_41cd799c4d5c4671a2abaa82c24c2116_Texture_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TexelSize_e952e8381c61479c99b38609e01c5554_Texture_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_9e3a7e262db34ddea10b612088dd1860_Out_0:
+        m_Texture: {fileID: 2800000, guid: 7e1aff9652c0dac418d9aa42f5f24dc2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _alphaTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _belowWaterTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _colorGradient:
+        m_Texture: {fileID: 1327972233}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _distortion_tex:
+        m_Texture: {fileID: 2800000, guid: 63a3a961b343e5341a13f8efb4988815, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _pixelperfectuv_03f5e53fd18b43e19a2becb6e93e2e58_tex_258542073:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _pixelperfectuv_3a2b250062924f3da269ec1b910b2f57_tex_258542073:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _pixelperfectuv_660921aca76b4ccca33840e8e7c6d762_tex_258542073:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _pixelperfectuv_8e2ab4842edb4530b0c5c85605e2f077_tex_258542073:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _pixelperfectuv_b5263cc47d6b4a8d84a602eb760e7a19_tex_258542073:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _pixelperfectuv_b75d5bc4da1347da957eff4013b32203_tex_258542073:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _pixelperfectuv_c5a47b7d4821456281b0ca7cff8a55e1_tex_258542073:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _pixelperfectuv_f8eba3edd3e04eee97fe2c65a8a53d16_tex_258542073:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _reflectionsTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _simTex:
+        m_Texture: {fileID: 122437724}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _sun_strips:
+        m_Texture: {fileID: 2800000, guid: 02b9ccfabe688644ebd37eb70cbe2341, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _surfaceTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _EnableExternalAlpha: 0
+    - _RFalpha: 0
+    - _RForgColor: 0
+    - _belowWaterTexAlpha: 0
+    - _belowWaterTexDistortionStrength: 1
+    - _color_type: 1
+    - _deep_mlp: 1
+    - _depthFromObstructors: 0
+    - _depthMlp: 0
+    - _distortionFPRH: 0
+    - _distortion_str: 0.1
+    - _edgeIgnoreTransparency: 0
+    - _edgeSize: 0
+    - _enableFalloff: 0
+    - _enable_nor: 0
+    - _enable_obs: 1
+    - _enable_pl: 0
+    - _enable_plat: 1
+    - _enable_ref: 0
+    - _enable_rm: 0
+    - _enable_scrolling: 0
+    - _enable_sim: 1
+    - _enable_td: 1
+    - _enable_topdown: 0
+    - _falloffStart: 0
+    - _falloffStrength: 0
+    - _foam_alpha: 0.007
+    - _foam_density: 0.313
+    - _foam_size: 2.78
+    - _foam_speed: 0.37
+    - _foam_width: 0.179
+    - _lighting: 0
+    - _normStr: 0.07
+    - _num_of_pixels: 64
+    - _obstruction_alpha: 1
+    - _obstruction_width: 0.15
+    - _pixelArtUV: 0
+    - _pixel_art: 0
+    - _pixel_perfect: 0
+    - _raymarchFalloffEnd: 0
+    - _raymarchFalloffStart: 0
+    - _raymarchSteps: 0
+    - _reflectionY: 2.2545903
+    - _rm_type2: 0
+    - _scrStrength: 0
+    - _strength: 0
+    - _strips_alpha: 0.646
+    - _strips_density: 16
+    - _strips_scrolling_speed: 0
+    - _strips_size: 0.44
+    - _strips_speed: 0.89
+    - _surfaceAlpha: 0
+    - _surfaceTexAlpha: 0
+    - _useFoamSpeedForST: 0
+    - _usePerspective: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RFcolor: {r: 0, g: 0, b: 0, a: 0}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+    - _belowWaterTexUV: {r: 0, g: 0, b: 1, a: 1}
+    - _color: {r: 0, g: 0.6939702, b: 1, a: 0}
+    - _deep_color: {r: 0.70358664, g: 0.88689333, b: 0.9150943, a: 0}
+    - _deep_minmax: {r: 0, g: 1, b: 0, a: 0}
+    - _deep_minmax_1: {r: 0.56, g: 1, b: 0, a: 0}
+    - _distortion_color: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
+    - _distortion_minmax: {r: 0, g: 3, b: 0, a: 0}
+    - _distortion_speed: {r: 0.06, g: 0.01, b: 0, a: 0}
+    - _distortion_strength: {r: 0.02, g: 0.02, b: 0, a: 0}
+    - _distortion_tiling: {r: 2, g: 2, b: 0, a: 0}
+    - _edgeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _foam_color: {r: 0.86774653, g: 0.93894625, b: 0.9433962, a: 0}
+    - _foam_speed: {r: 0, g: 0, b: 0, a: 0}
+    - _m_Color: {r: 0.6415094, g: 0.20879316, b: 0.20879316, a: 0}
+    - _num_of_pixels: {r: 64, g: 64, b: 0, a: 0}
+    - _obs_transform: {r: 0.8, g: 0.8, b: 0.1, a: 0.1}
+    - _obstruction_color: {r: 1, g: 1, b: 1, a: 0}
+    - _perspective: {r: 1.59, g: -0.17, b: 0, a: 0}
+    - _perspective2: {r: 0, g: 0, b: 0, a: 0}
+    - _playerPosition: {r: 0, g: 0, b: -10, a: 0}
+    - _refTexRes: {r: 1920, g: 1620, b: 0, a: 0}
+    - _ref_transform: {r: 1, g: 0.6666666, b: 0, a: 0.16666667}
+    - _reflectionsColor: {r: 0.4433962, g: 0.31548905, b: 0.12758097, a: 0}
+    - _simFoamColor: {r: 1, g: 1, b: 1, a: 1}
+    - _simMinMaxWavesHeightFoam: {r: 0, g: 0.07, b: 0, a: 0}
+    - _surfaceTexSpeed: {r: 0, g: 0, b: 0, a: 0}
+    - _surfaceTexTiling: {r: 0, g: 0, b: 0, a: 0}
+    - _surfaceTexUV: {r: 0, g: 0, b: 1, a: 1}
+    - _tiling: {r: 1, g: 1, b: 0, a: 0}
+    - m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &1908032010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -480075,7 +480194,8 @@ PrefabInstance:
       objectReference: {fileID: 1871343170}
     - target: {fileID: 4801833429043068593, guid: 51ab4f797f06d6f4dacb7611bb72dc8a, type: 3}
       propertyPath: completionMission
-      value: Clean The Beach! Defeat all monsters on the beach!
+      value: Bersihkan pantai! Kalahkan semua monster di pantai hingga indikator
+        ditengah atas menjadi hijau lagi!
       objectReference: {fileID: 0}
     - target: {fileID: 5701833702012603526, guid: 51ab4f797f06d6f4dacb7611bb72dc8a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -480257,8 +480377,8 @@ RenderTexture:
     Hash: 00000000000000000000000000000000
   m_IsAlphaChannelOptional: 0
   serializedVersion: 6
-  m_Width: 519
-  m_Height: 292
+  m_Width: 750
+  m_Height: 469
   m_AntiAliasing: 1
   m_MipCount: -1
   m_DepthStencilFormat: 93
@@ -529824,7 +529944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2806451232791597443, guid: 58484cc7097c6cf428d4a0808becc8c8, type: 3}
       propertyPath: killMissionName
-      value: 'First Cleaning: Defeat 3 The Living Garbages, press LMB to attack'
+      value: Kalahkan 3 Monster (The Living Garbage)
       objectReference: {fileID: 0}
     - target: {fileID: 4434105707194845171, guid: 58484cc7097c6cf428d4a0808becc8c8, type: 3}
       propertyPath: m_LocalPosition.x

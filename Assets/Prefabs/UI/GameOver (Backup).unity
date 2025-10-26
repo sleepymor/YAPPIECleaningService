@@ -572,7 +572,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lanjut
+  m_text: Restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57302d93790426942979782cc858aa3f, type: 2}
   m_sharedMaterial: {fileID: 346952215716223322, guid: 57302d93790426942979782cc858aa3f, type: 2}
@@ -786,7 +786,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dahlah Nyerah
+  m_text: Back To Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57302d93790426942979782cc858aa3f, type: 2}
   m_sharedMaterial: {fileID: 346952215716223322, guid: 57302d93790426942979782cc858aa3f, type: 2}

@@ -67,31 +67,35 @@ MonoBehaviour:
   missionPairs:
   - missionsToComplete: []
     missionsToActivate:
-    - 'Tutorial: Move -> Use WASD to move and reach your first Charging Station'
+    - Tutorial -> Gunakan WASD untuk bergerak ke charging station
   - missionsToComplete:
-    - 'Tutorial: Move -> Use WASD to move and reach your first Charging Station'
+    - Tutorial -> Gunakan WASD untuk bergerak ke charging station
     missionsToActivate:
-    - 'Tutorial: Hold E to use Charging Station'
+    - Tahan tombol E untuk healing di charging station
   - missionsToComplete:
-    - 'Tutorial: Hold E to use Charging Station'
+    - Tahan tombol E untuk healing di charging station
     missionsToActivate:
-    - 'First Cleaning: Defeat 3 The Living Garbages, press LMB to attack'
+    - Kalahkan 3 Monster (The Living Garbage)
   - missionsToComplete:
-    - 'First Cleaning: Defeat 3 The Living Garbages, press LMB to attack'
+    - Kalahkan 3 Monster (The Living Garbage)
     missionsToActivate:
-    - 'Harpoon Tutorial: Hold LMB to aim, release to shoot'
+    - Kalahkan Oil Drop, tekan Space untuk Dash, dan tahan tombol kiri mouse untuk
+      membidik harpoon
   - missionsToComplete:
-    - 'Harpoon Tutorial: Hold LMB to aim, release to shoot'
+    - Kalahkan Oil Drop, tekan Space untuk Dash, dan tahan tombol kiri mouse untuk
+      membidik harpoon
     missionsToActivate:
-    - 'Defeat Oil Drops: Use Space To Dodge their ranged attacks'
+    - Bersihkan pantai! Kalahkan semua monster di pantai hingga indikator ditengah
+      atas menjadi hijau lagi!
   - missionsToComplete:
-    - 'Defeat Oil Drops: Use Space To Dodge their ranged attacks'
+    - Bersihkan pantai! Kalahkan semua monster di pantai hingga indikator ditengah
+      atas menjadi hijau lagi!
     missionsToActivate:
+    - Selamat! Level pertama selesai (Fullnya gak bisa ditaroh disini wkwkw)
+  - missionsToComplete:
     - Clean The Beach! Defeat all monsters on the beach!
-  - missionsToComplete:
-    - Clean The Beach! Defeat all monsters on the beach!
     missionsToActivate:
-    - 'An abandoned city?: Go to the City'
+    - Selamat! Level pertama selesai (Fullnya gak bisa ditaroh disini wkwkw)
   - missionsToComplete:
     - 'An abandoned city?: Go to the City'
     missionsToActivate:
@@ -111,7 +115,8 @@ MonoBehaviour:
   - missionsToComplete:
     - 'Final Boss?: Defeat Mutant Landfill Monster'
     missionsToActivate:
-    - Thank you for helping us in the development!
+    - Thank you for helping us in the development! Now enemies are spawn infinitely,
+      you can fight them all or start a new  game! Thank you for playing!
   - missionsToComplete:
     - Clean the Coral Maze
     missionsToActivate:
@@ -131,16 +136,15 @@ MonoBehaviour:
   missionText: {fileID: 0}
   playerTransform: {fileID: 0}
   missionsToDefine:
-  - missionName: 'Tutorial: Move -> Use WASD to move and reach your first Charging
-      Station'
+  - missionName: Tutorial -> Gunakan WASD untuk bergerak ke charging station
     targetCount: 1
     missionType: 1
     destinationPosition: {x: 0, y: 0, z: 0}
-  - missionName: 'Tutorial: Hold E to use Charging Station'
+  - missionName: Tahan tombol E untuk healing di charging station
     targetCount: 1
     missionType: 3
     destinationPosition: {x: 0, y: 0, z: 0}
-  - missionName: 'First Cleaning: Defeat 3 The Living Garbages, press LMB to attack'
+  - missionName: Kalahkan 3 Monster (The Living Garbage)
     targetCount: 3
     missionType: 0
     destinationPosition: {x: 0, y: 0, z: 0}
@@ -148,11 +152,18 @@ MonoBehaviour:
     targetCount: 1
     missionType: 3
     destinationPosition: {x: 0, y: 0, z: 0}
-  - missionName: 'Defeat Oil Drops: Use Space To Dodge their ranged attacks'
+  - missionName: Kalahkan Oil Drop, tekan Space untuk Dash, dan tahan tombol kiri
+      mouse untuk membidik harpoon
     targetCount: 2
     missionType: 0
     destinationPosition: {x: 0, y: 0, z: 0}
-  - missionName: Clean The Beach! Defeat all monsters on the beach!
+  - missionName: Bersihkan pantai! Kalahkan semua monster di pantai hingga indikator
+      ditengah atas menjadi hijau lagi!
+    targetCount: 1
+    missionType: 3
+    destinationPosition: {x: 0, y: 0, z: 0}
+  - missionName: Selamat! Level pertama selesai (Fullnya gak bisa ditaroh disini
+      wkwkw)
     targetCount: 1
     missionType: 3
     destinationPosition: {x: 0, y: 0, z: 0}
